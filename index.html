@@ -5,143 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A&H Auto Detailer</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.6;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
     }
 
-    header {
-      background-color: #000;
-      text-align: center;
-      padding: 60px 20px 40px;
+    header img {
+      width: 200px;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 1.3rem;
+      font-size: 20px;
       font-weight: 400;
-      color: #ccc;
-    }
-
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 30px;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-align: center;
-      color: #fff;
+      font-size: 28px;
+      margin-top: 40px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+    .service {
+      background-color: #111;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
     }
 
-    .card {
-      background: #121212;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
-      transition: background 0.3s ease;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
     }
 
-    .card:hover {
-      background: #1c1c1c;
+    li {
+      margin: 8px 0;
     }
 
-    .card h3 {
-      color: #fff;
-      margin-bottom: 15px;
-    }
-
-    .card ul,
-    .card p {
-      color: #ccc;
-    }
-
-    footer {
-      background: #000;
-      color: #777;
-      text-align: center;
-      padding: 30px 20px 10px;
-      font-size: 0.9rem;
-    }
-
-    .whatsapp-btn {
+    .whatsapp-button {
       display: inline-block;
-      margin: 30px auto 60px;
       background-color: #25D366;
-      color: #fff;
-      padding: 14px 26px;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 10px;
-      font-size: 1rem;
+      font-size: 16px;
+      margin-top: 40px;
       transition: background 0.3s ease;
     }
 
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
-    }
-
-    .cta {
-      text-align: center;
+    .whatsapp-button:hover {
+      background-color: #1DA851;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="logo.png" alt="A&H Auto Detailer Logo">
     <h1>Welcome to A&H AutoDetailer</h1>
   </header>
 
   <section>
-    <h2>Our Signature Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>A&H Total Revamp Package</h3>
-        <ul>
-          <li>Exterior Detailing</li>
-          <li>Interior Detailing</li>
-          <li>3-Step Paint Correction</li>
-          <li>Wax or Sealant</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Detailed Wash + 1 Step Polish + Wax</h3>
-        <p>Perfect for a glossy finish with long-lasting protection.</p>
-      </div>
-      <div class="card">
-        <h3>Paint Correction</h3>
-        <p>Remove swirls and scratches for a smooth, flawless shine.</p>
-      </div>
-      <div class="card">
-        <h3>Interior Detailing</h3>
-        <p>Deep clean your cabin for comfort, hygiene, and luxury feel.</p>
-      </div>
+    <h2>Our Services</h2>
+
+    <div class="service">
+      <h3>A&H Total Revamp Package</h3>
+      <ul>
+        <li>Exterior Detailing</li>
+        <li>Interior Detailing</li>
+        <li>3 Step Paint Correction</li>
+        <li>Wax or Sealant for Protection</li>
+      </ul>
+    </div>
+
+    <div class="service">
+      <h3>Detailed Wash + 1 Step Polish + Wax</h3>
+      <p>Perfect for a fresh, glossy look with added protection.</p>
+    </div>
+
+    <div class="service">
+      <h3>Paint Correction</h3>
+      <p>Restore your car’s paint to perfection, removing swirls and imperfections.</p>
+    </div>
+
+    <div class="service">
+      <h3>Interior Detailing</h3>
+      <p>A meticulous clean of your car’s interior to ensure a pristine, fresh space.</p>
     </div>
   </section>
 
-  <div class="cta">
-    <a href="https://wa.me/919818198485" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-  </div>
-
-  <footer>
-    &copy; 2025 A&H Auto Detailer. All rights reserved.
-  </footer>
+  <a class="whatsapp-button" href="https://wa.me/919818198485" target="_blank">
+    Chat on WhatsApp
+  </a>
 
 </body>
-</html></body>
 </html>
