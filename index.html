@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A&H Auto Detailer</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
       color: #fff;
       text-align: center;
+      padding: 20px;
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60') no-repeat center center fixed;
       background-size: cover;
       position: relative;
@@ -27,80 +25,92 @@
       z-index: -1;
     }
 
-    .logo {
-      margin-top: 20px;
+    header img {
+      width: 180px;
+      margin: 30px 0 10px;
     }
 
-    .logo img {
-      width: 200px;
+    h2 {
+      font-size: 28px;
+      margin-top: 40px;
+      color: #f8f8f8;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin: 30px 0 20px;
+    .pricing-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .packages {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
-      padding: 0 20px 60px;
-    }
-
-    .card {
+    .pricing-card {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 20px 25px;
-      max-width: 350px;
-      width: 100%;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       text-align: left;
     }
 
-    .card h2 {
-      font-size: 1.5rem;
+    .pricing-card h3 {
+      color: #fff;
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
-    .price {
-      color: #00e676;
+    .pricing-card .price {
+      font-size: 18px;
+      color: #25D366;
+      margin-bottom: 10px;
       font-weight: bold;
-      margin-bottom: 10px;
     }
 
-    ul {
-      list-style-type: disc;
+    .pricing-card ul {
       padding-left: 20px;
+    }
+
+    .pricing-card ul li {
       color: #ccc;
-      margin: 0;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
 
-    .footer {
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    .footer a {
-      color: #00e676;
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 30px;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 50px auto 20px;
+      transition: background 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1DA851;
+    }
+
+    @media (min-width: 768px) {
+      .pricing-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="logo">
+  <header>
     <img src="logo.png" alt="A&H Auto Detailer Logo">
-  </div>
+  </header>
 
-  <h1>Our Packages</h1>
+  <h2>Our Packages</h2>
 
-  <div class="packages">
-    <div class="card">
-      <h2>A&H Total Revamp Package</h2>
-      <div class="price">Starting at ₹4,999</div>
+  <div class="pricing-wrapper">
+    <div class="pricing-card">
+      <h3>A&H Total Revamp Package</h3>
+      <p class="price">Starting at ₹4,999</p>
       <ul>
         <li>Exterior Detailing</li>
         <li>Interior Detailing</li>
@@ -109,25 +119,25 @@
       </ul>
     </div>
 
-    <div class="card">
-      <h2>Detailed Wash + 1 Step Polish + Wax</h2>
-      <div class="price">Starting at ₹1,499</div>
+    <div class="pricing-card">
+      <h3>Detailed Wash + 1 Step Polish + Wax</h3>
+      <p class="price">Starting at ₹1,499</p>
     </div>
 
-    <div class="card">
-      <h2>Paint Correction</h2>
-      <div class="price">Starting at ₹3,499</div>
+    <div class="pricing-card">
+      <h3>Paint Correction</h3>
+      <p class="price">Starting at ₹3,499</p>
     </div>
 
-    <div class="card">
-      <h2>Interior Detailing</h2>
-      <div class="price">Starting at ₹1,499</div>
+    <div class="pricing-card">
+      <h3>Interior Detailing</h3>
+      <p class="price">Starting at ₹1,499</p>
     </div>
   </div>
 
-  <div class="footer">
-    Follow us on <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
-  </div>
+  <a class="whatsapp-button" href="https://wa.me/919818198485" target="_blank">
+    Chat on WhatsApp
+  </a>
 
 </body>
 </html>
