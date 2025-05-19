@@ -12,70 +12,55 @@
     }
 
     body {
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
       background-color: #0a0a0a;
-      color: #eaeaea;
+      color: #ffffff;
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(180deg, #000 60%, #111);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background-color: #000;
       text-align: center;
-      padding: 20px;
+      padding: 60px 20px 40px;
     }
 
     header img {
-      max-width: 100%;
+      max-width: 300px;
       height: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: #ffffff;
-      letter-spacing: 1.2px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #aaa;
       margin-bottom: 20px;
     }
 
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #ccc;
+    }
+
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 50px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       font-size: 2rem;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       text-align: center;
-      color: #ffffff;
+      color: #fff;
     }
 
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      gap: 25px;
     }
 
     .card {
       background: #121212;
       padding: 25px;
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
-      transition: 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .card:hover {
@@ -83,11 +68,12 @@
     }
 
     .card h3 {
-      color: #ffffff;
+      color: #fff;
       margin-bottom: 15px;
     }
 
-    .card ul, .card p {
+    .card ul,
+    .card p {
       color: #ccc;
     }
 
@@ -95,35 +81,37 @@
       background: #000;
       color: #777;
       text-align: center;
-      padding: 30px 20px;
+      padding: 30px 20px 10px;
       font-size: 0.9rem;
     }
 
     .whatsapp-btn {
       display: inline-block;
-      margin: 30px auto;
+      margin: 30px auto 60px;
       background-color: #25D366;
       color: #fff;
-      padding: 12px 24px;
+      padding: 14px 26px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-size: 1rem;
       transition: background 0.3s ease;
-      text-align: center;
-      max-width: 200px;
     }
 
     .whatsapp-btn:hover {
       background-color: #1ebe5d;
+    }
+
+    .cta {
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://i.postimg.cc/Bv7df5sB/car-detailing.jpg" alt="Car Detailing Hero Image">
+    <img src="/mnt/data/file-BJ6LMWBz6hV8Ldt5pDKWMc" alt="A&H Auto Detailer Logo">
     <h1>Welcome to A&H AutoDetailer</h1>
-    <p>Experience luxury-level care for your car — right at home.</p>
   </header>
 
   <section>
@@ -153,14 +141,13 @@
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 A&H Auto Detailer. All rights reserved. <br>
-    Follow us on Instagram | WhatsApp | Call Us
-  </footer>
-
-  <div style="text-align:center;">
+  <div class="cta">
     <a href="https://wa.me/919818198485" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
   </div>
+
+  <footer>
+    &copy; 2025 A&H Auto Detailer. All rights reserved.
+  </footer>
 
 </body>
 </html>
