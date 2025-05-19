@@ -4,70 +4,120 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root {
+      --bg-dark: #000000;
+      --bg-gray: #1d1d1f;
+      --text-light: #f5f5f7;
+      --accent-green: #25D366;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: #1c1c1c;
-      background-image: url('data:image/svg+xml;utf8,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.05" stroke="%23ffffff" stroke-width="1"><rect x="4" y="28" width="20" height="12" rx="3" ry="3"/><circle cx="12" cy="40" r="3"/><circle cx="20" cy="40" r="3"/><path d="M28 20L40 20L44 28L40 36L28 36L24 28L28 20Z" fill="none"/><circle cx="34" cy="32" r="3"/><rect x="44" y="28" width="12" height="8" rx="2" ry="2"/></g></svg>');
-      background-repeat: repeat;
-      background-attachment: fixed;
-      color: #eee;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.6;
     }
 
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background-color: #111;
-      color: white;
+      padding: 4rem 1rem 2rem;
+      background-color: var(--bg-gray);
     }
 
     header img {
-      max-width: 150px;
-      margin-bottom: 1rem;
+      max-width: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #d1d1d6;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 2rem 1rem;
+      padding: 4rem 1.5rem;
     }
 
     h2 {
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    ul.services {
+      list-style: none;
+      display: grid;
+      gap: 2rem;
+    }
+
+    ul.services li {
+      background-color: #161616;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    ul.services li:hover {
+      transform: translateY(-5px);
+    }
+
+    ul.services li strong {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 0.75rem;
       color: #fff;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
+    ul.services li ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
     }
 
-    li {
-      margin: 1rem 0;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    ul.services li ul li {
+      list-style: disc;
+      color: #aaa;
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
     }
 
-    li strong {
-      color: #fff;
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-section p {
+      margin-bottom: 1.5rem;
+      color: #ccc;
     }
 
     .whatsapp-btn {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #25D366;
-      color: white;
+      padding: 0.9rem 2rem;
+      background-color: var(--accent-green);
+      color: #fff;
       font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      border-radius: 100px;
       text-decoration: none;
       transition: background-color 0.3s ease;
-      margin-top: 1rem;
     }
 
     .whatsapp-btn:hover {
@@ -76,51 +126,66 @@
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #111;
-      font-size: 0.9rem;
-      color: #999;
+      padding: 2rem 1rem;
+      background-color: var(--bg-gray);
+      font-size: 0.875rem;
+      color: #888;
+    }
+
+    @media (min-width: 768px) {
+      ul.services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="Logo.png" alt="A&H Auto Detailer Logo" />
-    <h1>Welcome to A&H Auto Detailer!</h1>
-    <p>Premium doorstep car detailing services</p>
+    <h1>A&H Auto Detailer</h1>
+    <p>Premium Doorstep Car Detailing Services</p>
   </header>
 
   <section>
     <h2>Our Services</h2>
-    <ul>
+    <ul class="services">
       <li>
-        <strong>A&H Total Revamp Package</strong><br />
+        <strong>A&H Total Revamp Package</strong>
         A complete transformation with deep exterior and interior cleaning, multi-step paint correction, and protection.
         <ul>
           <li>Exterior Detailing</li>
           <li>Interior Detailing</li>
           <li>3 Step Paint Correction</li>
-          <li>Wax or Sealant for protection</li>
+          <li>Wax or Sealant for Protection</li>
         </ul>
       </li>
       <li>
-        <strong>Detailed Wash + 1 Step Polish + Wax</strong><br />
+        <strong>Detailed Wash + 1 Step Polish + Wax</strong>
         Perfect for a fresh, glossy look with added protection.
       </li>
       <li>
-        <strong>Paint Correction</strong><br />
+        <strong>Paint Correction</strong>
         Restore your car’s paint to perfection, removing swirls and imperfections.
       </li>
       <li>
-        <strong>Interior Detailing</strong><br />
+        <strong>Interior Detailing</strong>
         A meticulous clean of your car’s interior to ensure a pristine, fresh space.
       </li>
     </ul>
   </section>
 
-  <section style="text-align:center;">
+  <section class="contact-section">
     <h2>Contact Us</h2>
-    <p>Have questions or want to book a service? Chat with us directly on WhatsApp!</p>
+    <p>Have questions or want to book a service? Chat with us directly on WhatsApp.</p>
     <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
   </section>
 
