@@ -1,82 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A&H Auto Detailer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      line-height: 1.6;
     }
     header {
-      background: #111;
+      background: url('https://images.unsplash.com/photo-1571607381624-6813f18ab4ab?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      height: 90vh;
       color: white;
-      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #bbb;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
       padding: 20px;
     }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
     .section-title {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 600;
       text-align: center;
+      margin-bottom: 30px;
+      color: #222;
     }
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
     .card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+      padding: 25px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .card h3 {
-      margin-top: 0;
-      color: #111;
+      font-size: 1.4rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
     }
     .card p {
+      font-size: 1rem;
       color: #555;
     }
-    .contact {
+    .cta {
       text-align: center;
-      margin-top: 40px;
+      margin: 50px 0;
+    }
+    .cta p {
+      font-size: 1.2rem;
     }
     .whatsapp-btn {
+      margin-top: 15px;
+      display: inline-block;
       background-color: #25D366;
       color: white;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
+      padding: 16px 32px;
+      font-size: 1.1rem;
       font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
     }
     footer {
       background: #111;
-      color: #ccc;
+      color: #aaa;
       text-align: center;
-      padding: 15px 10px;
-      margin-top: 50px;
+      padding: 30px 15px;
       font-size: 0.9rem;
     }
   </style>
@@ -84,39 +107,33 @@
 <body>
   <header>
     <h1>A&H Auto Detailer</h1>
-    <p>Premium Car Detailing at Your Doorstep — Delhi NCR</p>
-  </header>
-
-  <div class="container">
-    <div class="section-title">Our Services</div>
+    <p>Luxury Car Detailing at Your Doorstep in Delhi NCR</p>
+  </header>  <div class="container">
+    <div class="section-title">Our Premium Services</div>
     <div class="services">
       <div class="card">
         <h3>Total Revamp Package</h3>
-        <p>Complete transformation with deep exterior & interior clean, 3-step paint correction, and wax or sealant protection.</p>
+        <p>Exterior & interior deep clean, 3-step paint correction, and protection with wax/sealant. A full transformation.</p>
       </div>
       <div class="card">
         <h3>Detailed Wash + 1-Step Polish</h3>
-        <p>Perfect for a fresh, glossy look with light polishing and wax for added protection.</p>
+        <p>Perfect gloss and shine for your vehicle with added wax protection. Ideal for quick upgrades.</p>
       </div>
       <div class="card">
         <h3>Paint Correction</h3>
-        <p>Restore your car’s paint by removing swirls, scratches, and imperfections.</p>
+        <p>Remove swirls, oxidation and imperfections from paintwork. Restore a like-new finish.</p>
       </div>
       <div class="card">
         <h3>Interior Detailing</h3>
-        <p>Thorough cleaning and restoration of the car's interior for a fresh, clean cabin.</p>
+        <p>Steam cleaning, vacuuming, stain removal and protection for a spotless and hygienic cabin.</p>
       </div>
-    </div>
+    </div><div class="cta">
+  <p>Serving selective locations in <strong>Delhi NCR</strong>. Ready to make your car shine?</p>
+  <a href="https://wa.me/" class="whatsapp-btn">Book Now on WhatsApp</a>
+</div>
 
-    <div class="contact">
-      <p>Available in: <strong>Delhi NCR (limited areas)</strong></p>
-      <p>Call or WhatsApp: <strong>9818198485</strong></p>
-      <a href="https://wa.me/919818198485" class="whatsapp-btn">Book Now on WhatsApp</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 A&H Auto Detailer. All rights reserved.
+  </div>  <footer>
+    &copy; 2025 A&H Auto Detailer. Crafted with passion for detail.
   </footer>
 </body>
 </html>
