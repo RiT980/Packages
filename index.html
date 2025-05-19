@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,105 +11,113 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-    }body {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyJTIwd2FzaHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  padding-bottom: 80px;
-}
+    }
 
-header {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 15px 20px;
-  text-align: center;
-}
+    body {
+      background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyJTIwd2FzaHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+      background-blend-mode: darken;
+      color: white;
+      padding-bottom: 80px;
+    }
 
-header img {
-  max-height: 60px;
-}
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 20px;
+      text-align: center;
+    }
 
-h1 {
-  margin: 30px 0 20px;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-}
+    header img {
+      max-height: 60px;
+    }
 
-.pricing-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
+    h1 {
+      margin: 30px 0 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+    }
 
-.card {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 400px;
-  width: 100%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
+    .pricing-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-.card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
 
-.price {
-  color: #00e676;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-.card p {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: #dcdcdc;
-}
+    .price {
+      color: #00e676;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-.card ul {
-  list-style: disc;
-  padding-left: 20px;
-  font-size: 0.9rem;
-}
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
 
-footer {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #ccc;
-}
+    .card ul {
+      list-style: disc;
+      padding-left: 20px;
+      font-size: 0.9rem;
+    }
 
-a {
-  color: #00e676;
-  text-decoration: none;
-}
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
 
-.whatsapp-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #25D366;
-  color: white;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+    a {
+      color: #00e676;
+      text-decoration: none;
+    }
 
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
-}
+    .whatsapp-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #25D366;
+      color: white;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
 
+    .whatsapp-button:hover {
+      background-color: #1ebe5d;
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="A&H Auto Detailer Logo" />
-  </header>  <h1>Our Packages</h1>  <section class="pricing-section">
+  </header>
+
+  <h1>Our Packages</h1>
+
+  <section class="pricing-section">
     <div class="card">
       <h2>A&H Total Revamp Package</h2>
       <div class="price">Starting at ₹4,999</div>
@@ -119,33 +128,35 @@ a {
         <li>3 Step Paint Correction</li>
         <li>Wax or Sealant for Protection</li>
       </ul>
-    </div><div class="card">
-  <h2>Detailed Wash + 1 Step Polish + Wax</h2>
-  <div class="price">Starting at ₹1,499</div>
-  <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
-</div>
+    </div>
 
-<div class="card">
-  <h2>Paint Correction</h2>
-  <div class="price">Starting at ₹3,499</div>
-  <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
-</div>
+    <div class="card">
+      <h2>Detailed Wash + 1 Step Polish + Wax</h2>
+      <div class="price">Starting at ₹1,499</div>
+      <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
+    </div>
 
-<div class="card">
-  <h2>Interior Detailing</h2>
-  <div class="price">Starting at ₹1,499</div>
-  <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
-</div>
+    <div class="card">
+      <h2>Paint Correction</h2>
+      <div class="price">Starting at ₹3,499</div>
+      <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
+    </div>
 
-  </section>  <div style="text-align:center">
+    <div class="card">
+      <h2>Interior Detailing</h2>
+      <div class="price">Starting at ₹1,499</div>
+      <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
+    </div>
+  </section>
+
+  <div style="text-align:center">
     <a class="whatsapp-button" href="https://wa.me/919818198485" target="_blank">
       Chat on WhatsApp
     </a>
-  </div>  <footer>
+  </div>
+
+  <footer>
     Follow us on <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
-  </footer>
-</body>
-</html></a>
   </footer>
 </body>
 </html>
