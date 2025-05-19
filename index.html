@@ -11,7 +11,7 @@
       color: #fff;
       text-align: center;
       padding: 20px;
-      background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyJTIwd2FzaHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
@@ -36,30 +36,43 @@
       color: #f8f8f8;
     }
 
-    .service {
-      background: rgba(0, 0, 0, 0.7);
-      margin: 20px auto;
+    .pricing-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px;
       border-radius: 16px;
-      max-width: 600px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
     }
 
-    h3 {
-      margin-bottom: 10px;
+    .pricing-card h3 {
       color: #fff;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .pricing-card .price {
+      font-size: 18px;
+      color: #25D366;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
 
-    li, p {
-      margin: 6px 0;
-      font-size: 15px;
+    .pricing-card ul {
+      padding-left: 20px;
+    }
+
+    .pricing-card ul li {
       color: #ccc;
+      font-size: 14px;
+      margin-bottom: 6px;
     }
 
     .whatsapp-button {
@@ -79,44 +92,10 @@
       background-color: #1DA851;
     }
 
-    .pricing {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 30px 20px;
-      border-radius: 16px;
-      margin: 30px auto;
-      max-width: 700px;
-    }
-
-    .pricing h3 {
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .pricing ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pricing li {
-      margin: 10px 0;
-      font-size: 18px;
-      color: #fff;
-    }
-
-    .instagram-feed {
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 16px;
-      max-width: 800px;
-      margin: 40px auto;
-    }
-
-    .instagram-feed iframe {
-      border-radius: 16px;
-      width: 100%;
-      height: 500px;
+    @media (min-width: 768px) {
+      .pricing-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -126,11 +105,12 @@
     <img src="logo.png" alt="A&H Auto Detailer Logo">
   </header>
 
-  <section>
-    <h2>Our Services</h2>
+  <h2>Our Packages</h2>
 
-    <div class="service">
+  <div class="pricing-wrapper">
+    <div class="pricing-card">
       <h3>A&H Total Revamp Package</h3>
+      <p class="price">Starting at ₹4,999</p>
       <ul>
         <li>Exterior Detailing</li>
         <li>Interior Detailing</li>
@@ -139,39 +119,25 @@
       </ul>
     </div>
 
-    <div class="service">
+    <div class="pricing-card">
       <h3>Detailed Wash + 1 Step Polish + Wax</h3>
-      <p>Perfect for a fresh, glossy look with added protection.</p>
+      <p class="price">Starting at ₹1,499</p>
     </div>
 
-    <div class="service">
+    <div class="pricing-card">
       <h3>Paint Correction</h3>
-      <p>Restore your car’s paint to perfection, removing swirls and imperfections.</p>
+      <p class="price">Starting at ₹3,499</p>
     </div>
 
-    <div class="service">
+    <div class="pricing-card">
       <h3>Interior Detailing</h3>
-      <p>A meticulous clean of your car’s interior to ensure a pristine, fresh space.</p>
+      <p class="price">Starting at ₹1,499</p>
     </div>
-  </section>
-
-  <div class="pricing">
-    <h3>Our Pricing</h3>
-    <ul>
-      <li><strong>A&H Total Revamp Package:</strong> from ₹4,999</li>
-      <li><strong>Detailed Wash:</strong> from ₹1,499</li>
-      <li><strong>Paint Correction:</strong> from ₹3,499</li>
-      <li><strong>Interior Detailing:</strong> from ₹1,499</li>
-    </ul>
   </div>
 
   <a class="whatsapp-button" href="https://wa.me/919818198485" target="_blank">
     Chat on WhatsApp
   </a>
-
-  <div class="instagram-feed">
-    <iframe src="https://snapwidget.com/embed/1044137" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-  </div>
 
 </body>
 </html>
