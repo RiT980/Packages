@@ -1,122 +1,140 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A&H Auto Detailer</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #eee;
-    }header {
-  background: url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-}
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header h1 {
-  font-size: 3rem;
-  margin: 0;
-}
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #0a0a0a;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
 
-header p {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
-}
+    header {
+      background: linear-gradient(180deg, #000 60%, #111);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-.btn {
-  background: #e50914;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-}
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+      margin-bottom: 30px;
+    }
 
-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #fff;
-}
+    header p {
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
 
-.services {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
+    .btn {
+      padding: 12px 28px;
+      background: #e50914;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-.card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-}
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
 
-.card h3 {
-  margin-top: 0;
-  color: #e50914;
-}
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
 
-.why-us {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.why-card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1 1 250px;
-  text-align: center;
-}
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 30px auto 0;
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-input, textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-}
+    .card {
+      background: #121212;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.03);
+      transition: 0.3s ease;
+    }
 
-footer {
-  background: #000;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #aaa;
-}
+    .card:hover {
+      background: #1c1c1c;
+    }
 
+    .card h3 {
+      color: #e50914;
+      margin-bottom: 15px;
+    }
+
+    .card ul, .card p {
+      color: #ccc;
+    }
+
+    footer {
+      background: #000;
+      color: #777;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Premium Car Detailing, Right at Your Doorstep</h1>
-    <p>Luxury-grade exterior & interior detailing without leaving your home.</p>
+    <img src="your-generated-image.jpg" alt="Car Detailing Hero Image">
+    <h1>Premium Car Detailing at Your Doorstep</h1>
+    <p>Experience luxury-level care for your car — right at home.</p>
     <button class="btn">Book Now</button>
-  </header>  <section>
+    <a href="https://wa.me/919818198485" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
+  </header>
+
+  <section>
     <h2>Our Signature Services</h2>
     <div class="services">
       <div class="card">
@@ -125,50 +143,31 @@ footer {
           <li>Exterior Detailing</li>
           <li>Interior Detailing</li>
           <li>3-Step Paint Correction</li>
-          <li>Wax or Sealant for Protection</li>
+          <li>Wax or Sealant</li>
         </ul>
       </div>
       <div class="card">
         <h3>Detailed Wash + 1 Step Polish + Wax</h3>
-        <p>Glossy finish with durable protection.</p>
+        <p>Perfect for a glossy finish with long-lasting protection.</p>
       </div>
       <div class="card">
         <h3>Paint Correction</h3>
-        <p>Removes swirls and imperfections for a flawless finish.</p>
+        <p>Remove swirls and scratches for a smooth, flawless shine.</p>
       </div>
       <div class="card">
         <h3>Interior Detailing</h3>
-        <p>Deep clean of upholstery, carpets, and panels for a pristine interior.</p>
+        <p>Deep clean your cabin for comfort, hygiene, and luxury feel.</p>
       </div>
     </div>
-  </section>  <section>
-    <h2>Why Choose A&H?</h2>
-    <div class="why-us">
-      <div class="why-card">
-        <h3>We Come to You</h3>
-        <p>Enjoy professional service at your convenience.</p>
-      </div>
-      <div class="why-card">
-        <h3>Luxury-Grade Products</h3>
-        <p>Only the best materials and tools for your car.</p>
-      </div>
-      <div class="why-card">
-        <h3>Detail-Oriented</h3>
-        <p>Meticulous care for top-tier results.</p>
-      </div>
-    </div>
-  </section>  <section>
-    <h2>Get Started</h2>
-    <p style="text-align:center">What service are you looking for? Let us know and we’ll get back to you.</p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Tell us what you need..."></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
-  </section>  <footer>
-    <p>&copy; 2025 A&H Auto Detailer. All rights reserved.</p>
-    <p>Follow us: [Instagram] [WhatsApp] [Call]</p>
+  </section>
+
+  <footer>
+    &copy; 2025 A&H Auto Detailer. All rights reserved. <br>
+    Follow us on Instagram | WhatsApp | Call Us
+  </footer>
+
+</body>
+</html>/p>
   </footer>
 </body>
 </html>
