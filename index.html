@@ -4,128 +4,243 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer</title>
+  <meta name="description" content="Premium doorstep car detailing including paint correction, interior & exterior cleaning, and protective coatings by A&H Auto Detailer." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* SVG pattern as data URI */
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #1c1c1c;
-      background-image: url('data:image/svg+xml;utf8,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.05" stroke="%23ffffff" stroke-width="1"><rect x="4" y="28" width="20" height="12" rx="3" ry="3"/><circle cx="12" cy="40" r="3"/><circle cx="20" cy="40" r="3"/><path d="M28 20L40 20L44 28L40 36L28 36L24 28L28 20Z" fill="none"/><circle cx="34" cy="32" r="3"/><rect x="44" y="28" width="12" height="8" rx="2" ry="2"/></g></svg>');
-      background-repeat: repeat;
-      background-attachment: fixed;
-      color: #eee;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #fafafa;
+      color: #1c1c1c;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     header {
+      padding: 3rem 1.5rem 4rem;
+      background: linear-gradient(135deg, #111111, #1c1c1c);
       text-align: center;
-      padding: 2rem 1rem;
-      background-color: #111;
       color: white;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
     }
 
     header img {
-      max-width: 150px;
+      max-width: 120px;
       margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
     }
 
-    section {
+    header h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      font-weight: 400;
+      font-size: 1.25rem;
+      opacity: 0.85;
+      margin-top: 0;
+    }
+
+    main {
+      flex-grow: 1;
       max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      width: 100%;
     }
 
     h2 {
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.5rem;
-      color: #fff;
+      font-weight: 600;
+      font-size: 2rem;
+      color: #111;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.4rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.03em;
     }
 
-    ul {
-      list-style-type: none;
+    ul.services-list {
+      list-style: none;
       padding-left: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
     }
 
-    li {
-      margin: 1rem 0;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    @media(min-width: 600px) {
+      ul.services-list {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    li strong {
-      color: #fff;
+    ul.services-list > li {
+      background: white;
+      padding: 1.75rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .whatsapp-btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #25D366;
-      color: white;
+    ul.services-list > li:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgb(0 0 0 / 0.15);
+    }
+
+    ul.services-list strong {
+      display: block;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+      color: #222;
+    }
+
+    ul.services-list p,
+    ul.services-list ul {
+      font-weight: 400;
+      font-size: 1rem;
+      color: #444;
+      margin: 0;
+    }
+
+    ul.services-list ul {
+      margin-top: 0.8rem;
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+
+    ul.services-list ul li {
+      margin: 0.4rem 0;
+      color: #666;
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+
+    section.contact {
+      text-align: center;
+      margin-bottom: 5rem;
+      padding: 0 1rem;
+    }
+
+    section.contact h2 {
+      color: #111;
+      margin-bottom: 1rem;
+    }
+
+    section.contact p {
       font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      color: #333;
+      margin-bottom: 1.8rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 500;
     }
 
-    .whatsapp-btn:hover {
-      background-color: #1eb65f;
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      font-weight: 600;
+      padding: 0.9rem 2.2rem;
+      border-radius: 9999px;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgb(37 211 102 / 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: none;
+      cursor: pointer;
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus {
+      background: #1ca854;
+      box-shadow: 0 10px 25px rgb(28 168 84 / 0.7);
+      outline: none;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #111;
       font-size: 0.9rem;
       color: #999;
+      padding: 1.5rem 1rem;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      user-select: none;
     }
+
   </style>
 </head>
 <body>
+
   <header>
     <img src="logo.png" alt="A&H Auto Detailer Logo" />
-    <h1>Welcome to A&H Auto Detailer!</h1>
+    <h1>A&H Auto Detailer</h1>
     <p>Premium doorstep car detailing services</p>
   </header>
 
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>
-        <strong>A&H Total Revamp Package</strong><br />
-        A complete transformation with deep exterior and interior cleaning, multi-step paint correction, and protection.
-        <ul>
-          <li>Exterior Detailing</li>
-          <li>Interior Detailing</li>
-          <li>3 Step Paint Correction</li>
-          <li>Wax or Sealant for protection</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Detailed Wash + 1 Step Polish + Wax</strong><br />
-        Perfect for a fresh, glossy look with added protection.
-      </li>
-      <li>
-        <strong>Paint Correction</strong><br />
-        Restore your car’s paint to perfection, removing swirls and imperfections.
-      </li>
-      <li>
-        <strong>Interior Detailing</strong><br />
-        A meticulous clean of your car’s interior to ensure a pristine, fresh space.
-      </li>
-    </ul>
-  </section>
+  <main>
+    <section aria-labelledby="services-title">
+      <h2 id="services-title">Our Services</h2>
+      <ul class="services-list">
+        <li>
+          <strong>A&H Total Revamp Package</strong>
+          <p>A complete transformation with deep exterior and interior cleaning, multi-step paint correction, and protection.</p>
+          <ul>
+            <li>Exterior Detailing</li>
+            <li>Interior Detailing</li>
+            <li>3 Step Paint Correction</li>
+            <li>Wax or Sealant for protection</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Detailed Wash + 1 Step Polish + Wax</strong>
+          <p>Perfect for a fresh, glossy look with added protection.</p>
+        </li>
+        <li>
+          <strong>Paint Correction</strong>
+          <p>Restore your car’s paint to perfection, removing swirls and imperfections.</p>
+        </li>
+        <li>
+          <strong>Interior Detailing</strong>
+          <p>A meticulous clean of your car’s interior to ensure a pristine, fresh space.</p>
+        </li>
+      </ul>
+    </section>
 
-  <section style="text-align:center;">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to book a service? Chat with us directly on WhatsApp!</p>
-    <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-  </section>
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      <p>Have questions or want to book a service? Chat with us directly on WhatsApp!</p>
+      <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Chat with A&H Auto Detailer on WhatsApp">
+        Chat on WhatsApp
+      </a>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 A&H Auto Detailer. All rights reserved.
   </footer>
+
 </body>
 </html>
