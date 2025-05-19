@@ -3,244 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>A&H Auto Detailer</title>
-  <meta name="description" content="Premium doorstep car detailing including paint correction, interior & exterior cleaning, and protective coatings by A&H Auto Detailer." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <title>A&H AutoDetailer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
     body {
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: #fafafa;
-      color: #1c1c1c;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      padding: 3rem 1.5rem 4rem;
-      background: linear-gradient(135deg, #111111, #1c1c1c);
-      text-align: center;
-      color: white;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
-    }
-
-    header img {
-      max-width: 120px;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
-    }
-
-    header h1 {
-      font-weight: 600;
-      font-size: 2.8rem;
-      margin-bottom: 0.25rem;
-      letter-spacing: 0.05em;
-    }
-
-    header p {
-      font-weight: 400;
-      font-size: 1.25rem;
-      opacity: 0.85;
-      margin-top: 0;
-    }
-
-    main {
-      flex-grow: 1;
-      max-width: 900px;
-      margin: 3rem auto 4rem;
-      padding: 0 1.5rem;
-      width: 100%;
-    }
-
-    h2 {
-      font-weight: 600;
-      font-size: 2rem;
-      color: #111;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.4rem;
-      margin-bottom: 2rem;
-      letter-spacing: 0.03em;
-    }
-
-    ul.services-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    @media(min-width: 600px) {
-      ul.services-list {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    ul.services-list > li {
-      background: white;
-      padding: 1.75rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgb(0 0 0 / 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    ul.services-list > li:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 30px rgb(0 0 0 / 0.15);
-    }
-
-    ul.services-list strong {
-      display: block;
-      font-weight: 700;
-      font-size: 1.25rem;
-      margin-bottom: 0.8rem;
+      padding: 0;
+      background-color: #f4f4f4;
       color: #222;
     }
 
-    ul.services-list p,
-    ul.services-list ul {
-      font-weight: 400;
-      font-size: 1rem;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 16px;
       color: #444;
-      margin: 0;
     }
 
-    ul.services-list ul {
-      margin-top: 0.8rem;
-      padding-left: 1.2rem;
-      list-style-type: disc;
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
     }
 
-    ul.services-list ul li {
-      margin: 0.4rem 0;
-      color: #666;
-      font-weight: 400;
-      font-size: 0.95rem;
+    li {
+      margin-bottom: 10px;
+      font-size: 16px;
     }
 
-    section.contact {
-      text-align: center;
-      margin-bottom: 5rem;
-      padding: 0 1rem;
-    }
-
-    section.contact h2 {
-      color: #111;
-      margin-bottom: 1rem;
-    }
-
-    section.contact p {
-      font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 1.8rem;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      font-weight: 500;
-    }
-
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 9999px;
-      font-size: 1.1rem;
-      box-shadow: 0 6px 12px rgb(37 211 102 / 0.6);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    .whatsapp-button {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      border: none;
-      cursor: pointer;
-      user-select: none;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #25D366;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      border-radius: 6px;
       text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
-    .btn-whatsapp:hover,
-    .btn-whatsapp:focus {
-      background: #1ca854;
-      box-shadow: 0 10px 25px rgb(28 168 84 / 0.7);
-      outline: none;
+    .whatsapp-button:hover {
+      background-color: #1ebc59;
     }
 
-    footer {
+    .footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #999;
-      padding: 1.5rem 1rem;
-      background: #fafafa;
-      border-top: 1px solid #eee;
-      user-select: none;
+      margin-top: 50px;
+      font-size: 14px;
+      color: #777;
     }
 
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .container {
+        padding: 30px 15px;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>A&H AutoDetailer</h1>
+    <p><em>Premium Car Detailing at Your Doorstep</em></p>
 
-  <header>
-    <img src="logo.png" alt="A&H Auto Detailer Logo" />
-    <h1>A&H Auto Detailer</h1>
-    <p>Premium doorstep car detailing services</p>
-  </header>
+    <h2>Welcome to A&H AutoDetailer!</h2>
+    <p>We bring premium detailing right to your doorstep with our top services:</p>
 
-  <main>
-    <section aria-labelledby="services-title">
-      <h2 id="services-title">Our Services</h2>
-      <ul class="services-list">
-        <li>
-          <strong>A&H Total Revamp Package</strong>
-          <p>A complete transformation with deep exterior and interior cleaning, multi-step paint correction, and protection.</p>
-          <ul>
-            <li>Exterior Detailing</li>
-            <li>Interior Detailing</li>
-            <li>3 Step Paint Correction</li>
-            <li>Wax or Sealant for protection</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Detailed Wash + 1 Step Polish + Wax</strong>
-          <p>Perfect for a fresh, glossy look with added protection.</p>
-        </li>
-        <li>
-          <strong>Paint Correction</strong>
-          <p>Restore your car’s paint to perfection, removing swirls and imperfections.</p>
-        </li>
-        <li>
-          <strong>Interior Detailing</strong>
-          <p>A meticulous clean of your car’s interior to ensure a pristine, fresh space.</p>
-        </li>
-      </ul>
-    </section>
+    <h2>Our Services</h2>
+    <ul>
+      <li>
+        <strong>A&H Total Revamp Package</strong><br />
+        Experience a complete transformation with a deep exterior and interior clean, multi-step paint correction, and lasting protection.
+        <ul>
+          <li>▫️ Exterior Detailing</li>
+          <li>▫️ Interior Detailing</li>
+          <li>▫️ 3 Step Paint Correction</li>
+          <li>▫️ Wax or Sealant for protection</li>
+        </ul>
+      </li>
+      <li><strong>Detailed Wash + 1 Step Polish + Wax</strong> — Perfect for a fresh, glossy look with added protection.</li>
+      <li><strong>Paint Correction</strong> — Restore your car’s paint to perfection, removing swirls and imperfections.</li>
+      <li><strong>Interior Detailing</strong> — A meticulous clean of your car’s interior to ensure a pristine, fresh space.</li>
+    </ul>
 
-    <section class="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Us</h2>
-      <p>Have questions or want to book a service? Chat with us directly on WhatsApp!</p>
-      <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Chat with A&H Auto Detailer on WhatsApp">
-        Chat on WhatsApp
-      </a>
-    </section>
-  </main>
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Skilled & passionate detailers</li>
+      <li>High quality products from trusted brands</li>
+      <li>Convenient doorstep service — no need to visit a garage</li>
+      <li>Competitive pricing with guaranteed satisfaction</li>
+    </ul>
 
-  <footer>
-    &copy; 2025 A&H Auto Detailer. All rights reserved.
-  </footer>
+    <h2>Book Your Detailing Now</h2>
+    <a class="whatsapp-button" href="https://wa.me/919818198485" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="icon" alt="WhatsApp" />
+      Chat on WhatsApp
+    </a>
 
+    <p style="margin-top: 15px;">
+      Follow us on <a href="https://instagram.com/ahautodetailer" target="_blank">@ahautodetailer</a>
+    </p>
+
+    <div class="footer">
+      <p>A&H AutoDetailer — Because Your Car Deserves the Best Care.</p>
+    </div>
+  </div>
 </body>
 </html>
