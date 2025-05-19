@@ -6,86 +6,71 @@
   <title>A&H Auto Detailer</title>
   <style>
     :root {
-      color-scheme: light dark;
+      color-scheme: light;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #121212;
-      color: #f1f1f1;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background-color: #ffffff;
-        color: #111111;
-      }
-
-      .card {
-        background-color: #f7f7f7;
-        color: #111;
-      }
-
-      .whatsapp-btn {
-        background-color: #25D366;
-        color: #fff;
-      }
-
-      .whatsapp-btn:hover {
-        background-color: #1ebc5c;
-      }
+      background-color: #f9f9f9;
+      color: #222;
     }
 
     header {
       text-align: center;
       padding: 2rem 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     .logo {
       width: 80px;
       height: 80px;
-      margin-bottom: 1rem;
-      border-radius: 50%;
-      background: #fff;
-      color: #000;
-      display: inline-flex;
+      background: #222;
+      color: #fff;
+      display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      margin: auto;
     }
 
     h1 {
-      margin: 0;
+      margin: 1rem 0 0.5rem;
       font-size: 2rem;
     }
 
     p {
-      font-size: 1.1rem;
-      color: #ccc;
+      margin: 0.5rem 0;
+      color: #555;
     }
 
     .section {
       max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
       text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      margin-top: 2rem;
     }
 
     .card {
-      background-color: #1e1e1e;
-      padding: 1.5rem;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      padding: 1.5rem;
+      text-align: center;
       transition: transform 0.2s ease;
     }
 
@@ -98,43 +83,63 @@
       height: 48px;
       margin-bottom: 1rem;
       fill: none;
-      stroke: currentColor;
+      stroke: #4a90e2;
       stroke-width: 2;
     }
 
     .card h3 {
       margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .card ul li {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+      color: #333;
     }
 
     .whatsapp-btn {
       display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #128C7E;
+      background-color: #25D366;
       color: white;
+      padding: 0.8rem 1.6rem;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1.5rem;
       transition: background 0.3s;
     }
 
     .whatsapp-btn:hover {
-      background-color: #0e7e6f;
+      background-color: #1ebc5c;
     }
 
     footer {
       text-align: center;
-      padding: 1.5rem;
       font-size: 0.85rem;
-      color: #888;
+      color: #777;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">A&H</div>
-    <h1>A&H Auto Detailer</h1>
-    <p>Premium Doorstep Car Detailing</p>
+    <h1>Welcome to A&H Auto Detailer!</h1>
+    <p>Premium doorstep car detailing services</p>
   </header>
 
   <section class="section">
@@ -142,35 +147,41 @@
     <div class="services">
       <div class="card">
         <svg viewBox="0 0 64 64"><path d="M12 40h40l4-10-4-10H12l-4 10 4 10Zm-2 0v4a2 2 0 0 0 2 2h2a4 4 0 0 0 8 0h20a4 4 0 0 0 8 0h2a2 2 0 0 0 2-2v-4"></path></svg>
-        <h3>Full Car Refresh</h3>
-        <p>Deep interior & exterior cleaning, paint correction and sealant protection</p>
+        <h3>A&H Total Revamp</h3>
+        <p>Complete transformation of your car</p>
+        <ul>
+          <li>Exterior Detailing</li>
+          <li>Interior Detailing</li>
+          <li>3 Step Paint Correction</li>
+          <li>Wax or Sealant Protection</li>
+        </ul>
       </div>
       <div class="card">
         <svg viewBox="0 0 64 64"><path d="M10 44h44l4-12-4-12H10L6 32l4 12ZM32 24v16M24 28l16 8M24 36l16-8"/></svg>
         <h3>Wash + Polish + Wax</h3>
-        <p>Thorough wash with single stage polish and wax finish for gloss & shine</p>
+        <p>Glossy look with added paint protection</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 64 64"><path d="M32 12l16 20-16 20-16-20L32 12Zm0 0l-8 12 8 12 8-12-8-12Z"/></svg>
         <h3>Paint Correction</h3>
-        <p>Removal of swirl marks, Razej and scratches through machine polishing</p>
+        <p>Remove swirls and imperfections</p>
       </div>
       <div class="card">
         <svg viewBox="0 0 64 64"><path d="M22 20h20v24H22V20Zm-6 0h-4v24h4V20Zm32 0h4v24h-4V20Z"/></svg>
         <h3>Interior Detailing</h3>
-        <p>Deep vacuuming, foam cleaning, plastic, leather and AC vent treatment</p>
+        <p>Meticulous interior cleaning for a fresh cabin</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Get in Touch</h2>
-    <p>Want to book a service or have a question?</p>
-    <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." class="whatsapp-btn" target="_blank">Message Us on WhatsApp</a>
+  <section class="section" style="text-align:center;">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to book a service?</p>
+    <a href="https://wa.me/919818198485?text=Hi%20A%26H%20Auto%20Detailer%2C%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
   </section>
 
   <footer>
     &copy; 2025 A&H Auto Detailer. All rights reserved.
   </footer>
 </body>
-</html>
+  </html>
