@@ -1,67 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A&H Auto Detailer</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #f7f7f7;
-      color: #333;
-    }
-    h1 {
-      color: #111;
-      margin-bottom: 1rem;
-    }
-    .section {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #eee;
+    }header {
+  background: url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  background: #e50914;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.services {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #e50914;
+}
+
+.why-us {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.why-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
   </style>
 </head>
 <body>
-
-  <h1>Welcome to A&H Auto Detailer!</h1>
-
-  <div class="section">
-    <p>We bring premium detailing right to your doorstep with our top services across Delhi NCR (limited areas).</p>
-  </div>
-
-  <div class="section">
-    <h2>Our Services:</h2>
-    <ul>
-      <li><strong>A&H Total Revamp Package:</strong> Exterior & Interior Detailing, 3 Step Paint Correction, Wax/Sealant Protection</li>
-      <li><strong>Detailed Wash + 1 Step Polish + Wax:</strong> Glossy shine with added protection</li>
-      <li><strong>Paint Correction:</strong> Remove swirls and imperfections</li>
-      <li><strong>Interior Detailing:</strong> Deep interior clean and sanitization</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Contact Us:</h2>
-    <p>WhatsApp: <a href="https://wa.me/919818198485">9818198485</a></p>
-    <p>Available in: Delhi NCR (limited areas)</p>
-    <a class="whatsapp-btn" href="https://wa.me/919818198485">Book Now on WhatsApp</a>
-  </div>
-
+  <header>
+    <h1>Premium Car Detailing, Right at Your Doorstep</h1>
+    <p>Luxury-grade exterior & interior detailing without leaving your home.</p>
+    <button class="btn">Book Now</button>
+  </header>  <section>
+    <h2>Our Signature Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>A&H Total Revamp Package</h3>
+        <ul>
+          <li>Exterior Detailing</li>
+          <li>Interior Detailing</li>
+          <li>3-Step Paint Correction</li>
+          <li>Wax or Sealant for Protection</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Detailed Wash + 1 Step Polish + Wax</h3>
+        <p>Glossy finish with durable protection.</p>
+      </div>
+      <div class="card">
+        <h3>Paint Correction</h3>
+        <p>Removes swirls and imperfections for a flawless finish.</p>
+      </div>
+      <div class="card">
+        <h3>Interior Detailing</h3>
+        <p>Deep clean of upholstery, carpets, and panels for a pristine interior.</p>
+      </div>
+    </div>
+  </section>  <section>
+    <h2>Why Choose A&H?</h2>
+    <div class="why-us">
+      <div class="why-card">
+        <h3>We Come to You</h3>
+        <p>Enjoy professional service at your convenience.</p>
+      </div>
+      <div class="why-card">
+        <h3>Luxury-Grade Products</h3>
+        <p>Only the best materials and tools for your car.</p>
+      </div>
+      <div class="why-card">
+        <h3>Detail-Oriented</h3>
+        <p>Meticulous care for top-tier results.</p>
+      </div>
+    </div>
+  </section>  <section>
+    <h2>Get Started</h2>
+    <p style="text-align:center">What service are you looking for? Let us know and we’ll get back to you.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Tell us what you need..."></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>  <footer>
+    <p>&copy; 2025 A&H Auto Detailer. All rights reserved.</p>
+    <p>Follow us: [Instagram] [WhatsApp] [Call]</p>
+  </footer>
 </body>
-</html>p
+</html>
