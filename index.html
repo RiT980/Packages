@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer</title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -12,9 +13,8 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-
     body {
-      background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyJTIwd2FzaHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center;
+      background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
       background-color: rgba(0, 0, 0, 0.6);
@@ -23,35 +23,25 @@
       padding-bottom: 100px;
       scroll-behavior: smooth;
     }
-
     header {
-      background: transparent;
-      padding: 10px 0;
       text-align: center;
+      padding: 15px 0;
     }
-
     header img {
       max-height: 60px;
     }
-
     .tagline {
       text-align: center;
       font-size: 0.85rem;
-      font-style: normal;
       color: #bbb;
-      font-weight: 400;
       margin-bottom: 35px;
-      letter-spacing: 0.6px;
     }
-
     h1 {
-      margin-bottom: 5px;
       text-align: center;
       font-size: 2.5rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      margin-bottom: 20px;
     }
-
     .pricing-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -60,71 +50,113 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .card {
-      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(20,20,20,0.85));
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 0.85));
       border-radius: 16px;
       padding: 25px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(0,230,118,0.3);
+      border: 1px solid rgba(0, 230, 118, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 15px 40px rgba(0, 230, 118, 0.5);
     }
-
     .card h2 {
       font-size: 1.6rem;
       margin-bottom: 10px;
-      font-weight: 700;
       color: #ffffff;
-      letter-spacing: 0.8px;
     }
-
     .price {
       color: #00e676;
       font-weight: 700;
       font-size: 1.2rem;
       margin-bottom: 10px;
-      letter-spacing: 0.5px;
     }
-
     .card p {
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-      color: #e0e0e0;
-      line-height: 1.4;
-    }
-
-    .card ul {
-      list-style: disc;
-      padding-left: 20px;
       font-size: 0.95rem;
       color: #ddd;
     }
-
-    .card ul li {
-      margin-bottom: 8px;
+    .quote-btn, .info-btn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
     }
-
-    .note {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #ccc;
-      margin-top: 30px;
+    .quote-btn {
+      background-color: #25D366;
+      color: white;
+    }
+    .quote-btn:hover {
+      background-color: #1ebe5d;
+    }
+    .info-btn {
+      background-color: #00e5ff;
+      color: #000;
+      margin-left: 10px;
+    }
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 16px;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 0 20px #00e67650;
+      color: #ddd;
+      animation: fadeIn 0.3s ease;
+      position: relative;
+    }
+    .popup h3 {
+      margin-bottom: 15px;
+      color: #00e676;
+    }
+    .popup p, .popup li {
+      font-size: 0.95rem;
       margin-bottom: 10px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
-
-    .whatsapp-button {
-      display: inline-block;
+    .popup ul {
+      padding-left: 20px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      background-color: #ff3b3b;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 12px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .note, .cta-section {
+      text-align: center;
       margin-top: 30px;
+      color: #ccc;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+    .cta-section a {
+      display: inline-block;
+      margin-top: 20px;
       padding: 14px 30px;
       background: linear-gradient(45deg, #25D366, #1ebe5d);
       color: white;
@@ -132,72 +164,60 @@
       font-size: 1rem;
       border-radius: 50px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #25D366, 0 0 20px #25D36650;
     }
-
-    .whatsapp-button:hover {
-      background: #1ebe5d;
-      box-shadow: 0 0 20px #1ebe5d, 0 0 30px #1ebe5d80;
+    .faq-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
-
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00e676;
+    }
+    .faq-item {
+      border-bottom: 1px solid #444;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .faq-question {
+      font-weight: bold;
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #bbb;
+      margin-top: 10px;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9rem;
       color: #aaa;
-      letter-spacing: 0.5px;
     }
-
     footer a {
       color: #00e676;
-      text-decoration: none;
     }
-
-    .cta-section {
-      text-align: center;
-      margin: 40px auto;
-      max-width: 600px;
-      color: #ddd;
-    }
-
-    .cta-section h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .cta-section p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      font-weight: 500;
-      color: #bbb;
-    }
-
     @media (max-width: 600px) {
       h1 {
         font-size: 1.8rem;
       }
-
       .pricing-section {
         grid-template-columns: 1fr;
-        padding: 15px;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .cta-section {
-        padding: 0 15px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="A&H Auto Detailer Logo" />
+    <!-- Use your own logo.png, or this placeholder for CodePen: -->
+    <img src="https://via.placeholder.com/150x60?text=Logo" alt="A&H Auto Detailer Logo" />
     <p class="tagline">Refined car care that comes to you!</p>
   </header>
 
@@ -208,30 +228,30 @@
       <h2>A&H Total Revamp Package</h2>
       <div class="price">Starting at ₹4,999*</div>
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
-      <ul>
-        <li>Exterior Detailing</li>
-        <li>Interior Detailing</li>
-        <li>3 Step Paint Correction</li>
-        <li>Wax or Sealant for Protection</li>
-      </ul>
+      <button class="quote-btn" onclick="openQuotePopup('A&H Total Revamp Package')">Get Quote</button>
+      <button class="info-btn" onclick="document.getElementById('revampInclusionPopup').style.display='flex'">See Inclusions</button>
     </div>
 
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
       <div class="price">Starting at ₹1,499*</div>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
+      <button class="quote-btn" onclick="openQuotePopup('Detailed Wash + 1 Step Polish + Wax')">Get Quote</button>
     </div>
 
     <div class="card">
       <h2>Paint Correction</h2>
       <div class="price">Starting at ₹3,499*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
+      <button class="quote-btn" onclick="openQuotePopup('Paint Correction')">Get Quote</button>
     </div>
 
     <div class="card">
       <h2>Interior Detailing</h2>
       <div class="price">Starting at ₹1,499*</div>
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
+      <button class="quote-btn" onclick="openQuotePopup('Interior Detailing')">Get Quote</button>
+      <button class="info-btn" onclick="document.getElementById('inclusionPopup').style.display='flex'">See Inclusions</button>
     </div>
   </section>
 
@@ -240,11 +260,146 @@
   <section class="cta-section">
     <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
-    <a href="https://wa.me/919818198485" class="whatsapp-button" target="_blank" rel="noopener noreferrer">Book Now on WhatsApp</a>
+    <a href="https://wa.me/919818198485" target="_blank">Book Now on WhatsApp</a>
+  </section>
+
+  <section class="faq-section">
+    <h2>FAQs</h2>
+    <div class="faq-item"><div class="faq-question">Do you need water and electricity access?</div><div class="faq-answer">Yes, we require access to water and electricity at your location for most detailing services.</div></div>
+    <div class="faq-item"><div class="faq-question">Where do you serve?</div><div class="faq-answer">We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you bring your own equipment?</div><div class="faq-answer">Yes, we carry all necessary tools, products, and equipment to your doorstep.</div></div>
+    <div class="faq-item"><div class="faq-question">How long does a full detail take?</div><div class="faq-answer">A full detail can take 3 to 6 hours depending on the car size and condition.</div></div>
+    <div class="faq-item"><div class="faq-question">How do I book a service?</div><div class="faq-answer">You can book via WhatsApp through the provided buttons or by messaging us directly.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you use safe products?</div><div class="faq-answer">Yes, we only use professional-grade, pH-balanced products safe for your car.</div></div>
+    <div class="faq-item"><div class="faq-question">What is paint correction?</div><div class="faq-answer">Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.</div></div>
+    <div class="faq-item"><div class="faq-question">Can you clean leather interiors?</div><div class="faq-answer">Yes, we deep clean and condition leather seats using specialized leather care products.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you clean engine bays?</div><div class="faq-answer">Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.</div></div>
+    <div class="faq-item"><div class="faq-question">What are your operating hours?</div><div class="faq-answer">We work from 8 AM to 7 PM every day, including weekends.</div></div>
   </section>
 
   <footer>
-    Follow us on <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener noreferrer">@aandhautodetailer</a>
+    &copy; 2025 A&H Auto Detailer. All rights reserved. | Follow us on 
+    <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
   </footer>
+
+  <!-- WhatsApp Quote Popup -->
+  <div class="popup-overlay" id="quotePopup">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup()">X</button>
+      <h3></h3>
+      <p>Enter your car model & location to proceed.</p>
+      <input type="text" id="carModel" placeholder="Car Model" style="width: 100%; padding: 10px; margin: 10px 0;" />
+      <input type="text" id="location" placeholder="Location" style="width: 100%; padding: 10px; margin-bottom: 15px;" />
+      <button class="quote-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Total Revamp Inclusions Popup -->
+  <div class="popup-overlay" id="revampInclusionPopup">
+    <div class="popup">
+      <button class="close-btn" onclick="document.getElementById('revampInclusionPopup').style.display='none'">X</button>
+      <h3>𝗔&𝗛 𝗔𝘂𝘁𝗼 𝗗𝗲𝘁𝗮𝗶𝗹𝗲𝗿 – Total Revamp Package Inclusions</h3>
+      <ul>
+        <li>Exterior foam wash and hand dry</li>
+        <li>Iron & tar decontamination (removes embedded contaminants)</li>
+        <li>Clay bar treatment for ultra-smooth paint</li>
+        <li>Multi-stage paint correction (removes swirls, scratches, oxidation)</li>
+        <li>Machine polish for deep gloss</li>
+        <li>Premium wax or ceramic coating application</li>
+        <li>Wheel, rim, and tire cleaning & dressing</li>
+        <li>Engine bay cleaning and dressing</li>
+        <li>Door jamb and sill cleaning</li>
+        <li>Complete interior vacuuming (including trunk)</li>
+        <li>Carpet and upholstery shampoo/extraction</li>
+        <li>Leather seat cleaning and conditioning</li>
+        <li>Dashboard, console, and trim detailing & protection</li>
+        <li>Headliner and seatbelt cleaning</li>
+        <li>Air vent cleaning and sanitization</li>
+        <li>Glass and mirror cleaning (inside & out)</li>
+        <li>Odor removal and air freshener</li>
+        <li>Metal and chrome polishing</li>
+        <li>Exterior plastic and trim restoration/protection</li>
+        <li>Final quality inspection and customer walkaround</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Interior Inclusions Popup -->
+  <div class="popup-overlay" id="inclusionPopup">
+    <div class="popup">
+      <button class="close-btn" onclick="document.getElementById('inclusionPopup').style.display='none'">X</button>
+      <h3>𝗔&𝗛 𝗔𝘂𝘁𝗼 𝗗𝗲𝘁𝗮𝗶𝗹𝗲𝗿 – Interior Care Package</h3>
+      <ul>
+        <li>Complete Vacuuming – Thorough removal of dust and debris.</li>
+        <li>Seat Cleaning – Dedicated interior and foaming cleaner.</li>
+        <li>Leather Cleaning & Conditioning – Clean and protect leather surfaces.</li>
+        <li>Dashboard & Console Detailing – Clean and restore dashboard and panels.</li>
+        <li>Interior Dressing – Interior dressing application.</li>
+        <li>Air Vent Cleaning – Dust removal from air vents.</li>
+        <li>Glass & Mirror Cleaning – Streak-free window cleaning.</li>
+        <li>Carpet & Floor Mat Cleaning – Cleaning of mats and carpets.</li>
+        <li>Headliner Cleaning – Clean the ceiling fabric.</li>
+        <li>Seatbelt Cleaning – Clean & sanitize seatbelts.</li>
+        <li>Trunk Area Detailing – Clean and vacuum trunk space.</li>
+        <li>Steering Wheel and Pedals Detailing – Clean and sanitize pedals and wheel.</li>
+        <li>Electronic Controls & Touchscreen Cleaning – Remove fingerprints and dust.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let currentService = "";
+
+    function openQuotePopup(service) {
+      currentService = service;
+      document.getElementById("quotePopup").style.display = "flex";
+      // Optional: clear previous values
+      document.getElementById("carModel").value = "";
+      document.getElementById("location").value = "";
+      document.querySelector("#quotePopup h3").textContent = service;
+    }
+
+    function closePopup() {
+      document.getElementById("quotePopup").style.display = "none";
+    }
+
+    function sendWhatsApp() {
+      const car = document.getElementById("carModel").value;
+      const loc = document.getElementById("location").value;
+      if (car && loc) {
+        const msg = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
+        const url = `https://wa.me/919818198485?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+        closePopup();
+      } else {
+        alert("Please enter both car model and location.");
+      }
+    }
+
+    // FAQ toggle (only one open at a time)
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+        q.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Optional: Close popups on overlay click
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    });
+
+    // Optional: Close popups with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        document.getElementById('revampInclusionPopup').style.display = 'none';
+        document.getElementById('inclusionPopup').style.display = 'none';
+        document.getElementById('quotePopup').style.display = 'none';
+      }
+    });
+  </script>
 </body>
-</html>
+                            </html>
+        
