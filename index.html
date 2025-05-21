@@ -113,7 +113,7 @@
       transform: scale(1.04);
     }
 
-    /* Popup Styling to Match Your Screenshot */
+    /* Popup Styling */
     .popup-overlay {
       display: none;
       position: fixed;
@@ -130,9 +130,12 @@
       color: #f4f4f4;
       max-width: 480px;
       width: 95vw;
-      padding: 48px 32px 36px 32px;
+      max-height: 80vh; /* Responsive: 80% of viewport height */
+      padding: 64px 32px 44px 32px; /* Plenty of space top and bottom */
       position: relative;
       animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
+      overflow-y: auto; /* Enable scroll if content is long */
+      box-sizing: border-box;
     }
     .popup-title, .popup h3 {
       margin-bottom: 28px;
@@ -235,8 +238,9 @@
     }
     @media (max-width: 600px) {
       .popup {
-        padding: 18px 5vw 16px 5vw;
+        padding: 50px 5vw 28px 5vw; /* More top/bottom padding for close button and scroll */
         max-width: 98vw;
+        max-height: 85vh;
       }
       .close-btn {
         top: 8px;
@@ -418,7 +422,6 @@
       <button class="close-btn" onclick="document.getElementById('inclusionPopup').style.display='none'">×</button>
       <div class="popup-title">𝗔&𝗛 𝗔𝘂𝘁𝗼 𝗗𝗲𝘁𝗮𝗶𝗹𝗲𝗿 – Interior Care Package</div>
       <ul>
-        <li>Complete Vacuuming – Thorough removal of dust and debris.</li>
         <li>Seat Cleaning – Dedicated interior and foaming cleaner.</li>
         <li>Leather Cleaning & Conditioning – Clean and protect leather surfaces.</li>
         <li>Dashboard & Console Detailing – Clean and restore dashboard and panels.</li>
