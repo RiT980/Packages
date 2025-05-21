@@ -383,6 +383,9 @@
       <input type="text" id="carModel" placeholder="Car Model" />
       <input type="text" id="location" placeholder="Location" />
       <button class="quote-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
+      <div id="successMessage" style="display:none; margin-top: 20px; color: #00e676; font-weight: 600; text-align: center;">
+        Your request has been sent! We will contact you soon.
+      </div>
     </div>
   </div>
 
@@ -446,6 +449,10 @@
       document.getElementById("quotePopup").style.display = "flex";
       document.getElementById("carModel").value = "";
       document.getElementById("location").value = "";
+      document.getElementById("carModel").disabled = false;
+      document.getElementById("location").disabled = false;
+      document.querySelector(".popup .quote-btn").disabled = false;
+      document.getElementById("successMessage").style.display = "none";
     }
 
     function closePopup() {
@@ -453,13 +460,31 @@
     }
 
     function sendWhatsApp() {
-      const car = document.getElementById("carModel").value;
-      const loc = document.getElementById("location").value;
+      const car = document.getElementById("carModel").value.trim();
+      const loc = document.getElementById("location").value.trim();
+      const successMsg = document.getElementById("successMessage");
       if (car && loc) {
         const msg = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
         const url = `https://wa.me/919818198485?text=${encodeURIComponent(msg)}`;
         window.open(url, "_blank");
-        closePopup();
+
+        // Show success message
+        successMsg.style.display = "block";
+
+        // Disable inputs and button to prevent resubmission
+        document.getElementById("carModel").disabled = true;
+        document.getElementById("location").disabled = true;
+        document.querySelector(".popup .quote-btn").disabled = true;
+
+        // After 3 seconds, close popup and reset form
+        setTimeout(() => {
+          successMsg.style.display = "none";
+          closePopup();
+          // Re-enable inputs and button
+          document.getElementById("carModel").disabled = false;
+          document.getElementById("location").disabled = false;
+          document.querySelector(".popup .quote-btn").disabled = false;
+        }, 3000);
       } else {
         alert("Please enter both car model and location.");
       }
