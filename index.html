@@ -216,8 +216,7 @@
 </head>
 <body>
   <header>
-    <!-- Use your own logo.png, or this placeholder for CodePen: -->
-    <img src="https://via.placeholder.com/150x60?text=Logo" alt="A&H Auto Detailer Logo" />
+    <img src="logo.png" alt="A&H Auto Detailer Logo" />
     <p class="tagline">Refined car care that comes to you!</p>
   </header>
 
@@ -231,21 +230,18 @@
       <button class="quote-btn" onclick="openQuotePopup('A&H Total Revamp Package')">Get Quote</button>
       <button class="info-btn" onclick="document.getElementById('revampInclusionPopup').style.display='flex'">See Inclusions</button>
     </div>
-
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
       <div class="price">Starting at ₹1,499*</div>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
       <button class="quote-btn" onclick="openQuotePopup('Detailed Wash + 1 Step Polish + Wax')">Get Quote</button>
     </div>
-
     <div class="card">
       <h2>Paint Correction</h2>
       <div class="price">Starting at ₹3,499*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
       <button class="quote-btn" onclick="openQuotePopup('Paint Correction')">Get Quote</button>
     </div>
-
     <div class="card">
       <h2>Interior Detailing</h2>
       <div class="price">Starting at ₹1,499*</div>
@@ -353,7 +349,6 @@
     function openQuotePopup(service) {
       currentService = service;
       document.getElementById("quotePopup").style.display = "flex";
-      // Optional: clear previous values
       document.getElementById("carModel").value = "";
       document.getElementById("location").value = "";
       document.querySelector("#quotePopup h3").textContent = service;
@@ -401,5 +396,4 @@
     });
   </script>
 </body>
-                            </html>
-        
+</html>
