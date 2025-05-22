@@ -1,11 +1,12 @@
-       
+
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer</title>
-  <meta name="description" content="Premium doorstep car detailing in Delhi NCR. Book A&H Auto Detailer for a showroom shine!"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -13,12 +14,6 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      overflow-x: hidden;
     }
     body {
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
@@ -31,72 +26,27 @@
       scroll-behavior: smooth;
     }
     header {
-      width: 100%;
-    }
-    .logo-bar {
-      width: 100vw;
-      background: #000;
-      padding: 40px 0 30px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
-      opacity: 0;
-      transform: translateY(-40px);
-      animation: logoBarFadeIn 0.9s cubic-bezier(.22,.61,.36,1) forwards;
-      z-index: 100;
-      position: sticky;
-      top: 0;
-      overflow: visible;
-      position: sticky;
-      top: 0;
-    }
-    .logo-bar::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 60px;
-      pointer-events: none;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,0.7) 35%,
-        rgba(0,0,0,0.3) 70%,
-        rgba(0,0,0,0) 100%
-      );
-      z-index: 101;
-    }
-    @keyframes logoBarFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .logo-bar img {
-      max-height: 300px;
-      width: auto;
-      height: auto;
-      display: block;
-      margin-bottom: 12px;
-    }
-    .logo-bar .tagline {
       text-align: center;
-      font-size: 2rem;
+      padding: 20px 0 0 0;
+    }
+    header img {
+      max-height: 70px;
+      width: auto;
+      display: block;
+      margin: 0 auto 8px auto;
+    }
+    .tagline {
+      text-align: center;
+      font-size: 0.85rem;
       color: #bbb;
-      margin-bottom: 0;
-      margin-top: 6px;
-      letter-spacing: 0.02em;
-      padding: 0 16px;
-      word-break: break-word;
+      margin-bottom: 22px;
     }
     h1 {
       text-align: center;
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 18px;
-      margin-top: 28px;
+      margin-top: 0;
     }
     .pricing-section {
       display: grid;
@@ -164,121 +114,142 @@
       box-shadow: 0 4px 18px #00000044;
       transform: scale(1.04);
     }
-
-    /* Modern FAQ Section */
-    .faq-section {
-      max-width: 700px;
-      margin: 50px auto 0 auto;
-      padding: 0 16px;
+    /* Popup Styling */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
     }
-    .faq-section h2 {
-      text-align: center;
-      font-size: 2.1rem;
-      margin-bottom: 28px;
-      color: #00e676;
-      letter-spacing: 1px;
-    }
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .faq-item {
-      background: rgba(20, 20, 20, 0.97);
-      border-radius: 14px;
-      box-shadow: 0 4px 24px #0004;
-      overflow: hidden;
-      transition: box-shadow 0.18s;
+    .popup {
+      background: #222;
+      border-radius: 28px;
+      box-shadow: 0 8px 40px #000a, 0 0 0 1px #222;
+      color: #f4f4f4;
+      max-width: 480px;
+      width: 95vw;
+      max-height: 80vh;
+      padding: 64px 32px 44px 32px;
       position: relative;
+      animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
+      overflow-y: auto;
+      box-sizing: border-box;
     }
-    .faq-item.open {
-      box-shadow: 0 8px 36px #00e67644, 0 4px 24px #0004;
-    }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      outline: none;
+    .popup-title, .popup h3 {
+      margin-bottom: 28px;
       color: #fff;
-      text-align: left;
-      font-size: 1.18rem;
+      font-size: 1.25rem;
       font-weight: 600;
-      padding: 20px 52px 20px 24px;
+      text-align: left;
+      letter-spacing: 0.2px;
+    }
+    .popup input[type="text"],
+    .popup input[type="email"],
+    .popup textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 17px 18px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1.13rem;
+      background: #fff;
+      color: #222;
+      box-shadow: 0 2px 8px #0001;
+      outline: none;
+      transition: box-shadow 0.18s;
+    }
+    .popup input[type="text"]:focus,
+    .popup input[type="email"]:focus,
+    .popup textarea:focus {
+      box-shadow: 0 0 0 2px #25D366;
+    }
+    .popup .quote-btn {
+      display: block;
+      width: 100%;
+      margin: 26px 0 0 0;
+      padding: 17px 0;
+      font-size: 1.13rem;
+      border-radius: 32px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      box-shadow: 0 2px 8px #25D36633;
+      transition: background 0.18s, box-shadow 0.18s;
+    }
+    .popup .quote-btn:hover {
+      background: #1ebe5d;
+      box-shadow: 0 4px 18px #25D36644;
+    }
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: #ff3b3b;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 0 18px;
+      height: 44px;
+      min-width: 44px;
+      font-size: 1.45rem;
+      font-weight: bold;
       cursor: pointer;
+      box-shadow: 0 2px 8px #ff3b3b22;
       display: flex;
       align-items: center;
+      justify-content: center;
+      transition: background 0.18s, transform 0.18s;
+      z-index: 2;
+    }
+    .close-btn:hover {
+      background: #dd2222;
+      transform: scale(1.06);
+    }
+    .popup ul {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .popup li {
+      list-style: none;
+      margin-bottom: 13px;
+      padding: 10px 0 10px 38px;
+      border-radius: 8px;
       position: relative;
-      transition: background 0.18s;
-    }
-    .faq-question:hover,
-    .faq-item.open .faq-question {
-      background: rgba(0,230,118,0.08);
-    }
-    .faq-icon {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      margin-right: 16px;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .faq-icon::before, .faq-icon::after {
-      content: '';
-      position: absolute;
-      background: #00e676;
-      border-radius: 2px;
-      transition: transform 0.3s;
-    }
-    .faq-icon::before {
-      top: 11px; left: 4px; width: 16px; height: 2.5px;
-    }
-    .faq-icon::after {
-      left: 11px; top: 4px; width: 2.5px; height: 16px;
-    }
-    .faq-item.open .faq-icon::after {
-      transform: scaleY(0); /* Hide vertical bar for minus */
-    }
-    .faq-answer {
-      color: #bbb;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      padding: 0 24px;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.38s cubic-bezier(.22,.61,.36,1), opacity 0.25s;
+      font-size: 1.07rem;
+      color: #e0fbe2;
       background: none;
     }
-    .faq-item.open .faq-answer {
-      padding: 0 24px 18px 24px;
-      max-height: 500px;
-      opacity: 1;
+    .popup li:before {
+      content: '✔';
+      color: #25D366;
+      font-size: 1.15em;
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 600px) {
-      .faq-section {
-        padding: 0 4vw;
+      h1 {
+        font-size: 1.45rem;
       }
-      .faq-section h2 {
-        font-size: 1.3rem;
+      .card {
+        padding: 12px;
       }
-      .faq-question {
-        font-size: 1rem;
-        padding: 16px 44px 16px 14px;
+      .pricing-section {
+        gap: 16px;
       }
-      .faq-icon {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-      }
-      .faq-answer {
-        font-size: 0.97rem;
-        padding: 0 14px;
-      }
-      .faq-item.open .faq-answer {
-        padding: 0 14px 14px 14px;
+      header img {
+        max-height: 54px;
       }
     }
-
     .note, .cta-section {
       text-align: center;
       margin-top: 30px;
@@ -298,6 +269,36 @@
       border-radius: 50px;
       text-decoration: none;
     }
+    .faq-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00e676;
+    }
+    .faq-item {
+      border-bottom: 1px solid #444;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .faq-question {
+      font-weight: bold;
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #bbb;
+      margin-top: 10px;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
     footer {
       text-align: center;
       margin-top: 40px;
@@ -307,48 +308,12 @@
     footer a {
       color: #00e676;
     }
-    /* Responsive for logo bar and rest */
-    @media (max-width: 900px) {
-      .logo-bar img {
-        max-height: 220px;
-      }
-    }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.45rem;
-      }
-      .card {
-        padding: 12px;
-      }
-      .pricing-section {
-        gap: 16px;
-      }
-      .logo-bar img {
-        max-height: 140px;
-      }
-      .logo-bar .tagline {
-        font-size: 1.4rem;
-      }
-      .logo-bar {
-        padding: 20px 0 12px 0;
-      }
-    }
-    @media (max-width: 400px) {
-      .logo-bar img {
-        max-height: 100px;
-      }
-      .logo-bar .tagline {
-        font-size: 1.1rem;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-bar">
-      <img src="logo.png" alt="A&H Auto Detailer Logo" />
-      <p class="tagline">Refined car care that comes to you!</p>
-    </div>
+    <img src="logo.png" alt="A&H Auto Detailer Logo" />
+    <p class="tagline">Refined car care that comes to you!</p>
   </header>
 
   <h1>Our Packages</h1>
@@ -390,101 +355,18 @@
     <a href="https://wa.me/919818198485" target="_blank">Book Now on WhatsApp</a>
   </section>
 
-  <!-- Modern FAQ Section -->
   <section class="faq-section">
     <h2>FAQs</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Do you need water and electricity access?
-        </button>
-        <div class="faq-answer">
-          Yes, we require access to water and electricity at your location for most detailing services.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Where do you serve?
-        </button>
-        <div class="faq-answer">
-          We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Do you bring your own equipment?
-        </button>
-        <div class="faq-answer">
-          Yes, we carry all necessary tools, products, and equipment to your doorstep.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          How long does a full detail take?
-        </button>
-        <div class="faq-answer">
-          A full detail can take 3 to 6 hours depending on the car size and condition.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          How do I book a service?
-        </button>
-        <div class="faq-answer">
-          You can book via WhatsApp through the provided buttons or by messaging us directly.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Do you use safe products?
-        </button>
-        <div class="faq-answer">
-          Yes, we only use professional-grade, pH-balanced products safe for your car.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          What is paint correction?
-        </button>
-        <div class="faq-answer">
-          Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Can you clean leather interiors?
-        </button>
-        <div class="faq-answer">
-          Yes, we deep clean and condition leather seats using specialized leather care products.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          Do you clean engine bays?
-        </button>
-        <div class="faq-answer">
-          Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-icon"></span>
-          What are your operating hours?
-        </button>
-        <div class="faq-answer">
-          We work from 8 AM to 7 PM every day, including weekends.
-        </div>
-      </div>
-    </div>
+    <div class="faq-item"><div class="faq-question">Do you need water and electricity access?</div><div class="faq-answer">Yes, we require access to water and electricity at your location for most detailing services.</div></div>
+    <div class="faq-item"><div class="faq-question">Where do you serve?</div><div class="faq-answer">We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you bring your own equipment?</div><div class="faq-answer">Yes, we carry all necessary tools, products, and equipment to your doorstep.</div></div>
+    <div class="faq-item"><div class="faq-question">How long does a full detail take?</div><div class="faq-answer">A full detail can take 3 to 6 hours depending on the car size and condition.</div></div>
+    <div class="faq-item"><div class="faq-question">How do I book a service?</div><div class="faq-answer">You can book via WhatsApp through the provided buttons or by messaging us directly.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you use safe products?</div><div class="faq-answer">Yes, we only use professional-grade, pH-balanced products safe for your car.</div></div>
+    <div class="faq-item"><div class="faq-question">What is paint correction?</div><div class="faq-answer">Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.</div></div>
+    <div class="faq-item"><div class="faq-question">Can you clean leather interiors?</div><div class="faq-answer">Yes, we deep clean and condition leather seats using specialized leather care products.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you clean engine bays?</div><div class="faq-answer">Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.</div></div>
+    <div class="faq-item"><div class="faq-question">What are your operating hours?</div><div class="faq-answer">We work from 8 AM to 7 PM every day, including weekends.</div></div>
   </section>
 
   <footer>
@@ -607,18 +489,30 @@
       }
     }
 
-    // Modern FAQ accordion logic
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const item = this.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(i => {
-          i.classList.remove('open');
-          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
-        // Open clicked one if it wasn't open
-        if (!isOpen) {
-          item.classList.add('open');
-          this.setAttribute('aria-expanded', 'true');
-      
+    // FAQ toggle (only one open at a time)
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+        q.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Optional: Close popups on overlay click
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    });
+
+    // Optional: Close popups with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        document.getElementById('revampInclusionPopup').style.display = 'none';
+        document.getElementById('inclusionPopup').style.display = 'none';
+        document.getElementById('quotePopup').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+        </html>
+        
