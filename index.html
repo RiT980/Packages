@@ -1,5 +1,5 @@
- </html>
-      
+
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +15,12 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      overflow-x: hidden;
+    }
     body {
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
       background-size: cover;
@@ -29,9 +35,9 @@
       width: 100%;
     }
     .logo-bar {
-      width: 100%;
+      width: 100vw;
       background: #000; /* fully opaque black */
-      padding: 18px 0 10px 0;
+      padding: 40px 0 30px 0; /* increased padding for bigger logo */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,7 +45,9 @@
       opacity: 0;
       transform: translateY(-40px);
       animation: logoBarFadeIn 0.9s cubic-bezier(.22,.61,.36,1) forwards;
-      z-index: 10;
+      z-index: 100;
+      position: sticky;
+      top: 0;
     }
     @keyframes logoBarFadeIn {
       to {
@@ -48,18 +56,21 @@
       }
     }
     .logo-bar img {
-      max-height: 100px; /* bigger logo */
+      max-height: 300px; /* 3 times bigger */
       width: auto;
+      height: auto;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
     .logo-bar .tagline {
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #bbb;
       margin-bottom: 0;
-      margin-top: 3px;
+      margin-top: 6px;
       letter-spacing: 0.02em;
+      padding: 0 16px;
+      word-break: break-word;
     }
     h1 {
       text-align: center;
@@ -256,6 +267,11 @@
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @media (max-width: 900px) {
+      .logo-bar img {
+        max-height: 220px;
+      }
+    }
     @media (max-width: 600px) {
       h1 {
         font-size: 1.45rem;
@@ -267,10 +283,21 @@
         gap: 16px;
       }
       .logo-bar img {
-        max-height: 60px;
+        max-height: 140px;
       }
       .logo-bar .tagline {
         font-size: 0.82rem;
+      }
+      .logo-bar {
+        padding: 20px 0 12px 0;
+      }
+    }
+    @media (max-width: 400px) {
+      .logo-bar img {
+        max-height: 100px;
+      }
+      .logo-bar .tagline {
+        font-size: 0.7rem;
       }
     }
     .note, .cta-section {
