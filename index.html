@@ -1,12 +1,10 @@
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer</title>
+  <meta name="description" content="Premium doorstep car detailing in Delhi NCR. Book A&H Auto Detailer for a showroom shine!"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -26,27 +24,37 @@
       scroll-behavior: smooth;
     }
     header {
-      text-align: center;
-      padding: 20px 0 0 0;
+      width: 100%;
     }
-    header img {
+    .logo-bar {
+      width: 100%;
+      background: #111;
+      padding: 18px 0 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+    .logo-bar img {
       max-height: 70px;
       width: auto;
       display: block;
-      margin: 0 auto 8px auto;
+      margin-bottom: 6px;
     }
-    .tagline {
+    .logo-bar .tagline {
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: #bbb;
-      margin-bottom: 22px;
+      margin-bottom: 0;
+      margin-top: 3px;
+      letter-spacing: 0.02em;
     }
     h1 {
       text-align: center;
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 18px;
-      margin-top: 0;
+      margin-top: 28px;
     }
     .pricing-section {
       display: grid;
@@ -246,8 +254,11 @@
       .pricing-section {
         gap: 16px;
       }
-      header img {
+      .logo-bar img {
         max-height: 54px;
+      }
+      .logo-bar .tagline {
+        font-size: 0.82rem;
       }
     }
     .note, .cta-section {
@@ -312,8 +323,10 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="A&H Auto Detailer Logo" />
-    <p class="tagline">Refined car care that comes to you!</p>
+    <div class="logo-bar">
+      <img src="logo.png" alt="A&H Auto Detailer Logo" />
+      <p class="tagline">Refined car care that comes to you!</p>
+    </div>
   </header>
 
   <h1>Our Packages</h1>
@@ -514,5 +527,5 @@
     });
   </script>
 </body>
-        </html>
-        
+                                                                                                                                                                                                      </html>
+      
