@@ -23,36 +23,28 @@ html>
       padding-bottom: 100px;
       scroll-behavior: smooth;
     }
-    .main-logo {
+    header {
       text-align: center;
-      margin-top: 24px;
-      margin-bottom: 12px;
+      padding: 20px 0 0 0;
     }
-    .main-logo img {
-      max-height: 110px;
+    header img {
+      max-height: 70px;
       width: auto;
-      display: inline-block;
-      background: rgba(0,0,0,0.82);
-      border-radius: 16px;
-      padding: 16px 28px;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.7);
+      display: block;
+      margin: 0 auto 8px auto;
     }
-    @media (max-width: 600px) {
-      .main-logo img {
-        max-height: 85px;
-        padding: 10px 18px;
-      }
-      .main-logo {
-        margin-top: 18px;
-        margin-bottom: 10px;
-      }
+    .tagline {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-bottom: 22px;
     }
     h1 {
       text-align: center;
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 18px;
-      margin-top: 10px;
+      margin-top: 0;
     }
     .pricing-section {
       display: grid;
@@ -252,13 +244,8 @@ html>
       .pricing-section {
         gap: 16px;
       }
-      .main-logo img {
-        max-height: 85px;
-        padding: 10px 18px;
-      }
-      .main-logo {
-        margin-top: 18px;
-        margin-bottom: 10px;
+      header img {
+        max-height: 54px;
       }
     }
     .note, .cta-section {
@@ -322,10 +309,10 @@ html>
   </style>
 </head>
 <body>
-  <!-- BIG LOGO -->
-  <div class="main-logo">
+  <header>
     <img src="logo.png" alt="A&H Auto Detailer Logo" />
-  </div>
+    <p class="tagline">Refined car care that comes to you!</p>
+  </header>
 
   <h1>Our Packages</h1>
 
@@ -525,4 +512,5 @@ html>
     });
   </script>
 </body>
-</html>
+  </html>
+  
