@@ -1,3 +1,6 @@
+
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,56 +25,28 @@
       padding-bottom: 100px;
       scroll-behavior: smooth;
     }
-    /* Hero Section */
-    .hero-section {
-      position: relative;
-      width: 100%;
-      min-height: 170px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.25));
-      margin-bottom: 0;
-    }
-    .hero-card {
-      background: rgba(20,20,20,0.92);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.45);
-      padding: 22px 26px 14px 26px;
+    header {
       text-align: center;
-      margin-top: 30px;
-      margin-bottom: 18px;
-      animation: fadeInHero 0.8s 0.1s both;
+      padding: 20px 0 0 0;
     }
-    .hero-card img {
-      max-height: 54px;
-      margin-bottom: 10px;
+    header img {
+      max-height: 70px;
+      width: auto;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 8px auto;
     }
-    .hero-card .tagline {
-      font-size: 1.07rem;
-      color: #e0e0e0;
-      margin-bottom: 0;
-      letter-spacing: 0.1px;
-    }
-    .hero-divider {
-      width: 100%;
-      margin-bottom: -10px;
-      line-height: 0;
-    }
-    @keyframes fadeInHero {
-      from { opacity: 0; transform: translateY(20px);}
-      to { opacity: 1; transform: none;}
+    .tagline {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-bottom: 22px;
     }
     h1 {
-      margin-top: 16px;
-      margin-bottom: 18px;
-      font-size: 2rem;
-      font-weight: 700;
       text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      margin-top: 0;
     }
     .pricing-section {
       display: grid;
@@ -82,15 +57,14 @@
       margin: 0 auto;
     }
     .card {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(20, 20, 20, 0.88));
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 0.85));
       border-radius: 16px;
       padding: 18px;
       box-shadow: 0 10px 36px rgba(0,0,0,0.7);
       border: 1.5px solid rgba(0,230,118,0.13);
-      margin-bottom: 2px;
     }
     .card h2 {
-      font-size: 1.18rem;
+      font-size: 1.25rem;
       margin-bottom: 10px;
       color: #ffffff;
     }
@@ -107,7 +81,7 @@
     .quote-btn, .info-btn {
       margin-top: 12px;
       padding: 10px 20px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       border-radius: 25px;
       cursor: pointer;
       font-weight: bold;
@@ -119,17 +93,15 @@
       margin-right: auto;
     }
     .quote-btn {
-      background: linear-gradient(90deg, #25D366, #1ebe5d);
+      background-color: #25D366;
       color: white;
       margin-bottom: 8px;
-      box-shadow: 0 2px 8px #25d36633;
-      border: none;
     }
     .quote-btn:hover {
       background-color: #1ebe5d;
     }
     .info-btn {
-      background: #232323;
+      background-color: #333333;
       color: #fff;
       border-radius: 32px;
       font-size: 1.08rem;
@@ -265,25 +237,17 @@
       to { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 600px) {
-      .hero-section {
-        min-height: 120px;
-      }
-      .hero-card {
-        padding: 10px 8vw 8px 8vw;
-        margin-top: 18px;
-        margin-bottom: 10px;
-      }
-      .hero-card img {
-        max-height: 38px;
-      }
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.45rem;
       }
       .card {
         padding: 12px;
       }
       .pricing-section {
         gap: 16px;
+      }
+      header img {
+        max-height: 54px;
       }
     }
     .note, .cta-section {
@@ -347,18 +311,10 @@
   </style>
 </head>
 <body>
-  <!-- HERO SECTION -->
-  <div class="hero-section">
-    <div class="hero-card">
-      <img src="logo.png" alt="A&H Auto Detailer Logo" />
-      <p class="tagline">Refined car care that comes to you!</p>
-    </div>
-    <div class="hero-divider">
-      <svg viewBox="0 0 500 40" preserveAspectRatio="none" style="width:100%;height:40px;display:block;">
-        <path d="M0,30 Q250,50 500,30 L500,40 L0,40 Z" fill="#181818"/>
-      </svg>
-    </div>
-  </div>
+  <header>
+    <img src="logo.png" alt="A&H Auto Detailer Logo" />
+    <p class="tagline">Refined car care that comes to you!</p>
+  </header>
 
   <h1>Our Packages</h1>
 
@@ -558,4 +514,5 @@
     });
   </script>
 </body>
-</html>
+        </html>
+        
