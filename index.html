@@ -1,6 +1,3 @@
-ody>
-  </html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,36 +22,37 @@ ody>
       padding-bottom: 100px;
       scroll-behavior: smooth;
     }
-    /* --- HERO SECTION --- */
+    /* Hero Section */
     .hero-section {
       position: relative;
       width: 100%;
-      min-height: 160px;
+      min-height: 170px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(rgba(0,0,0,0.72),rgba(0,0,0,0.36));
+      background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.25));
+      margin-bottom: 0;
     }
     .hero-card {
       background: rgba(20,20,20,0.92);
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.45);
-      padding: 18px 22px 10px 22px;
+      padding: 22px 26px 14px 26px;
       text-align: center;
-      margin-top: 18px;
-      margin-bottom: 12px;
+      margin-top: 30px;
+      margin-bottom: 18px;
       animation: fadeInHero 0.8s 0.1s both;
     }
     .hero-card img {
-      max-height: 44px;
+      max-height: 54px;
       margin-bottom: 10px;
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
     .hero-card .tagline {
-      font-size: 1.01rem;
+      font-size: 1.07rem;
       color: #e0e0e0;
       margin-bottom: 0;
       letter-spacing: 0.1px;
@@ -68,9 +66,8 @@ ody>
       from { opacity: 0; transform: translateY(20px);}
       to { opacity: 1; transform: none;}
     }
-    /* --- MAIN CONTENT --- */
     h1 {
-      margin-top: 12px;
+      margin-top: 16px;
       margin-bottom: 18px;
       font-size: 2rem;
       font-weight: 700;
@@ -145,65 +142,7 @@ ody>
       box-shadow: 0 4px 18px #00000044;
       transform: scale(1.04);
     }
-    .note, .cta-section {
-      text-align: center;
-      margin-top: 30px;
-      color: #ccc;
-    }
-    .cta-section h2 {
-      font-size: 2rem;
-    }
-    .cta-section a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 30px;
-      background: linear-gradient(45deg, #25D366, #1ebe5d);
-      color: white;
-      font-weight: 700;
-      font-size: 1rem;
-      border-radius: 50px;
-      text-decoration: none;
-    }
-    .faq-section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-    .faq-section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00e676;
-    }
-    .faq-item {
-      border-bottom: 1px solid #444;
-      padding: 15px 0;
-      cursor: pointer;
-    }
-    .faq-question {
-      font-weight: bold;
-      color: #fff;
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      color: #bbb;
-      margin-top: 10px;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    footer a {
-      color: #00e676;
-    }
-    /* --- POPUP STYLES (unchanged) --- */
+    /* Popup Styling */
     .popup-overlay {
       display: none;
       position: fixed;
@@ -331,10 +270,11 @@ ody>
       }
       .hero-card {
         padding: 10px 8vw 8px 8vw;
-        margin-top: 12px;
+        margin-top: 18px;
+        margin-bottom: 10px;
       }
       .hero-card img {
-        max-height: 36px;
+        max-height: 38px;
       }
       h1 {
         font-size: 1.2rem;
@@ -345,6 +285,64 @@ ody>
       .pricing-section {
         gap: 16px;
       }
+    }
+    .note, .cta-section {
+      text-align: center;
+      margin-top: 30px;
+      color: #ccc;
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+    .cta-section a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      background: linear-gradient(45deg, #25D366, #1ebe5d);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+    .faq-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00e676;
+    }
+    .faq-item {
+      border-bottom: 1px solid #444;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .faq-question {
+      font-weight: bold;
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      color: #bbb;
+      margin-top: 10px;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    footer a {
+      color: #00e676;
     }
   </style>
 </head>
@@ -560,5 +558,4 @@ ody>
     });
   </script>
 </body>
-  </html>
-        
+</html>
