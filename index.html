@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,25 +112,6 @@
       background: #1a1a1a;
       box-shadow: 0 4px 18px #00000044;
       transform: scale(1.04);
-    }
-    /* Instagram Button */
-    .instagram-btn {
-      background-color: #E1306C;
-      color: white;
-      margin-top: 10px;
-      margin-bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .instagram-btn:hover {
-      background-color: #c72e5a;
-    }
-    .instagram-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
     }
     /* Popup Styling */
     .popup-overlay {
@@ -324,17 +307,6 @@
     footer a {
       color: #00e676;
     }
-    /* Instagram DM instruction note */
-    .instagram-note {
-      font-size: 0.9rem;
-      color: #ddd;
-      text-align: center;
-      margin-top: 6px;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-      font-style: italic;
-    }
   </style>
 </head>
 <body>
@@ -401,7 +373,7 @@
     <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
   </footer>
 
-  <!-- WhatsApp & Instagram Quote Popup -->
+  <!-- WhatsApp Quote Popup -->
   <div class="popup-overlay" id="quotePopup">
     <div class="popup">
       <button class="close-btn" onclick="closePopup()">×</button>
@@ -409,16 +381,6 @@
       <input type="text" id="carModel" placeholder="Car Model" />
       <input type="text" id="location" placeholder="Location" />
       <button class="quote-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
-      <button class="quote-btn instagram-btn" onclick="sendInstagram()">
-        <!-- Instagram SVG Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.5a5.75 5.75 0 110 11.5 5.75 5.75 0 010-11.5zm0 1.5a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5z"/>
-        </svg>
-        Send on Instagram
-      </button>
-      <div class="instagram-note">
-        You'll be redirected to Instagram. The message is copied to your clipboard — please paste it in your DM to us!
-      </div>
       <div id="successMessage" style="display:none; margin-top: 20px; color: #00e676; font-weight: 600; text-align: center;">
         Your request has been sent! We will contact you soon.
       </div>
@@ -526,39 +488,30 @@
       }
     }
 
-    function sendInstagram() {
-      const car = document.getElementById("carModel").value.trim();
-      const loc = document.getElementById("location").value.trim();
-      if (car && loc) {
-        const username = "aandhautodetailer";
-        const message = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
-        // Instagram profile URL fallback
-        const igProfileUrl = `https://www.instagram.com/${username}/`;
+    // FAQ toggle (only one open at a time)
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+        q.parentElement.classList.toggle('active');
+      });
+    });
 
-        // Copy message to clipboard for user convenience
-        copyToClipboard(message);
+    // Optional: Close popups on overlay click
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    });
 
-        // Alert user about the DM process
-        alert("You will be redirected to Instagram. Please paste the copied message in your DM to us!");
-
-        // Try to open Instagram app (mobile)
-        window.location.href = `instagram://user?username=${username}`;
-
-        // Open profile in new tab as fallback (desktop)
-        setTimeout(() => {
-          window.open(igProfileUrl, "_blank");
-        }, 1200);
-      } else {
-        alert("Please enter both car model and location.");
+    // Optional: Close popups with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        document.getElementById('revampInclusionPopup').style.display = 'none';
+        document.getElementById('inclusionPopup').style.display = 'none';
+        document.getElementById('quotePopup').style.display = 'none';
       }
-    }
-
-    // Helper: Copy text to clipboard
-    function copyToClipboard(text) {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text);
-      } else {
-        // Fallback for older browsers
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        docu
+    });
+  </script>
+</body>
+        </html>
+        
