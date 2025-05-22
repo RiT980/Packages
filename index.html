@@ -1,3 +1,4 @@
+List.remove('ac
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,6 +165,9 @@
       animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
       overflow-y: auto;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .popup-title, .popup h3 {
       margin-bottom: 28px;
@@ -572,11 +576,9 @@
     }
 
     // FAQ toggle
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const parent = question.parentElement;
-        if (parent.classList.contains('active')) {
-          parent.classList.remove('active');
-        } else {
-          // Close other open items
-          document.querySelectorAll('.faq-item.active').forEach(item => item.classList.remove('ac
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+          const parent = this.parentElement;
+          if (parent.classList.contains('active')) {
+            parent.classList.remove('acti
