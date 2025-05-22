@@ -1,4 +1,3 @@
-List.remove('ac
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +75,7 @@ List.remove('ac
       font-size: 0.93rem;
       color: #ddd;
     }
-    .quote-btn, .info-btn {
+    .quote-btn, .info-btn, .insta-btn {
       margin-top: 12px;
       padding: 10px 20px;
       font-size: 0.95rem;
@@ -98,6 +97,26 @@ List.remove('ac
     .quote-btn:hover {
       background-color: #1ebe5d;
     }
+    .insta-btn {
+      background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+      margin: 8px auto 0 auto;
+      display: block;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      box-shadow: 0 2px 8px #d6249f33;
+    }
+    .insta-btn:hover {
+      background: linear-gradient(45deg, #fd5949 80%, #d6249f 100%);
+      transform: scale(1.04);
+    }
     .info-btn {
       background-color: #333333;
       color: #fff;
@@ -111,36 +130,6 @@ List.remove('ac
       background: #1a1a1a;
       box-shadow: 0 4px 18px #00000044;
       transform: scale(1.04);
-    }
-    /* Instagram DM Button Styling inside popup */
-    .insta-btn {
-      display: block;
-      margin: 0 auto;
-      padding: 8px 16px;
-      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.85rem;
-      border-radius: 20px;
-      text-decoration: none;
-      box-shadow: 0 2px 6px #833ab433;
-      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
-      width: 100%;
-      max-width: 220px;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-    }
-    .insta-btn:hover {
-      background: linear-gradient(45deg, #fd1d1d, #833ab4, #fcb045);
-      box-shadow: 0 4px 12px #fd1d1daa;
-      transform: scale(1.05);
-    }
-    .popup-btn-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 18px;
     }
     /* Popup Styling */
     .popup-overlay {
@@ -165,9 +154,6 @@ List.remove('ac
       animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
       overflow-y: auto;
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     .popup-title, .popup h3 {
       margin-bottom: 28px;
@@ -198,23 +184,35 @@ List.remove('ac
     .popup textarea:focus {
       box-shadow: 0 0 0 2px #25D366;
     }
-    .popup .quote-btn {
+    .popup .quote-btn, .popup .insta-btn {
       display: block;
       width: 100%;
-      margin: 0;
-      padding: 12px 0;
-      font-size: 1.05rem;
+      margin: 16px 0 0 0;
+      padding: 17px 0;
+      font-size: 1.13rem;
       border-radius: 32px;
-      background: #25D366;
-      color: #fff;
       font-weight: 700;
       border: none;
-      box-shadow: 0 2px 8px #25D36633;
       transition: background 0.18s, box-shadow 0.18s;
+    }
+    .popup .quote-btn {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 2px 8px #25D36633;
     }
     .popup .quote-btn:hover {
       background: #1ebe5d;
       box-shadow: 0 4px 18px #25D36644;
+    }
+    .popup .insta-btn {
+      background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
+      color: #fff;
+      box-shadow: 0 2px 8px #d6249f33;
+      margin-top: 10px;
+    }
+    .popup .insta-btn:hover {
+      background: linear-gradient(45deg, #fd5949 80%, #d6249f 100%);
+      transform: scale(1.04);
     }
     .close-btn {
       position: absolute;
@@ -388,46 +386,16 @@ List.remove('ac
 
   <section class="faq-section">
     <h2>FAQs</h2>
-    <div class="faq-item">
-      <div class="faq-question">Do you need water and electricity access?</div>
-      <div class="faq-answer">Yes, we require access to water and electricity at your location for most detailing services.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Where do you serve?</div>
-      <div class="faq-answer">We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Do you bring your own equipment?</div>
-      <div class="faq-answer">Yes, we carry all necessary tools, products, and equipment to your doorstep.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">How long does a full detail take?</div>
-      <div class="faq-answer">A full detail can take 3 to 6 hours depending on the car size and condition.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">How do I book a service?</div>
-      <div class="faq-answer">You can book via WhatsApp through the provided buttons or by messaging us directly.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Do you use safe products?</div>
-      <div class="faq-answer">Yes, we only use professional-grade, pH-balanced products safe for your car.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">What is paint correction?</div>
-      <div class="faq-answer">Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Can you clean leather interiors?</div>
-      <div class="faq-answer">Yes, we deep clean and condition leather seats using specialized leather care products.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Do you clean engine bays?</div>
-      <div class="faq-answer">Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">What are your operating hours?</div>
-      <div class="faq-answer">We work from 8 AM to 7 PM every day, including weekends.</div>
-    </div>
+    <div class="faq-item"><div class="faq-question">Do you need water and electricity access?</div><div class="faq-answer">Yes, we require access to water and electricity at your location for most detailing services.</div></div>
+    <div class="faq-item"><div class="faq-question">Where do you serve?</div><div class="faq-answer">We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you bring your own equipment?</div><div class="faq-answer">Yes, we carry all necessary tools, products, and equipment to your doorstep.</div></div>
+    <div class="faq-item"><div class="faq-question">How long does a full detail take?</div><div class="faq-answer">A full detail can take 3 to 6 hours depending on the car size and condition.</div></div>
+    <div class="faq-item"><div class="faq-question">How do I book a service?</div><div class="faq-answer">You can book via WhatsApp through the provided buttons or by messaging us directly.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you use safe products?</div><div class="faq-answer">Yes, we only use professional-grade, pH-balanced products safe for your car.</div></div>
+    <div class="faq-item"><div class="faq-question">What is paint correction?</div><div class="faq-answer">Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.</div></div>
+    <div class="faq-item"><div class="faq-question">Can you clean leather interiors?</div><div class="faq-answer">Yes, we deep clean and condition leather seats using specialized leather care products.</div></div>
+    <div class="faq-item"><div class="faq-question">Do you clean engine bays?</div><div class="faq-answer">Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.</div></div>
+    <div class="faq-item"><div class="faq-question">What are your operating hours?</div><div class="faq-answer">We work from 8 AM to 7 PM every day, including weekends.</div></div>
   </section>
 
   <footer>
@@ -435,17 +403,15 @@ List.remove('ac
     <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
   </footer>
 
-  <!-- WhatsApp & Instagram Quote Popup -->
+  <!-- WhatsApp/Instagram Quote Popup -->
   <div class="popup-overlay" id="quotePopup">
     <div class="popup">
       <button class="close-btn" onclick="closePopup()">×</button>
       <div class="popup-title">Enter your car model & location to proceed.</div>
       <input type="text" id="carModel" placeholder="Car Model" />
       <input type="text" id="location" placeholder="Location" />
-      <div class="popup-btn-row">
-        <button class="quote-btn" id="whatsappBtn" onclick="sendWhatsApp()">Send on WhatsApp</button>
-        <button class="insta-btn" id="instagramBtn" onclick="sendInstagram()">Send on Instagram DM</button>
-      </div>
+      <button class="quote-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
+      <button class="insta-btn" onclick="sendInstagram()">Send on Instagram</button>
       <div id="successMessage" style="display:none; margin-top: 20px; color: #00e676; font-weight: 600; text-align: center;">
         Your request has been sent! We will contact you soon.
       </div>
@@ -514,8 +480,8 @@ List.remove('ac
       document.getElementById("location").value = "";
       document.getElementById("carModel").disabled = false;
       document.getElementById("location").disabled = false;
-      document.getElementById("whatsappBtn").disabled = false;
-      document.getElementById("instagramBtn").disabled = false;
+      document.querySelector(".popup .quote-btn").disabled = false;
+      document.querySelector(".popup .insta-btn").disabled = false;
       document.getElementById("successMessage").style.display = "none";
     }
 
@@ -531,18 +497,25 @@ List.remove('ac
         const msg = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
         const url = `https://wa.me/919818198485?text=${encodeURIComponent(msg)}`;
         window.open(url, "_blank");
+
+        // Show success message
         successMsg.style.display = "block";
+
+        // Disable inputs and button to prevent resubmission
         document.getElementById("carModel").disabled = true;
         document.getElementById("location").disabled = true;
-        document.getElementById("whatsappBtn").disabled = true;
-        document.getElementById("instagramBtn").disabled = true;
+        document.querySelector(".popup .quote-btn").disabled = true;
+        document.querySelector(".popup .insta-btn").disabled = true;
+
+        // After 3 seconds, close popup and reset form
         setTimeout(() => {
           successMsg.style.display = "none";
           closePopup();
+          // Re-enable inputs and button
           document.getElementById("carModel").disabled = false;
           document.getElementById("location").disabled = false;
-          document.getElementById("whatsappBtn").disabled = false;
-          document.getElementById("instagramBtn").disabled = false;
+          document.querySelector(".popup .quote-btn").disabled = false;
+          document.querySelector(".popup .insta-btn").disabled = false;
         }, 3000);
       } else {
         alert("Please enter both car model and location.");
@@ -552,33 +525,37 @@ List.remove('ac
     function sendInstagram() {
       const car = document.getElementById("carModel").value.trim();
       const loc = document.getElementById("location").value.trim();
-      const successMsg = document.getElementById("successMessage");
       if (car && loc) {
         const msg = `Hi, I'm interested in ${currentService}.\nCar Model: ${car}\nLocation: ${loc}`;
-        const url = `https://ig.me/m/aandhautodetailer?text=${encodeURIComponent(msg)}`;
-        window.open(url, "_blank");
-        successMsg.style.display = "block";
-        document.getElementById("carModel").disabled = true;
-        document.getElementById("location").disabled = true;
-        document.getElementById("whatsappBtn").disabled = true;
-        document.getElementById("instagramBtn").disabled = true;
-        setTimeout(() => {
-          successMsg.style.display = "none";
-          closePopup();
-          document.getElementById("carModel").disabled = false;
-          document.getElementById("location").disabled = false;
-          document.getElementById("whatsappBtn").disabled = false;
-          document.getElementById("instagramBtn").disabled = false;
-        }, 3000);
+        // Copy message to clipboard for user convenience
+        navigator.clipboard.writeText(msg).then(() => {
+          alert("Custom message copied! Paste it in Instagram DM.");
+          // Open your Instagram profile page for DM
+          window.open("https://www.instagram.com/aandhautodetailer/", "_blank");
+        });
+        // Optionally, you can show a success message or disable buttons as above if you wish
       } else {
         alert("Please enter both car model and location.");
       }
     }
 
-    // FAQ toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', function() {
-          const parent = this.parentElement;
-          if (parent.classList.contains('active')) {
-            parent.classList.remove('acti
+    // FAQ toggle (only one open at a time)
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+        q.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Optional: Close popups on overlay click
+    document.querySelectorAll('.popup-overlay').forEach(overlay => {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) this.style.display = 'none';
+      });
+    });
+
+    // Optional: Close popups with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") {
+        document.getElementById('revampInclusionPopup').style.display = 'none';
+        document.getEle
