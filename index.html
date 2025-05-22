@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +77,7 @@
       font-size: 0.93rem;
       color: #ddd;
     }
-    .quote-btn, .info-btn, .insta-btn {
+    .quote-btn, .info-btn {
       margin-top: 12px;
       padding: 10px 20px;
       font-size: 0.95rem;
@@ -96,26 +98,6 @@
     }
     .quote-btn:hover {
       background-color: #1ebe5d;
-    }
-    .insta-btn {
-      background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      width: 100%;
-      max-width: 220px;
-      margin: 8px auto 0 auto;
-      display: block;
-      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
-      box-shadow: 0 2px 8px #d6249f33;
-    }
-    .insta-btn:hover {
-      background: linear-gradient(45deg, #fd5949 80%, #d6249f 100%);
-      transform: scale(1.04);
     }
     .info-btn {
       background-color: #333333;
@@ -184,35 +166,23 @@
     .popup textarea:focus {
       box-shadow: 0 0 0 2px #25D366;
     }
-    .popup .quote-btn, .popup .insta-btn {
+    .popup .quote-btn {
       display: block;
       width: 100%;
-      margin: 16px 0 0 0;
+      margin: 26px 0 0 0;
       padding: 17px 0;
       font-size: 1.13rem;
       border-radius: 32px;
-      font-weight: 700;
-      border: none;
-      transition: background 0.18s, box-shadow 0.18s;
-    }
-    .popup .quote-btn {
       background: #25D366;
       color: #fff;
+      font-weight: 700;
+      border: none;
       box-shadow: 0 2px 8px #25D36633;
+      transition: background 0.18s, box-shadow 0.18s;
     }
     .popup .quote-btn:hover {
       background: #1ebe5d;
       box-shadow: 0 4px 18px #25D36644;
-    }
-    .popup .insta-btn {
-      background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
-      color: #fff;
-      box-shadow: 0 2px 8px #d6249f33;
-      margin-top: 10px;
-    }
-    .popup .insta-btn:hover {
-      background: linear-gradient(45deg, #fd5949 80%, #d6249f 100%);
-      transform: scale(1.04);
     }
     .close-btn {
       position: absolute;
@@ -403,7 +373,7 @@
     <a href="https://www.instagram.com/aandhautodetailer" target="_blank">@aandhautodetailer</a>
   </footer>
 
-  <!-- WhatsApp/Instagram Quote Popup -->
+  <!-- WhatsApp Quote Popup -->
   <div class="popup-overlay" id="quotePopup">
     <div class="popup">
       <button class="close-btn" onclick="closePopup()">×</button>
@@ -411,7 +381,6 @@
       <input type="text" id="carModel" placeholder="Car Model" />
       <input type="text" id="location" placeholder="Location" />
       <button class="quote-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
-      <button class="insta-btn" onclick="sendInstagram()">Send on Instagram</button>
       <div id="successMessage" style="display:none; margin-top: 20px; color: #00e676; font-weight: 600; text-align: center;">
         Your request has been sent! We will contact you soon.
       </div>
@@ -481,7 +450,6 @@
       document.getElementById("carModel").disabled = false;
       document.getElementById("location").disabled = false;
       document.querySelector(".popup .quote-btn").disabled = false;
-      document.querySelector(".popup .insta-btn").disabled = false;
       document.getElementById("successMessage").style.display = "none";
     }
 
@@ -505,7 +473,6 @@
         document.getElementById("carModel").disabled = true;
         document.getElementById("location").disabled = true;
         document.querySelector(".popup .quote-btn").disabled = true;
-        document.querySelector(".popup .insta-btn").disabled = true;
 
         // After 3 seconds, close popup and reset form
         setTimeout(() => {
@@ -515,25 +482,7 @@
           document.getElementById("carModel").disabled = false;
           document.getElementById("location").disabled = false;
           document.querySelector(".popup .quote-btn").disabled = false;
-          document.querySelector(".popup .insta-btn").disabled = false;
         }, 3000);
-      } else {
-        alert("Please enter both car model and location.");
-      }
-    }
-
-    function sendInstagram() {
-      const car = document.getElementById("carModel").value.trim();
-      const loc = document.getElementById("location").value.trim();
-      if (car && loc) {
-        const msg = `Hi, I'm interested in ${currentService}.\nCar Model: ${car}\nLocation: ${loc}`;
-        // Copy message to clipboard for user convenience
-        navigator.clipboard.writeText(msg).then(() => {
-          alert("Custom message copied! Paste it in Instagram DM.");
-          // Open your Instagram profile page for DM
-          window.open("https://www.instagram.com/aandhautodetailer/", "_blank");
-        });
-        // Optionally, you can show a success message or disable buttons as above if you wish
       } else {
         alert("Please enter both car model and location.");
       }
@@ -558,4 +507,11 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === "Escape") {
         document.getElementById('revampInclusionPopup').style.display = 'none';
-        document.getEle
+        document.getElementById('inclusionPopup').style.display = 'none';
+        document.getElementById('quotePopup').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+        </html>
+        
