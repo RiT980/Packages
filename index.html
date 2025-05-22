@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,8 +147,7 @@
     }
     .popup input[type="text"],
     .popup input[type="email"],
-    .popup textarea,
-    .popup select {
+    .popup textarea {
       display: block;
       width: 100%;
       margin-bottom: 20px;
@@ -162,8 +163,7 @@
     }
     .popup input[type="text"]:focus,
     .popup input[type="email"]:focus,
-    .popup textarea:focus,
-    .popup select:focus {
+    .popup textarea:focus {
       box-shadow: 0 0 0 2px #25D366;
     }
     .popup .quote-btn {
@@ -247,9 +247,6 @@
       }
       header img {
         max-height: 54px;
-      }
-      .popup {
-        padding: 32px 8px 24px 8px;
       }
     }
     .note, .cta-section {
@@ -355,8 +352,6 @@
     <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
     <a href="https://wa.me/919818198485" target="_blank">Book Now on WhatsApp</a>
-    <!-- New Book Now Button -->
-    <button class="quote-btn" style="margin-top: 12px;" onclick="openBookingPopup()">Book Now</button>
   </section>
 
   <section class="faq-section">
@@ -444,31 +439,6 @@
     </div>
   </div>
 
-  <!-- Booking Popup -->
-  <div class="popup-overlay" id="bookingPopup" style="display:none;">
-    <div class="popup">
-      <button class="close-btn" onclick="closeBookingPopup()">×</button>
-      <div class="popup-title">Book Your Detailing Service</div>
-      <input type="text" id="bookingName" placeholder="Full Name" />
-      <input type="text" id="bookingPhone" placeholder="Phone Number" />
-      <input type="email" id="bookingEmail" placeholder="Email (optional)" />
-      <input type="text" id="bookingCarModel" placeholder="Car Model" />
-      <input type="text" id="bookingLocation" placeholder="Location" />
-      <select id="bookingPackage">
-        <option value="" disabled selected>Select Package</option>
-        <option value="A&H Total Revamp Package">A&H Total Revamp Package</option>
-        <option value="Detailed Wash + 1 Step Polish + Wax">Detailed Wash + 1 Step Polish + Wax</option>
-        <option value="Paint Correction">Paint Correction</option>
-        <option value="Interior Detailing">Interior Detailing</option>
-      </select>
-      <textarea id="bookingNotes" placeholder="Additional Notes (optional)" rows="3"></textarea>
-      <button class="quote-btn" onclick="sendBooking()">Send Booking Request</button>
-      <div id="bookingSuccessMessage" style="display:none; margin-top: 20px; color: #00e676; font-weight: 600; text-align: center;">
-        Your booking request has been sent! We will contact you soon.
-      </div>
-    </div>
-  </div>
-
   <script>
     let currentService = "";
 
@@ -539,11 +509,9 @@
         document.getElementById('revampInclusionPopup').style.display = 'none';
         document.getElementById('inclusionPopup').style.display = 'none';
         document.getElementById('quotePopup').style.display = 'none';
-        document.getElementById('bookingPopup').style.display = 'none';
       }
     });
-
-    // --- Booking Popup Functions ---
-    function openBookingPopup() {
-      document.getElementById("bookingPopup").style.display = "flex";
-                                                                                                                                                                                                                 
+  </script>
+</body>
+        </html>
+        
