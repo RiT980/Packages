@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +20,10 @@
       --secondary-color: #00e676;
       --error-color: #ff3b3b;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent; /* Remove blue tap highlight on mobile */
+    }
     .skip-link { position: absolute; top: -40px; left: 0; background: #000; color: white; padding: 8px; z-index: 1001; text-decoration: none; transition: top 0.2s; }
     .skip-link:focus { top: 0; }
     body {
@@ -257,6 +262,24 @@
     }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:last-child { text-align: right; font-weight: 600; }
+    /* Custom focus styles for interactive buttons and links */
+    .price-btn:focus,
+    .info-btn:focus,
+    .quote-btn:focus,
+    button:focus,
+    a:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px var(--primary-color);
+      border-radius: 25px;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+    .price-btn,
+    .info-btn,
+    .quote-btn,
+    button,
+    a {
+      transition: box-shadow 0.2s ease-in-out;
+    }
   </style>
 </head>
 <body>
@@ -396,8 +419,8 @@
       </div>
     </div>
   </section>
-</main>
-<footer class="site-footer">
+  </main>
+  <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
       <img src="logo.png" alt="A&H Auto Detailer Logo" class="footer-logo" />
@@ -561,8 +584,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-        </div>
-        <script>
+  </div>
+  <script>
   // Price Popup Functions
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
