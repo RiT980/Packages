@@ -349,7 +349,6 @@
   </style>
 </head>
 <body>
-<a href="#main" class="skip-link">Skip to main content</a>
 <header>
   <img src="logo.png" alt="A&H Auto Detailer Logo" loading="lazy" />
   <p class="tagline">Refined car care that comes to you!</p>
@@ -517,7 +516,45 @@
   </div>
 </div>
 
-<!-- Price/Inclusion Popups (add your price popups here, or ask for demo content) -->
+<!-- Revamp Inclusions Popup -->
+<div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="revampInclusionTitle" class="popup-title">A&H Total Revamp Package – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam wash & drying</li>
+      <li>Paint decontamination (claying)</li>
+      <li>One-step paint polish & swirl removal</li>
+      <li>Premium wax or sealant protection</li>
+      <li>Alloy wheel & tire cleaning + dressing</li>
+      <li>Engine bay cleaning</li>
+      <li>Glass & windshield cleaning</li>
+      <li>Deep interior vacuuming (seats, mats, boot)</li>
+      <li>Shampooing of carpets & upholstery</li>
+      <li>Leather seat cleaning & conditioning</li>
+      <li>Dashboard, console & trim cleaning</li>
+      <li>Door jambs & sill cleaning</li>
+      <li>Odor removal & air freshener</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Interior Detailing Inclusions Popup -->
+<div class="popup-overlay" id="inclusionPopup" role="dialog" aria-modal="true" aria-labelledby="inclusionPopupTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('inclusionPopup')" aria-label="Close popup">×</button>
+    <div id="inclusionPopupTitle" class="popup-title">Interior Detailing – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Complete vacuuming (seats, mats, boot)</li>
+      <li>Shampooing of seats, carpets & mats</li>
+      <li>Leather seat cleaning & conditioning</li>
+      <li>Dashboard, console & trim cleaning</li>
+      <li>Door panels & sill cleaning</li>
+      <li>Glass & mirror cleaning (inside)</li>
+      <li>Odor removal & air freshener</li>
+    </ul>
+  </div>
+</div>
 
 <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
@@ -580,7 +617,7 @@
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
         </footer>
-        <script>
+    <script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
@@ -773,6 +810,6 @@
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-        </script>
-        </body>
+    </script>
+    </body>
 </html>
