@@ -1,3 +1,4 @@
+head>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,77 +75,74 @@
       line-height: 1.6;
       margin-bottom: 20px;
     }
+    /* --- Modern Solid Filled Buttons --- */
     .card .card-btn-row {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
-      justify-content: flex-start; /* Align all buttons to the left */
+      justify-content: flex-start;
       margin-top: auto;
       padding-left: 0;
+      flex-wrap: wrap;
+    }
+    .card .card-btn-row button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0 22px;
+      height: 44px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
+      cursor: pointer;
+      outline: none;
+      letter-spacing: 0.1px;
+      min-width: 0;
+      white-space: nowrap;
     }
     .card .quote-btn {
-      min-width: 0;
-      max-width: 120px;
-      padding: 11px 0;
-      font-size: 1rem;
-      border-radius: 18px;
-      background: var(--primary-color);
+      background: linear-gradient(90deg, #25D366 70%, #00e676 100%);
       color: #fff;
-      font-weight: 700;
-      border: 1.5px solid #25D366;
-      box-shadow: 0 2px 12px #25D36633, var(--btn-shadow);
-      flex-shrink: 0;
-      flex-grow: 0;
-      margin: 0;
-    }
-    .card .price-btn,
-    .card .info-btn {
-      min-width: 0;
-      max-width: 90px;
-      padding: 8px 0;
-      font-size: 0.95rem;
-      border-radius: 14px;
-      margin: 0;
-      background: var(--btn-bg);
-      color: #25D366;
-      border: 1.5px solid #25D36677;
-      box-shadow: none;
-      font-weight: 600;
-    }
-    .card .info-btn {
-      color: #fff;
-      border: 1.5px solid #444;
-    }
-    .card .price-btn:hover, .card .info-btn:hover, .card .price-btn:focus, .card .info-btn:focus {
-      background: var(--btn-hover);
-      color: #25D366;
-      border: 1.5px solid #25D366;
-      transform: scale(1.03);
+      box-shadow: 0 2px 12px #25D36633;
     }
     .card .quote-btn:hover, .card .quote-btn:focus {
-      background: #1ed760;
+      background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
       color: #fff;
-      border: 1.5px solid #25D366;
-      transform: scale(1.03);
+      box-shadow: 0 4px 18px #25D36644;
+      transform: translateY(-2px) scale(1.03);
     }
-    .card .quote-btn:active {
-      background: #13b954;
+    .card .price-btn {
+      background: linear-gradient(90deg, #444cf7 60%, #2d7cff 100%);
       color: #fff;
+    }
+    .card .price-btn:hover, .card .price-btn:focus {
+      background: linear-gradient(90deg, #2d7cff 80%, #444cf7 100%);
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .card .info-btn {
+      background: linear-gradient(90deg, #00baff 60%, #00e4ff 100%);
+      color: #fff;
+    }
+    .card .info-btn:hover, .card .info-btn:focus {
+      background: linear-gradient(90deg, #00e4ff 80%, #00baff 100%);
+      color: #fff;
+      transform: translateY(-2px) scale(1.03);
     }
     @media (max-width: 600px) {
-      .pricing-section {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        padding: 12px 2px;
-      }
-      .card {
-        padding: 18px 8px 14px 8px;
-        min-height: 0;
-      }
       .card .card-btn-row {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 8px;
-        align-items: stretch;
+      }
+      .card .card-btn-row button {
+        flex: 1 1 120px;
+        min-width: 90px;
+        font-size: 0.98rem;
+        height: 40px;
+        padding: 0 12px;
       }
     }
     /* --- End Service Cards Improved --- */
@@ -347,7 +345,7 @@
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('A&H Total Revamp Package')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -357,6 +355,7 @@
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -366,6 +365,7 @@
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Paint Correction')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -375,7 +375,7 @@
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Interior Detailing')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">Inclusions</button>
       </div>
     </div>
   </section>
@@ -482,8 +482,6 @@
   </section>
 </main>
 
-<!-- All popups (category selection, inclusions, price, booking) and footer go here, unchanged from previous versions -->
-
 <!-- Car Category Selection Popup -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
   <div class="popup" style="max-width: 520px; padding: 40px 32px;">
@@ -533,20 +531,60 @@
   </div>
 </div>
 
-<!-- Interior Detailing Inclusions Popup -->
+<!-- Wash+Polish+Wax Inclusions Popup -->
+<div class="popup-overlay" id="washInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="washInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('washInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="washInclusionTitle" class="popup-title">Detailed Wash + 1 Step Polish + Wax – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Wheel, tire, and fender cleaning & dressing</li>
+      <li>Door jamb and fuel cap cleaning</li>
+      <li>1-step machine polish (removes light swirls, enhances gloss)</li>
+      <li>Premium wax application for paint protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Final wipe down and inspection</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Paint Correction Inclusions Popup -->
+<div class="popup-overlay" id="paintInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="paintInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('paintInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="paintInclusionTitle" class="popup-title">Paint Correction – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Full paint decontamination (clay bar + iron fallout removal)</li>
+      <li>Multi-stage machine polishing (removes swirls, scratches, oxidation, restores gloss)</li>
+      <li>Premium wax or sealant for paint protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Final inspection and touch-up</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Interior Detailing Inclusions Popup (Improved) -->
 <div class="popup-overlay" id="inclusionPopup" role="dialog" aria-modal="true" aria-labelledby="inclusionPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('inclusionPopup')" aria-label="Close popup">×</button>
     <div id="inclusionPopupTitle" class="popup-title">Interior Detailing – Inclusions</div>
     <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
-      <li>Complete vacuuming (seats, mats, boot)</li>
-      <li>Shampooing of seats, carpets & mats</li>
+      <li>Complete vacuuming of seats, carpets, mats, and boot</li>
+      <li>Shampooing of fabric seats, carpets, and mats for stain and odor removal</li>
       <li>Leather seat cleaning & conditioning (if applicable)</li>
-      <li>Dashboard, console & trim cleaning</li>
-      <li>Door panels & sill cleaning</li>
-      <li>Glass & mirror cleaning (inside)</li>
-      <li>Odor removal & air freshener</li>
+      <li>Cleaning & sanitization of dashboard, console, and center panel</li>
+      <li>Door panel and trim cleaning</li>
+      <li>Cleaning of seat belts, cup holders, and storage compartments</li>
+      <li>Cleaning of air vents and hard-to-reach areas with brushes</li>
+      <li>Interior roof/headliner spot cleaning</li>
+      <li>Interior glass and mirror cleaning (streak-free)</li>
+      <li>Odor neutralization and air freshener treatment</li>
+      <li>Final inspection and touch-up for a spotless finish</li>
     </ul>
+    <p style="color:#bbb; font-size:0.97rem; margin-top:14px;">
+      <b>Note:</b> Leather care and headliner cleaning are performed only if safe for your car’s materials.
+    </p>
   </div>
 </div>
 
@@ -662,18 +700,7 @@
         <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L10 9l6-4.99V4H4zm0 2.236V16h12V6.236l-6 4.99-6-4.99z"></path></svg>
       </a>
       <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.075-.148-.669-1.612-.916-2.205-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.215 3.074.149.198 2.098 3.205 5.077 4.368.71.306 1.263.489 1.696.625.712.227 1.36.196 1.872.119.571-.085 1.758-.719 2.007-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zM10 2C5.589 2 2 5.589 2 10c0 1.768.576 3.41 1.573 4.768L2 18l3.314-1.547C6.59 17.424 8.232 18 10 18c4.411 0 8-3.589 8-8s-3.589-8-8-8z"></path></svg>
-      </a>
-      <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M10 2.2c2.7 0 3.018.01 4.073.06.979.047 1.507.206 1.86.344.45.174.772.383 1.11.721.338.338.547.66.721 1.11.138.353.297.881.344 1.86.05 1.055.06 1.373.06 4.073s-.01 3.018-.06 4.073c-.047.979-.206 1.507-.344 1.86-.174.45-.383.772-.721 1.11-.338.338-.66.547-1.11.721-.353.138-.881.297-1.86.344-1.055.05-1.373.06-4.073.06s-3.018-.01-4.073-.06c-.979-.047-1.507-.206-1.86-.344-.45-.174-.772-.383-1.11-.721-.338-.338-.547-.66-.721-1.11-.138-.353-.297-.881-.344-1.86C2.21 13.018 2.2 12.7 2.2 10s.01-3.018.06-4.073c.047-.979.206-1.507.344-1.86.174-.45.383-.772.721-1.11.338-.338.66-.547 1.11-.721.353-.138.881-.297 1.86-.344C6.982 2.21 7.3 2.2 10 2.2zm0-2.2C7.243 0 6.912.012 5.841.06 4.771.108 4.045.262 3.39.51c-.678.26-1.24.608-1.8 1.168-.56.56-.908 1.122-1.168 1.8C.262 4.045.108 4.771.06 5.841.012 6.912 0 7.243 0 10c0 2.757.012 3.088.06 4.159.048 1.07.202 1.796.45 2.451.26.678.608 1.24 1.168 1.8.56.56 1.122.908 1.8 1.168.655.248 1.381.402 2.451.45C6.912 19.988 7.243 20 10 20c2.757 0 3.088-.012 4.159-.06 1.07-.048 1.796-.202 2.451-.45.678-.26 1.24-.608 1.8-1.168.56-.56.908-1.122 1.168-1.8.248-.655.402-1.381.45-2.451.048-1.07.06-1.401.06-4.159 0-2.757-.012-3.088-.06-4.159-.048-1.07-.202-1.796-.45-2.451-.26-.678-.608-1.24-1.168-1.8-.56-.56-1.122-.908-1.8-1.168-.655-.248-1.381-.402-2.451-.45C13.088.012 12.757 0 10 0zm0 4.838A5.162 5.162 0 0 0 4.838 10 5.162 5.162 0 0 0 10 15.162 5.162 5.162 0 0 0 15.162 10 5.162 5.162 0 0 0 10 4.838zm0 8.524A3.362 3.362 0 0 1 6.638 10 3.362 3.362 0 0 1 10 6.638 3.362 3.362 0 0 1 13.362 10 3.362 3.362 0 0 1 10 13.362zm6.406-10.844a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0z"></path></svg>
-      </a>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
-  </div>
-  </footer>
-      <script>
+        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.075-.148-.669-1.612-.916-2.205-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.215 3.074.149.198 2.098 3.205 5.077 4.368.71.306 1.263.489 1.696.625.712.227 1.36.196 1.872.119.571-.085 1.758-.719 2.007-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zM10 2C5.589 2 2 5.589 2 10c0 1.768.576 <script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
@@ -866,6 +893,7 @@
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-      </script>
-      </body>
-</html>
+        </script>
+          </body>
+        </html>
+          
