@@ -91,6 +91,29 @@
       transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
     }
     .info-btn:hover { background: #1a1a1a; box-shadow: 0 4px 18px #00000044; transform: scale(1.04); }
+    .quote-btn {
+      background: linear-gradient(45deg, var(--primary-color), #1ebe5d);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+    }
+    .quote-btn:hover {
+      background: #25D366;
+      color: #fff;
+      transform: scale(1.04);
+    }
     .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
     .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: linear-gradient(45deg, var(--primary-color), #1ebe5d); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; }
@@ -281,18 +304,21 @@
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
       <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
       <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
+      <button class="quote-btn" onclick="openBookingPopup('A&H Total Revamp Package')">Book Now</button>
     </div>
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
       <div class="price">From ₹1,199*</div>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
       <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
+      <button class="quote-btn" onclick="openBookingPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
     </div>
     <div class="card">
       <h2>Paint Correction</h2>
       <div class="price">From ₹2,999*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
       <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
+      <button class="quote-btn" onclick="openBookingPopup('Paint Correction')">Book Now</button>
     </div>
     <div class="card">
       <h2>Interior Detailing</h2>
@@ -300,6 +326,7 @@
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
       <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
       <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
+      <button class="quote-btn" onclick="openBookingPopup('Interior Detailing')">Book Now</button>
     </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
@@ -568,8 +595,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-</div>
-<script>
+          </div>
+          <script>
   // Price Popup Functions
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
@@ -641,13 +668,24 @@
   }
 
   // Booking Popup
-  function openBookingPopup() {
+  function openBookingPopup(service) {
     document.getElementById("bookingPopup").classList.add('active');
     document.getElementById("bookingForm").reset();
     document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
     document.getElementById("bookingSuccess").style.display = "none";
     setTimeout(() => document.getElementById("custName").focus(), 100);
     trapFocus(document.getElementById("bookingPopup"));
+
+    // Auto-select the service package if provided
+    if (service) {
+      var select = document.getElementById("custPackage");
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === service) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
   }
   function closeBookingPopup() {
     document.getElementById("bookingPopup").classList.remove('active');
