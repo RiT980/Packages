@@ -41,13 +41,48 @@
     .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.08rem; margin-bottom: 8px; }
     .card p { font-size: 0.93rem; color: #ddd; }
-    .quote-btn, .info-btn {
-      margin-top: 12px; padding: 10px 20px; font-size: 0.95rem; border-radius: 25px; cursor: pointer; font-weight: bold; border: none;
-      display: block; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+    .price-btn {
+      background: #222;
+      color: #25D366;
+      font-weight: 700;
+      border: 2px solid #25D366;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
     }
-    .quote-btn { background-color: var(--primary-color); color: white; margin-bottom: 8px; }
-    .quote-btn:hover { background-color: #1ebe5d; }
-    .info-btn { background-color: #333333; color: #fff; border-radius: 32px; font-size: 1.08rem; font-weight: 600; box-shadow: 0 2px 8px #00000033; }
+    .price-btn:hover {
+      background: #25D366;
+      color: #fff;
+      transform: scale(1.04);
+    }
+    .info-btn {
+      background-color: #333333;
+      color: #fff;
+      border-radius: 32px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #00000033;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      max-width: 220px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+    }
     .info-btn:hover { background: #1a1a1a; box-shadow: 0 4px 18px #00000044; transform: scale(1.04); }
     .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
@@ -208,6 +243,20 @@
     .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+    /* Price Table */
+    .price-table {
+      width: 100%;
+      color: #fff;
+      border-collapse: collapse;
+      margin-bottom: 0;
+    }
+    .price-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid #333;
+      font-size: 1.08rem;
+    }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table td:last-child { text-align: right; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -221,36 +270,35 @@
   <section class="pricing-section" aria-label="Service Packages">
     <div class="card">
       <h2>A&H Total Revamp Package</h2>
-      <div class="price">Starting at ₹4,999*</div>
+      <div class="price">From ₹4,999*</div>
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
-      <button class="quote-btn" onclick="openQuotePopup('A&H Total Revamp Package')">Get Quote</button>
+      <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
       <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
     </div>
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
-      <div class="price">Starting at ₹1,499*</div>
+      <div class="price">From ₹1,199*</div>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Detailed Wash + 1 Step Polish + Wax')">Get Quote</button>
+      <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
     </div>
     <div class="card">
       <h2>Paint Correction</h2>
-      <div class="price">Starting at ₹3,499*</div>
+      <div class="price">From ₹2,999*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Paint Correction')">Get Quote</button>
+      <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
     </div>
     <div class="card">
       <h2>Interior Detailing</h2>
-      <div class="price">Starting at ₹1,499*</div>
+      <div class="price">From ₹1,499*</div>
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Interior Detailing')">Get Quote</button>
+      <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
       <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
     </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
-    <section class="cta-section" aria-label="Call to Action">
+  <section class="cta-section" aria-label="Call to Action">
     <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
-    <!-- Removed: <a href="https://wa.me/919818198485" target="_blank" rel="noopener noreferrer">Book Now on WhatsApp</a> -->
     <button class="quote-btn" onclick="openBookingPopup()">Book Now</button>
   </section>
   <section class="faq-section" aria-label="Frequently Asked Questions">
@@ -372,23 +420,60 @@
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
 </footer>
-<!-- Quote Popup -->
-<div class="popup-overlay" id="quotePopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+
+<!-- Price Popups -->
+<div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
   <div class="popup">
-    <button class="close-btn" onclick="closePopup()" aria-label="Close popup">×</button>
-    <div id="popupTitle" class="popup-title">Enter your car model & location to proceed.</div>
-    <form id="quoteForm" onsubmit="return false;">
-      <label for="carModel" class="visually-hidden">Car Model</label>
-      <input type="text" id="carModel" placeholder="Car Model" autocomplete="off" required>
-      <div class="error-message" id="carModelError"></div>
-      <label for="location" class="visually-hidden">Location</label>
-      <input type="text" id="location" placeholder="Location" autocomplete="off" required>
-      <div class="error-message" id="locationError"></div>
-      <button class="quote-btn" id="sendBtn" type="button" onclick="sendWhatsApp()">Send on WhatsApp</button>
-      <div class="success-message" id="successMessage">Your request has been sent! We will contact you soon.</div>
-    </form>
+    <button class="close-btn" onclick="closePricePopup('revampPricePopup')" aria-label="Close popup">×</button>
+    <div id="revampPriceTitle" class="popup-title">A&H Total Revamp Package Pricing</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹4,999</td></tr>
+      <tr><td>Sedan</td><td>₹5,999</td></tr>
+      <tr><td>Compact SUV</td><td>₹6,999</td></tr>
+      <tr><td>Full Size SUV</td><td>₹8,499</td></tr>
+    </table>
   </div>
 </div>
+<div class="popup-overlay" id="washPricePopup" role="dialog" aria-modal="true" aria-labelledby="washPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('washPricePopup')" aria-label="Close popup">×</button>
+    <div id="washPriceTitle" class="popup-title">Detailed Wash + 1 Step Polish + Wax Pricing</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹1,199</td></tr>
+      <tr><td>Sedan</td><td>₹1,499</td></tr>
+      <tr><td>Compact SUV</td><td>₹1,799</td></tr>
+      <tr><td>Full Size SUV</td><td>₹2,499</td></tr>
+    </table>
+  </div>
+</div>
+<div class="popup-overlay" id="paintPricePopup" role="dialog" aria-modal="true" aria-labelledby="paintPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('paintPricePopup')" aria-label="Close popup">×</button>
+    <div id="paintPriceTitle" class="popup-title">Paint Correction Pricing</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹2,999</td></tr>
+      <tr><td>Sedan</td><td>₹3,499</td></tr>
+      <tr><td>Compact SUV</td><td>₹3,999</td></tr>
+      <tr><td>Full Size SUV</td><td>₹5,499</td></tr>
+    </table>
+  </div>
+</div>
+<div class="popup-overlay" id="interiorPricePopup" role="dialog" aria-modal="true" aria-labelledby="interiorPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('interiorPricePopup')" aria-label="Close popup">×</button>
+    <div id="interiorPriceTitle" class="popup-title">Interior Detailing Pricing</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹1,499</td></tr>
+      <tr><td>Sedan</td><td>₹1,999</td></tr>
+      <tr><td>Compact SUV</td><td>₹2,499</td></tr>
+      <tr><td>Full Size SUV</td><td>₹2,799</td></tr>
+      <tr><td>Luxury Sedan</td><td>₹2,799</td></tr>
+      <tr><td>Luxury Compact SUV</td><td>₹3,199</td></tr>
+      <tr><td>Luxury Full Size SUV</td><td>₹3,999</td></tr>
+    </table>
+  </div>
+</div>
+
 <!-- Revamp Inclusions Popup -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampPopupTitle">
   <div class="popup">
@@ -476,70 +561,24 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-</div>
-<script>
-  const WHATSAPP_NUMBER = '919818198485';
-  let currentService = "";
+        </div>
+        <script>
+  // Price Popup Functions
+  function openPricePopup(id) {
+    document.getElementById(id).classList.add('active');
+    trapFocus(document.getElementById(id));
+  }
+  function closePricePopup(id) {
+    document.getElementById(id).classList.remove('active');
+  }
 
-  function openQuotePopup(service) {
-    currentService = service;
-    document.getElementById("quotePopup").classList.add('active');
-    document.getElementById("carModel").value = "";
-    document.getElementById("location").value = "";
-    document.getElementById("carModelError").style.display = "none";
-    document.getElementById("locationError").style.display = "none";
-    document.getElementById("successMessage").style.display = "none";
-    document.getElementById("carModel").disabled = false;
-    document.getElementById("location").disabled = false;
-    document.getElementById("sendBtn").disabled = false;
-    setTimeout(() => {
-      document.getElementById("carModel").focus();
-    }, 100);
-    trapFocus(document.getElementById("quotePopup"));
-  }
-  function closePopup() {
-    document.getElementById("quotePopup").classList.remove('active');
-  }
+  // Inclusion Popups
   function openInclusionPopup(id) {
     document.getElementById(id).classList.add('active');
     trapFocus(document.getElementById(id));
   }
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
-  }
-  function sendWhatsApp() {
-    const car = document.getElementById("carModel").value.trim();
-    const loc = document.getElementById("location").value.trim();
-    let valid = true;
-    if (!car) {
-      document.getElementById("carModelError").textContent = "Please enter your car model";
-      document.getElementById("carModelError").style.display = "block";
-      valid = false;
-    } else {
-      document.getElementById("carModelError").style.display = "none";
-    }
-    if (!loc) {
-      document.getElementById("locationError").textContent = "Please enter your location";
-      document.getElementById("locationError").style.display = "block";
-      valid = false;
-    } else {
-      document.getElementById("locationError").style.display = "none";
-    }
-    if (!valid) return;
-    const msg = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-    document.getElementById("successMessage").style.display = "block";
-    document.getElementById("carModel").disabled = true;
-    document.getElementById("location").disabled = true;
-    document.getElementById("sendBtn").disabled = true;
-    setTimeout(() => {
-      document.getElementById("successMessage").style.display = "none";
-      closePopup();
-      document.getElementById("carModel").disabled = false;
-      document.getElementById("location").disabled = false;
-      document.getElementById("sendBtn").disabled = false;
-    }, 3000);
   }
 
   // FAQ Tiles iPhone-style
@@ -639,7 +678,7 @@
       `Preferred Date: ${date}%0A` +
       `Preferred Time: ${time}`;
 
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+    const url = `https://wa.me/919818198485?text=${msg}`;
 
     window.open(url, "_blank");
 
