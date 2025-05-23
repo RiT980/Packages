@@ -1,3 +1,5 @@
+div>
+  </div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,10 +81,22 @@
     }
     .faq-tile.open .faq-arrow { transform: rotate(-135deg); }
     .faq-tile-answer {
-      background: #232323; color: #bbb; font-size: 0.97rem; padding: 0 24px 18px 32px; max-height: 0;
-      overflow: hidden; transition: max-height 0.4s cubic-bezier(.22,.61,.36,1), padding 0.3s;
+      background: #232323;
+      color: #bbb;
+      font-size: 0.97rem;
+      padding: 0 24px 0 32px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: max-height 0.4s cubic-bezier(.22,.61,.36,1), padding 0.3s, opacity 0.2s;
     }
-    .faq-tile.open .faq-tile-answer { max-height: 400px; padding: 0 24px 18px 32px; }
+    .faq-tile.open .faq-tile-answer {
+      max-height: 400px;
+      padding: 12px 24px 18px 32px;
+      opacity: 1;
+      pointer-events: auto;
+    }
     /* Popups and Overlays */
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
     .popup-overlay.active { display: flex; }
