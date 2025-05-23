@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -615,8 +617,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-      </div>
-      <script>
+</div>
+<script>
   // Price Popup Functions
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
@@ -698,12 +700,12 @@
     return `${hour}:${minute} ${ampm}`;
   }
 
-  // Convert YYYY-MM-DD to DD MM YYYY
+  // Convert YYYY-MM-DD to DD/MM/YYYY
   function formatDateToDDMMYYYY(dateStr) {
     if (!dateStr) return "";
     const parts = dateStr.split("-");
     if (parts.length !== 3) return dateStr;
-    return `${parts[2]} ${parts[1]} ${parts[0]}`;
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
   }
 
   // Booking Popup
