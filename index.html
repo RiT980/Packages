@@ -176,6 +176,46 @@
       font-size: 1rem;
       margin-bottom: 14px;
       text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .info-icon {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+      user-select: none;
+      margin-left: 4px;
+      outline: none;
+    }
+    .info-icon:focus {
+      outline: 2px solid var(--primary-color);
+    }
+    .tooltip {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      color: #eee;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 260px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+      text-align: left;
+    }
+    .info-icon:focus .tooltip,
+    .info-icon:hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
     }
     /* Popups and Overlays */
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
@@ -287,8 +327,63 @@
     <p>Contact us now for premium doorstep detailing!</p>
     <a href="https://wa.me/919818198485" target="_blank" rel="noopener noreferrer">Book Now on WhatsApp</a>
     <button class="quote-btn" onclick="openBookingPopup()">Book Now</button>
-        </section>
-          <section class="faq-section" aria-label="Frequently Asked Questions">
+  </section>
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <!-- ...FAQ tiles as in previous part 2... -->
+    <!-- (Paste the FAQ tiles from previous part 2 here) -->
+  </section>
+</main>
+<footer class="site-footer">
+  <!-- ...footer as in previous part 2... -->
+</footer>
+<!-- ...all popups as in previous part 2... -->
+<!-- Booking Popup with info icon -->
+<div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
+    <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
+    <p class="booking-instructions">
+      After you fill the form and click <b>Submit Booking</b>, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
+      <span class="info-icon" tabindex="0" aria-describedby="bookingInfo" role="button" aria-label="Booking information">ℹ️
+        <span class="tooltip" role="tooltip" id="bookingInfo">
+          Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
+        </span>
+      </span>
+    </p>
+    <form id="bookingForm" onsubmit="return false;">
+      <label for="custName" class="visually-hidden">Name</label>
+      <input type="text" id="custName" placeholder="Your Name" required>
+      <div class="error-message" id="custNameError"></div>
+      <label for="custAddress" class="visually-hidden">Address</label>
+      <input type="text" id="custAddress" placeholder="Address" required>
+      <div class="error-message" id="custAddressError"></div>
+      <label for="custCar" class="visually-hidden">Car Model</label>
+      <input type="text" id="custCar" placeholder="Car Model" required>
+      <div class="error-message" id="custCarError"></div>
+      <label for="custPackage" class="visually-hidden">Service Package</label>
+      <select id="custPackage" required>
+        <option value="">Select Service Package</option>
+        <option>A&H Total Revamp Package</option>
+        <option>Detailed Wash + 1 Step Polish + Wax</option>
+        <option>Paint Correction</option>
+        <option>Interior Detailing</option>
+      </select>
+      <div class="error-message" id="custPackageError"></div>
+      <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select date</label>
+      <input type="date" id="custDate" required>
+      <div class="error-message" id="custDateError"></div>
+      <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select time</label>
+      <input type="time" id="custTime" required>
+      <div class="error-message" id="custTimeError"></div>
+      <button class="quote-btn" id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
+      <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
+        <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
+      </p>
+      <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
+    </form>
+  </div>
+</div>
+  <section class="faq-section" aria-label="Frequently Asked Questions">
     <h2>FAQs</h2>
     <div class="faq-tiles">
       <div class="faq-tile">
@@ -474,13 +569,18 @@
     </ul>
   </div>
 </div>
-<!-- Booking Popup with instructions -->
+<!-- Booking Popup with info icon -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
     <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
     <p class="booking-instructions">
       After you fill the form and click <b>Submit Booking</b>, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
+      <span class="info-icon" tabindex="0" aria-describedby="bookingInfo" role="button" aria-label="Booking information">ℹ️
+        <span class="tooltip" role="tooltip" id="bookingInfo">
+          Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
+        </span>
+      </span>
     </p>
     <form id="bookingForm" onsubmit="return false;">
       <label for="custName" class="visually-hidden">Name</label>
@@ -514,8 +614,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-  </div>
-  <script>
+</div>
+<script>
   const WHATSAPP_NUMBER = '919818198485';
   let currentService = "";
 
