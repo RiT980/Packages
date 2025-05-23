@@ -194,28 +194,45 @@
     .info-icon:focus {
       outline: 2px solid var(--primary-color);
     }
-    .tooltip {
-      position: absolute;
-      bottom: 125%;
+    /* Guidance Popup */
+    .guidance-popup {
+      display: none;
+      position: fixed;
       left: 50%;
+      bottom: 40px;
       transform: translateX(-50%);
-      background: #222;
-      color: #eee;
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      width: 260px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-      text-align: left;
+      background: #e8f9f1;
+      color: #222;
+      padding: 18px 30px 18px 18px;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 1px 4px #0001;
+      font-size: 1.08rem;
+      z-index: 2001;
+      min-width: 250px;
+      max-width: 90vw;
+      border-left: 6px solid #25D366;
+      align-items: center;
+      gap: 14px;
+      animation: fadeIn 0.2s;
     }
-    .info-icon:focus .tooltip,
-    .info-icon:hover .tooltip {
-      opacity: 1;
-      pointer-events: auto;
+    .guidance-popup.show {
+      display: flex;
+    }
+    .guidance-icon {
+      font-size: 1.45rem;
+      margin-right: 12px;
+      color: #25D366;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .guidance-popup {
+        font-size: 0.98rem;
+        padding: 14px 16px 14px 12px;
+        left: 50%;
+        bottom: 18px;
+        min-width: 160px;
+      }
+      .guidance-icon { font-size: 1.2rem; margin-right: 8px; }
     }
     /* Popups and Overlays */
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
@@ -253,35 +270,6 @@
     .error-message { color: var(--error-color); font-size: 0.93rem; margin-bottom: 8px; display: none; }
     .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 700px) {
-      .footer-container {
-        flex-direction: column;
-        gap: 18px;
-        padding: 0 8px;
-      }
-      .footer-links {
-        gap: 18px;
-      }
-      .footer-logo {
-        width: 36px;
-        height: 36px;
-      }
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.45rem; }
-      .card { padding: 12px; }
-      .pricing-section { gap: 16px; }
-      header img { max-height: 54px; }
-      .popup { padding: 44px 16px 20px 28px; }
-      .close-btn {
-        top: 8px;
-        right: 8px;
-        height: 36px;
-        min-width: 36px;
-        font-size: 1.1rem;
-        padding: 0 10px;
-      }
-    }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
   </style>
 </head>
@@ -329,59 +317,18 @@
     <button class="quote-btn" onclick="openBookingPopup()">Book Now</button>
   </section>
   <section class="faq-section" aria-label="Frequently Asked Questions">
-    <!-- ...FAQ tiles as in previous part 2... -->
-    <!-- (Paste the FAQ tiles from previous part 2 here) -->
+    <!-- ...FAQ tiles as above... -->
+    <!-- (Paste the FAQ tiles from above here) -->
   </section>
 </main>
 <footer class="site-footer">
-  <!-- ...footer as in previous part 2... -->
+  <!-- ...footer as above... -->
 </footer>
-<!-- ...all popups as in previous part 2... -->
-<!-- Booking Popup with info icon -->
-<div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
-  <div class="popup">
-    <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
-    <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
-    <p class="booking-instructions">
-      After you fill the form and click <b>Submit Booking</b>, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
-      <span class="info-icon" tabindex="0" aria-describedby="bookingInfo" role="button" aria-label="Booking information">ℹ️
-        <span class="tooltip" role="tooltip" id="bookingInfo">
-          Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
-        </span>
-      </span>
-    </p>
-    <form id="bookingForm" onsubmit="return false;">
-      <label for="custName" class="visually-hidden">Name</label>
-      <input type="text" id="custName" placeholder="Your Name" required>
-      <div class="error-message" id="custNameError"></div>
-      <label for="custAddress" class="visually-hidden">Address</label>
-      <input type="text" id="custAddress" placeholder="Address" required>
-      <div class="error-message" id="custAddressError"></div>
-      <label for="custCar" class="visually-hidden">Car Model</label>
-      <input type="text" id="custCar" placeholder="Car Model" required>
-      <div class="error-message" id="custCarError"></div>
-      <label for="custPackage" class="visually-hidden">Service Package</label>
-      <select id="custPackage" required>
-        <option value="">Select Service Package</option>
-        <option>A&H Total Revamp Package</option>
-        <option>Detailed Wash + 1 Step Polish + Wax</option>
-        <option>Paint Correction</option>
-        <option>Interior Detailing</option>
-      </select>
-      <div class="error-message" id="custPackageError"></div>
-      <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select date</label>
-      <input type="date" id="custDate" required>
-      <div class="error-message" id="custDateError"></div>
-      <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select time</label>
-      <input type="time" id="custTime" required>
-      <div class="error-message" id="custTimeError"></div>
-      <button class="quote-btn" id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
-      <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
-        <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
-      </p>
-      <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
-    </form>
-  </div>
+<!-- ...all popups as above... -->
+<!-- Guidance Popup -->
+<div id="guidancePopup" class="guidance-popup" role="status" aria-live="polite" aria-atomic="true">
+  <span class="guidance-icon" aria-hidden="true">ℹ️</span>
+  <span id="guidancePopupText">Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!</span>
 </div>
   <section class="faq-section" aria-label="Frequently Asked Questions">
     <h2>FAQs</h2>
@@ -576,10 +523,9 @@
     <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
     <p class="booking-instructions">
       After you fill the form and click <b>Submit Booking</b>, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
-      <span class="info-icon" tabindex="0" aria-describedby="bookingInfo" role="button" aria-label="Booking information">ℹ️
-        <span class="tooltip" role="tooltip" id="bookingInfo">
-          Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
-        </span>
+      <span class="info-icon" tabindex="0" role="button" aria-label="Booking information" onclick="showGuidancePopup()"
+        onkeydown="if(event.key==='Enter'||event.key===' '){showGuidancePopup();}">
+        ℹ️
       </span>
     </p>
     <form id="bookingForm" onsubmit="return false;">
@@ -614,6 +560,11 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
+</div>
+<!-- Guidance Popup -->
+<div id="guidancePopup" class="guidance-popup" role="status" aria-live="polite" aria-atomic="true">
+  <span class="guidance-icon" aria-hidden="true">ℹ️</span>
+  <span id="guidancePopupText">Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!</span>
 </div>
 <script>
   const WHATSAPP_NUMBER = '919818198485';
@@ -789,6 +740,25 @@
       document.getElementById("bookNowBtn").disabled = false;
     }, 3000);
   }
+
+  // Guidance Popup logic
+  function showGuidancePopup() {
+    const popup = document.getElementById('guidancePopup');
+    popup.classList.add('show');
+    clearTimeout(window.guidancePopupTimeout);
+    window.guidancePopupTimeout = setTimeout(() => {
+      popup.classList.remove('show');
+    }, 4000);
+  }
+  document.addEventListener('click', function(e) {
+    const popup = document.getElementById('guidancePopup');
+    if (popup.classList.contains('show')) {
+      const infoIcon = document.querySelector('.info-icon');
+      if (!popup.contains(e.target) && !infoIcon.contains(e.target)) {
+        popup.classList.remove('show');
+      }
+    }
+  });
 </script>
 </body>
 </html>
