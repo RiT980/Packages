@@ -111,7 +111,6 @@
       border-color: #444;
       box-shadow: none;
     }
-
     /* iPhone 16-style Car Category Cards */
     .car-category-card {
       background: var(--btn-bg);
@@ -513,20 +512,12 @@
       <button class="car-category-card" data-category="Luxury Sedan" data-price="₹8,999" onclick="selectCarCategory(this)">
         <strong>Luxury Sedan</strong><small>₹8,999</small>
       </button>
-      <!-- Add more categories as needed -->
     </div>
     <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;" onclick="confirmCarCategory()">Confirm</button>
   </div>
 </div>
 
-<!-- Price Popups (unchanged, add your price popups here) -->
-<!-- ...revampPricePopup, washPricePopup, paintPricePopup, interiorPricePopup... -->
-
-<!-- Revamp Inclusions Popup (unchanged) -->
-<!-- ... -->
-
-<!-- Interior Inclusions Popup (unchanged) -->
-<!-- ... -->
+<!-- Price/Inclusion Popups (add your price popups here, or ask for demo content) -->
 
 <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
@@ -575,15 +566,12 @@
     <nav class="footer-links">
       <a href="/privacy">Privacy Policy</a>
       <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">
-        <!-- Email SVG icon here -->
         <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L10 9l6-4.99V4H4zm0 2.236V16h12V6.236l-6 4.99-6-4.99z"></path></svg>
       </a>
       <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">
-        <!-- WhatsApp SVG icon here -->
         <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.075-.148-.669-1.612-.916-2.205-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.215 3.074.149.198 2.098 3.205 5.077 4.368.71.306 1.263.489 1.696.625.712.227 1.36.196 1.872.119.571-.085 1.758-.719 2.007-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zM10 2C5.589 2 2 5.589 2 10c0 1.768.576 3.41 1.573 4.768L2 18l3.314-1.547C6.59 17.424 8.232 18 10 18c4.411 0 8-3.589 8-8s-3.589-8-8-8z"></path></svg>
       </a>
       <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-        <!-- Instagram SVG icon here -->
         <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M10 2.2c2.7 0 3.018.01 4.073.06.979.047 1.507.206 1.86.344.45.174.772.383 1.11.721.338.338.547.66.721 1.11.138.353.297.881.344 1.86.05 1.055.06 1.373.06 4.073s-.01 3.018-.06 4.073c-.047.979-.206 1.507-.344 1.86-.174.45-.383.772-.721 1.11-.338.338-.66.547-1.11.721-.353.138-.881.297-1.86.344-1.055.05-1.373.06-4.073.06s-3.018-.01-4.073-.06c-.979-.047-1.507-.206-1.86-.344-.45-.174-.772-.383-1.11-.721-.338-.338-.547-.66-.721-1.11-.138-.353-.297-.881-.344-1.86C2.21 13.018 2.2 12.7 2.2 10s.01-3.018.06-4.073c.047-.979.206-1.507.344-1.86.174-.45.383-.772.721-1.11.338-.338.66-.547 1.11-.721.353-.138.881-.297 1.86-.344C6.982 2.21 7.3 2.2 10 2.2zm0-2.2C7.243 0 6.912.012 5.841.06 4.771.108 4.045.262 3.39.51c-.678.26-1.24.608-1.8 1.168-.56.56-.908 1.122-1.168 1.8C.262 4.045.108 4.771.06 5.841.012 6.912 0 7.243 0 10c0 2.757.012 3.088.06 4.159.048 1.07.202 1.796.45 2.451.26.678.608 1.24 1.168 1.8.56.56 1.122.908 1.8 1.168.655.248 1.381.402 2.451.45C6.912 19.988 7.243 20 10 20c2.757 0 3.088-.012 4.159-.06 1.07-.048 1.796-.202 2.451-.45.678-.26 1.24-.608 1.8-1.168.56-.56.908-1.122 1.168-1.8.248-.655.402-1.381.45-2.451.048-1.07.06-1.401.06-4.159 0-2.757-.012-3.088-.06-4.159-.048-1.07-.202-1.796-.45-2.451-.26-.678-.608-1.24-1.168-1.8-.56-.56-1.122-.908-1.8-1.168-.655-.248-1.381-.402-2.451-.45C13.088.012 12.757 0 10 0zm0 4.838A5.162 5.162 0 0 0 4.838 10 5.162 5.162 0 0 0 10 15.162 5.162 5.162 0 0 0 15.162 10 5.162 5.162 0 0 0 10 4.838zm0 8.524A3.362 3.362 0 0 1 6.638 10 3.362 3.362 0 0 1 10 6.638 3.362 3.362 0 0 1 13.362 10 3.362 3.362 0 0 1 10 13.362zm6.406-10.844a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0z"></path></svg>
       </a>
     </nav>
@@ -785,6 +773,6 @@
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-</script>
-</body>
+        </script>
+        </body>
 </html>
