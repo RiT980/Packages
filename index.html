@@ -1,4 +1,3 @@
-head>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +11,9 @@ head>
     :root {
       --primary-color: #25D366;
       --secondary-color: #00e676;
-      --error-color: #ff3b3b;
       --btn-bg: rgba(255,255,255,0.07);
-      --btn-glass: rgba(255,255,255,0.15);
-      --btn-border: rgba(255,255,255,0.24);
-      --btn-shadow: 0 2px 8px 0 rgba(0,0,0,0.13), 0 1.5px 3px 0 rgba(37,211,102,0.12);
-      --btn-hover: rgba(37,211,102,0.11);
-      --btn-active: rgba(37,211,102,0.17);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter',sans-serif; -webkit-tap-highlight-color: transparent; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter',sans-serif; }
     body {
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
       background-size: cover;
@@ -34,10 +27,8 @@ head>
     header { text-align: center; padding: 20px 0 0 0; }
     header img { max-height: 70px; width: auto; display: block; margin: 0 auto 8px auto; }
     .tagline { text-align: center; font-size: 0.85rem; color: #bbb; margin-bottom: 22px; }
-    main { display: block; width: 100%; }
+    main { width: 100%; }
     h1 { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; margin-top: 0; }
-
-    /* --- Service Cards Improved --- */
     .pricing-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -52,14 +43,13 @@ head>
       padding: 28px 28px 22px 28px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.7);
       border: 1.5px solid rgba(0,230,118,0.13);
-      min-height: 370px;
+      min-height: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
     .card h2 {
       font-size: 1.08rem;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       color: #fff;
       font-weight: 700;
     }
@@ -67,22 +57,21 @@ head>
       color: var(--secondary-color);
       font-weight: 700;
       font-size: 1.11rem;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .card p {
       font-size: 0.97rem;
       color: #ddd;
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 8px;
     }
-    /* --- Modern Solid Filled Buttons --- */
     .card .card-btn-row {
       display: flex;
+      flex-direction: row;
       gap: 12px;
       align-items: center;
       justify-content: flex-start;
-      margin-top: auto;
-      padding-left: 0;
+      margin-top: 16px;
       flex-wrap: wrap;
     }
     .card .card-btn-row button {
@@ -133,204 +122,52 @@ head>
       transform: translateY(-2px) scale(1.03);
     }
     @media (max-width: 600px) {
-      .card .card-btn-row {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
+      .pricing-section { grid-template-columns: 1fr; gap: 22px; padding: 12px 2px; }
+      .card { padding: 18px 8px 14px 8px; }
+      .card .card-btn-row { flex-wrap: wrap; gap: 8px; }
       .card .card-btn-row button {
-        flex: 1 1 120px;
-        min-width: 90px;
-        font-size: 0.98rem;
-        height: 40px;
-        padding: 0 12px;
+        flex: 1 1 120px; min-width: 90px; font-size: 0.98rem; height: 40px; padding: 0 12px;
       }
-    }
-    /* --- End Service Cards Improved --- */
-
-    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
-    .cta-section h2 { font-size: 2rem; }
-    .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-bg); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; border: 1.5px solid #25D366; }
-    .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
-    .site-footer {
-      background: #15191e;
-      color: #e0e0e0;
-      padding: 36px 0 0 0;
-      margin-top: 60px;
-      font-size: 1rem;
-      border-top: 1px solid #222;
-    }
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .footer-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: #fff;
-      object-fit: contain;
-      border: 1.5px solid #222;
-      box-shadow: 0 2px 8px #0002;
-    }
-    .footer-title {
-      font-weight: 700;
-      font-size: 1.18rem;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      color: #a0eec0;
-      text-decoration: none;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover {
-      color: #25D366;
-    }
-    .footer-bottom {
-      text-align: center;
-      color: #8aa;
-      font-size: 0.97rem;
-      padding: 18px 0 12px 0;
-      margin-top: 18px;
-      border-top: 1px solid #232323;
-      background: #15191e;
-    }
-    @media (max-width: 700px) {
-      .footer-container {
-        flex-direction: column;
-        gap: 18px;
-        padding: 0 8px;
-      }
-      .footer-links {
-        gap: 18px;
-      }
-      .footer-logo {
-        width: 36px;
-        height: 36px;
-      }
-    }
-    .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
-    .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
-    .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
-    .faq-tile {
-      background: #181818;
-      border-radius: 18px;
-      box-shadow: 0 2px 10px #0004;
-      padding: 0;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-    .faq-tile.open { box-shadow: 0 4px 18px #25D36633, 0 2px 10px #0004; }
-    .faq-tile-question {
-      width: 100%; background: none; border: none; outline: none; color: #fff; font-size: 1.07rem; font-weight: 600;
-      padding: 20px 20px 20px 26px; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; transition: background 0.18s;
-    }
-    .faq-tile-question:hover, .faq-tile-question:focus { background: #232323; }
-    .faq-arrow {
-      display: inline-block; margin-left: 12px; transition: transform 0.3s; border: solid #00e676; border-width: 0 3px 3px 0; padding: 4px; transform: rotate(45deg);
-    }
-    .faq-tile.open .faq-arrow { transform: rotate(-135deg); }
-    .faq-tile-answer {
-      background: #232323;
-      color: #bbb;
-      font-size: 0.97rem;
-      padding: 0 24px 0 32px;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transition: max-height 0.4s cubic-bezier(.22,.61,.36,1), padding 0.3s, opacity 0.2s;
-    }
-    .faq-tile.open .faq-tile-answer {
-      max-height: 400px;
-      padding: 12px 24px 18px 32px;
-      opacity: 1;
-      pointer-events: auto;
     }
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
     .popup-overlay.active { display: flex; }
-    .popup {
-      background: #222;
-      border-radius: 28px;
-      box-shadow: 0 8px 40px #000a, 0 0 0 1px #222;
-      color: #f4f4f4;
-      max-width: 480px;
-      width: 95vw;
-      max-height: 80vh;
-      padding: 64px 32px 44px 36px;
-      position: relative;
-      animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
-      overflow-y: auto;
-      box-sizing: border-box;
-    }
+    .popup { background: #222; border-radius: 28px; box-shadow: 0 8px 40px #000a, 0 0 0 1px #222; color: #f4f4f4; max-width: 480px; width: 95vw; max-height: 80vh; padding: 64px 32px 44px 36px; position: relative; overflow-y: auto; box-sizing: border-box; }
     .popup-title { margin-bottom: 28px; color: #fff; font-size: 1.25rem; font-weight: 600; text-align: left; letter-spacing: 0.2px; }
-    .popup input[type="text"], .popup input[type="date"], .popup input[type="time"] {
-      display: block; width: 100%; margin-bottom: 10px; padding: 17px 18px; border-radius: 12px; border: none; font-size: 1.13rem;
-      background: #fff; color: #222; box-shadow: 0 2px 8px #0001; outline: none; transition: box-shadow 0.18s;
-    }
-    .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus {
-      box-shadow: 0 0 0 2px #25D36699;
-    }
-    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--primary-color); color: #fff; font-weight: 700; border: 1.5px solid #25D366; box-shadow: 0 2px 12px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
-    .popup .quote-btn:hover { background: #1ed760; color: #fff; box-shadow: 0 4px 18px #25D36644; }
-    .close-btn {
-      position: absolute; top: 18px; right: 22px; background: var(--error-color); color: #fff; border: none; border-radius: 50px; padding: 0 18px;
-      height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2;
-    }
+    .close-btn { position: absolute; top: 18px; right: 22px; background: #ff3b3b; color: #fff; border: none; border-radius: 50px; padding: 0 18px; height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2; }
     .close-btn:hover { background: #dd2222; transform: scale(1.06); }
-    .error-message { color: var(--error-color); font-size: 0.93rem; margin-bottom: 8px; display: none; }
-    .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
-    .price-table {
-      width: 100%;
-      color: #fff;
-      border-collapse: collapse;
-      margin-bottom: 0;
-    }
-    .price-table td {
-      padding: 8px 0;
-      border-bottom: 1px solid #333;
-      font-size: 1.08rem;
-    }
+    .price-table { width: 100%; color: #fff; border-collapse: collapse; margin-bottom: 0; }
+    .price-table td { padding: 8px 0; border-bottom: 1px solid #333; font-size: 1.08rem; }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:last-child { text-align: right; font-weight: 600; }
-    #chosenPackage, #chosenCarCategory {
-      font-weight: 700;
-      color: #dcdcdc;
-      background: #222;
-      border: 1.5px solid #555;
-      border-radius: 12px;
-      padding: 14px 18px;
-      margin-bottom: 12px;
-      text-align: center;
-      box-shadow: 0 0 8px #44444488;
-      font-size: 1.1rem;
-      user-select: none;
+    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
+    .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
+    .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
+    .faq-tile { background: #181818; border-radius: 18px; box-shadow: 0 2px 10px #0004; padding: 0; overflow: hidden; }
+    .faq-tile-question { width: 100%; background: none; border: none; color: #fff; font-size: 1.07rem; font-weight: 600; padding: 20px 20px 20px 26px; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
+    .faq-arrow { display: inline-block; margin-left: 12px; transition: transform 0.3s; border: solid #00e676; border-width: 0 3px 3px 0; padding: 4px; transform: rotate(45deg);}
+    .faq-tile.open .faq-arrow { transform: rotate(-135deg);}
+    .faq-tile-answer { background: #232323; color: #bbb; font-size: 0.97rem; padding: 0 24px 0 32px; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height 0.4s, padding 0.3s, opacity 0.2s;}
+    .faq-tile.open .faq-tile-answer { max-height: 400px; padding: 12px 24px 18px 32px; opacity: 1; pointer-events: auto;}
+    .site-footer { background: #15191e; color: #e0e0e0; padding: 36px 0 0 0; margin-top: 60px; font-size: 1rem; border-top: 1px solid #222; }
+    .footer-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo { width: 44px; height: 44px; border-radius: 12px; background: #fff; object-fit: contain; border: 1.5px solid #222; box-shadow: 0 2px 8px #0002; }
+    .footer-title { font-weight: 700; font-size: 1.18rem; color: #fff; letter-spacing: 1px; }
+    .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #a0eec0; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .footer-links a:hover { color: #25D366; }
+    .footer-bottom { text-align: center; color: #8aa; font-size: 0.97rem; padding: 18px 0 12px 0; margin-top: 18px; border-top: 1px solid #232323; background: #15191e; }
+    @media (max-width: 700px) {
+      .footer-container { flex-direction: column; gap: 18px; padding: 0 8px; }
+      .footer-links { gap: 18px; }
+      .footer-logo { width: 36px; height: 36px; }
     }
   </style>
 </head>
-  <body>
+<body>
 <header>
   <img src="logo.png" alt="A&H Auto Detailer Logo" loading="lazy" />
   <p class="tagline">Refined car care that comes to you!</p>
@@ -345,7 +182,7 @@ head>
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('A&H Total Revamp Package')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -355,7 +192,7 @@ head>
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">See Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -365,7 +202,7 @@ head>
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Paint Correction')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">See Inclusions</button>
       </div>
     </div>
     <div class="card">
@@ -375,7 +212,7 @@ head>
       <div class="card-btn-row">
         <button class="quote-btn" onclick="openBookingPopup('Interior Detailing')">Book Now</button>
         <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
       </div>
     </div>
   </section>
@@ -482,32 +319,7 @@ head>
   </section>
 </main>
 
-<!-- Car Category Selection Popup -->
-<div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
-  <div class="popup" style="max-width: 520px; padding: 40px 32px;">
-    <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
-    <h2 id="carCategoryPopupTitle" class="popup-title">Select Your Car Category</h2>
-    <div class="car-category-grid">
-      <button class="car-category-card" data-category="Hatchback" data-price="₹4,999" onclick="selectCarCategory(this)">
-        <strong>Hatchback</strong><small>₹4,999</small>
-      </button>
-      <button class="car-category-card" data-category="Sedan" data-price="₹5,999" onclick="selectCarCategory(this)">
-        <strong>Sedan</strong><small>₹5,999</small>
-      </button>
-      <button class="car-category-card" data-category="Compact SUV" data-price="₹6,999" onclick="selectCarCategory(this)">
-        <strong>Compact SUV</strong><small>₹6,999</small>
-      </button>
-      <button class="car-category-card" data-category="Full Size SUV" data-price="₹8,499" onclick="selectCarCategory(this)">
-        <strong>Full Size SUV</strong><small>₹8,499</small>
-      </button>
-      <button class="car-category-card" data-category="Luxury Sedan" data-price="₹8,999" onclick="selectCarCategory(this)">
-        <strong>Luxury Sedan</strong><small>₹8,999</small>
-      </button>
-    </div>
-    <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;" onclick="confirmCarCategory()">Confirm</button>
-  </div>
-</div>
-
+<!-- Popups for all cards: Price and Inclusions -->
 <!-- Revamp Inclusions Popup -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
@@ -530,7 +342,6 @@ head>
     </ul>
   </div>
 </div>
-
 <!-- Wash+Polish+Wax Inclusions Popup -->
 <div class="popup-overlay" id="washInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="washInclusionTitle">
   <div class="popup">
@@ -547,7 +358,6 @@ head>
     </ul>
   </div>
 </div>
-
 <!-- Paint Correction Inclusions Popup -->
 <div class="popup-overlay" id="paintInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="paintInclusionTitle">
   <div class="popup">
@@ -563,8 +373,7 @@ head>
     </ul>
   </div>
 </div>
-
-<!-- Interior Detailing Inclusions Popup (Improved) -->
+<!-- Interior Detailing Inclusions Popup -->
 <div class="popup-overlay" id="inclusionPopup" role="dialog" aria-modal="true" aria-labelledby="inclusionPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('inclusionPopup')" aria-label="Close popup">×</button>
@@ -588,8 +397,7 @@ head>
   </div>
 </div>
 
-<!-- PRICE POPUPS FOR ALL PACKAGES -->
-<!-- Revamp Price Popup -->
+<!-- Price Popups -->
 <div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
   <div class="popup">
     <button class="close-btn" onclick="closePricePopup('revampPricePopup')" aria-label="Close popup">×</button>
@@ -604,7 +412,6 @@ head>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
 </div>
-<!-- Wash+Polish+Wax Price Popup -->
 <div class="popup-overlay" id="washPricePopup" role="dialog" aria-modal="true" aria-labelledby="washPriceTitle">
   <div class="popup">
     <button class="close-btn" onclick="closePricePopup('washPricePopup')" aria-label="Close popup">×</button>
@@ -619,7 +426,6 @@ head>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
 </div>
-<!-- Paint Correction Price Popup -->
 <div class="popup-overlay" id="paintPricePopup" role="dialog" aria-modal="true" aria-labelledby="paintPriceTitle">
   <div class="popup">
     <button class="close-btn" onclick="closePricePopup('paintPricePopup')" aria-label="Close popup">×</button>
@@ -634,7 +440,6 @@ head>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
 </div>
-<!-- Interior Detailing Price Popup -->
 <div class="popup-overlay" id="interiorPricePopup" role="dialog" aria-modal="true" aria-labelledby="interiorPriceTitle">
   <div class="popup">
     <button class="close-btn" onclick="closePricePopup('interiorPricePopup')" aria-label="Close popup">×</button>
@@ -683,7 +488,7 @@ head>
       <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
         <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
       </p>
-      <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
+      <div class="success-message" id="bookingSuccess" style="display:none;">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
 </div>
@@ -696,41 +501,22 @@ head>
     </div>
     <nav class="footer-links">
       <a href="/privacy">Privacy Policy</a>
-      <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L10 9l6-4.99V4H4zm0 2.236V16h12V6.236l-6 4.99-6-4.99z"></path></svg>
-      </a>
-      <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.075-.148-.669-1.612-.916-2.205-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.215 3.074.149.198 2.098 3.205 5.077 4.368.71.306 1.263.489 1.696.625.712.227 1.36.196 1.872.119.571-.085 1.758-.719 2.007-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zM10 2C5.589 2 2 5.589 2 10c0 1.768.576 <script>
-  // --- Car Category Selection Popup Logic ---
-  let selectedCarCategory = null;
+      <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">Email</a>
+      <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">WhatsApp</a>
+      <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">Instagram</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
+  </div>
+  </footer>
+  <script>
+  // --- Booking Popup Logic ---
+  let selectedCarCategory = "Hatchback";
   let selectedPackageForBooking = null;
 
   function openBookingPopup(service) {
     selectedPackageForBooking = service || "A&H Total Revamp Package";
-    openCarCategoryPopup();
-  }
-
-  function openCarCategoryPopup() {
-    document.getElementById('carCategoryPopup').classList.add('active');
-    document.getElementById('confirmCategoryBtn').disabled = true;
-    selectedCarCategory = null;
-    document.querySelectorAll('.car-category-card').forEach(card => card.classList.remove('selected'));
-  }
-
-  function closeCarCategoryPopup() {
-    document.getElementById('carCategoryPopup').classList.remove('active');
-  }
-
-  function selectCarCategory(card) {
-    document.querySelectorAll('.car-category-card').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    selectedCarCategory = card.getAttribute('data-category');
-    document.getElementById('confirmCategoryBtn').disabled = false;
-  }
-
-  function confirmCarCategory() {
-    if (!selectedCarCategory) return;
-    closeCarCategoryPopup();
     openBookingFormPopup(selectedPackageForBooking, selectedCarCategory);
   }
 
@@ -740,11 +526,8 @@ head>
     document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
     document.getElementById("bookingSuccess").style.display = "none";
     setTimeout(() => document.getElementById("custName").focus(), 100);
-    trapFocus(document.getElementById("bookingPopup"));
-
     window.selectedPackage = service || "A&H Total Revamp Package";
     window.selectedCarCategory = category || "";
-
     document.getElementById("chosenPackage").textContent = window.selectedPackage;
     document.getElementById("chosenCarCategory").textContent = window.selectedCarCategory;
   }
@@ -753,7 +536,6 @@ head>
     document.getElementById("bookingPopup").classList.remove('active');
   }
 
-  // --- Booking Form Submission ---
   function submitBooking() {
     let valid = true;
     function showError(id, msg) {
@@ -765,11 +547,6 @@ head>
     showError("custNameError", document.getElementById("custName").value.trim() ? "" : "Please enter your name");
     showError("custAddressError", document.getElementById("custAddress").value.trim() ? "" : "Please enter your address");
     showError("custCarError", document.getElementById("custCar").value.trim() ? "" : "Please enter your car model");
-    if (!window.selectedCarCategory) {
-      valid = false;
-      alert("Please select a car category.");
-      return;
-    }
     showError("custDateError", document.getElementById("custDate").value ? "" : "Please select a date");
     showError("custTimeError", document.getElementById("custTime").value ? "" : "Please select a time");
     if (!valid) return;
@@ -796,7 +573,6 @@ head>
       `Preferred Time: ${formattedTime}`;
 
     const url = `https://wa.me/919818198485?text=${msg}`;
-
     window.open(url, "_blank");
 
     document.getElementById("bookingSuccess").style.display = "block";
@@ -808,7 +584,6 @@ head>
     }, 3000);
   }
 
-  // --- Helper Functions ---
   function formatTimeTo12Hour(time24) {
     if (!time24) return "";
     let [hour, minute] = time24.split(":");
@@ -826,29 +601,7 @@ head>
     return `${parts[2]}/${parts[1]}/${parts[0]}`;
   }
 
-  // --- Accessibility & FAQ Logic ---
-  function trapFocus(popup) {
-    const focusableEls = popup.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (!focusableEls.length) return;
-    const first = focusableEls[0];
-    const last = focusableEls[focusableEls.length - 1];
-    popup.addEventListener('keydown', function(e) {
-      if (e.key !== 'Tab') return;
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          last.focus();
-          e.preventDefault();
-        }
-      } else {
-        if (document.activeElement === last) {
-          first.focus();
-          e.preventDefault();
-        }
-      }
-    });
-    setTimeout(() => first.focus(), 100);
-  }
-
+  // --- FAQ Logic ---
   document.querySelectorAll('.faq-tile-question').forEach(btn => {
     btn.addEventListener('click', function() {
       const tile = this.closest('.faq-tile');
@@ -866,34 +619,29 @@ head>
     });
   });
 
+  // --- Popup Logic ---
   document.querySelectorAll('.popup-overlay').forEach(overlay => {
     overlay.addEventListener('click', function(e) {
       if (e.target === this) this.classList.remove('active');
     });
   });
-
   document.addEventListener('keydown', function(e) {
     if (e.key === "Escape") {
       document.querySelectorAll('.popup-overlay').forEach(overlay => overlay.classList.remove('active'));
     }
   });
-
-  // Price/Inclusion Popups
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
-    trapFocus(document.getElementById(id));
   }
   function closePricePopup(id) {
     document.getElementById(id).classList.remove('active');
   }
   function openInclusionPopup(id) {
     document.getElementById(id).classList.add('active');
-    trapFocus(document.getElementById(id));
   }
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-        </script>
-          </body>
-        </html>
-          
+  </script>
+  </body>
+</html>
