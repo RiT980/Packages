@@ -165,6 +165,26 @@
       .footer-links { gap: 18px; }
       .footer-logo { width: 36px; height: 36px; }
     }
+    /* Booking Popup dropdowns */
+    .popup select {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1.13rem;
+      background: #fff;
+      color: #222;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px #0001;
+      outline: none;
+      transition: box-shadow 0.18s;
+    }
+    .popup select:focus {
+      box-shadow: 0 0 0 2px #25D36699;
+    }
+    .error-message { color: #ff3b3b; font-size: 0.93rem; margin-bottom: 8px; display: none; }
+    .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
   </style>
 </head>
 <body>
@@ -195,7 +215,7 @@
         <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">See Inclusions</button>
       </div>
     </div>
-    <div class="card">
+        <div class="card">
       <h2>Paint Correction</h2>
       <div class="price">From ₹2,999*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
@@ -318,7 +338,6 @@
     </div>
   </section>
 </main>
-
 <!-- Popups for all cards: Price and Inclusions -->
 <!-- Revamp Inclusions Popup -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
@@ -396,7 +415,6 @@
     </p>
   </div>
 </div>
-
 <!-- Price Popups -->
 <div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
   <div class="popup">
@@ -455,36 +473,54 @@
   </div>
 </div>
 
-<!-- Booking Popup -->
+<!-- Improved Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
-  <div class="popup">
+  <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
     <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
     <form id="bookingForm" onsubmit="return false;">
-      <label for="custName" class="visually-hidden">Name</label>
-      <input type="text" id="custName" placeholder="Your Name" required>
+      <label for="custName" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Your Name</label>
+      <input type="text" id="custName" placeholder="Enter your name" required>
       <div class="error-message" id="custNameError"></div>
-      <label for="custAddress" class="visually-hidden">Address</label>
-      <input type="text" id="custAddress" placeholder="Address" required>
+
+      <label for="custAddress" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Address</label>
+      <input type="text" id="custAddress" placeholder="Enter your address" required>
       <div class="error-message" id="custAddressError"></div>
-      <label for="custCar" class="visually-hidden">Car Model</label>
-      <input type="text" id="custCar" placeholder="Car Model" required>
+
+      <label for="custCar" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Car Model</label>
+      <input type="text" id="custCar" placeholder="e.g. Honda City" required>
       <div class="error-message" id="custCarError"></div>
-      <div style="margin-bottom:10px;">
-        <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Service Package</label>
-        <div id="chosenPackage"></div>
-      </div>
-      <div style="margin-bottom:10px;">
-        <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Car Category</label>
-        <div id="chosenCarCategory"></div>
-      </div>
-      <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select date</label>
+
+      <label for="custCategory" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Car Category</label>
+      <select id="custCategory" required>
+        <option value="">Select category</option>
+        <option>Hatchback</option>
+        <option>Sedan</option>
+        <option>Compact SUV</option>
+        <option>Full Size SUV</option>
+        <option>Luxury Sedan</option>
+      </select>
+      <div class="error-message" id="custCategoryError"></div>
+
+      <label for="custPackage" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Service Package</label>
+      <select id="custPackage" required>
+        <option value="">Select package</option>
+        <option>A&H Total Revamp Package</option>
+        <option>Detailed Wash + 1 Step Polish + Wax</option>
+        <option>Paint Correction</option>
+        <option>Interior Detailing</option>
+      </select>
+      <div class="error-message" id="custPackageError"></div>
+
+      <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Date</label>
       <input type="date" id="custDate" required>
       <div class="error-message" id="custDateError"></div>
-      <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select time</label>
+
+      <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Time</label>
       <input type="time" id="custTime" required>
       <div class="error-message" id="custTimeError"></div>
-      <button class="quote-btn" id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
+
+      <button class="quote-btn" id="bookNowBtn" type="button" style="margin-top:18px; width:100%;" onclick="submitBooking()">Submit Booking</button>
       <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
         <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
       </p>
@@ -509,33 +545,39 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-  </footer>
-  <script>
-  // --- Booking Popup Logic ---
-  let selectedCarCategory = "Hatchback";
-  let selectedPackageForBooking = null;
-
-  function openBookingPopup(service) {
-    selectedPackageForBooking = service || "A&H Total Revamp Package";
-    openBookingFormPopup(selectedPackageForBooking, selectedCarCategory);
+</footer>
+<script>
+  // --- Popup Logic ---
+  function openPricePopup(id) {
+    document.getElementById(id).classList.add('active');
   }
-
-  function openBookingFormPopup(service, category) {
-    document.getElementById("bookingPopup").classList.add('active');
+  function closePricePopup(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+  function openInclusionPopup(id) {
+    document.getElementById(id).classList.add('active');
+  }
+  function closeInclusionPopup(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+  function openBookingPopup(service) {
     document.getElementById("bookingForm").reset();
     document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
     document.getElementById("bookingSuccess").style.display = "none";
+    document.getElementById("bookingPopup").classList.add('active');
     setTimeout(() => document.getElementById("custName").focus(), 100);
-    window.selectedPackage = service || "A&H Total Revamp Package";
-    window.selectedCarCategory = category || "";
-    document.getElementById("chosenPackage").textContent = window.selectedPackage;
-    document.getElementById("chosenCarCategory").textContent = window.selectedCarCategory;
+    // If a service is passed, pre-select it
+    if (service) {
+      document.getElementById("custPackage").value = service;
+    } else {
+      document.getElementById("custPackage").selectedIndex = 0;
+    }
   }
-
   function closeBookingPopup() {
     document.getElementById("bookingPopup").classList.remove('active');
   }
 
+  // --- Booking Form Submission ---
   function submitBooking() {
     let valid = true;
     function showError(id, msg) {
@@ -547,6 +589,8 @@
     showError("custNameError", document.getElementById("custName").value.trim() ? "" : "Please enter your name");
     showError("custAddressError", document.getElementById("custAddress").value.trim() ? "" : "Please enter your address");
     showError("custCarError", document.getElementById("custCar").value.trim() ? "" : "Please enter your car model");
+    showError("custCategoryError", document.getElementById("custCategory").value ? "" : "Please select a car category");
+    showError("custPackageError", document.getElementById("custPackage").value ? "" : "Please select a service package");
     showError("custDateError", document.getElementById("custDate").value ? "" : "Please select a date");
     showError("custTimeError", document.getElementById("custTime").value ? "" : "Please select a time");
     if (!valid) return;
@@ -555,8 +599,8 @@
     const name = encodeURIComponent(document.getElementById("custName").value.trim());
     const address = encodeURIComponent(document.getElementById("custAddress").value.trim());
     const car = encodeURIComponent(document.getElementById("custCar").value.trim());
-    const category = encodeURIComponent(window.selectedCarCategory || "");
-    const pkg = encodeURIComponent(window.selectedPackage || "");
+    const category = encodeURIComponent(document.getElementById("custCategory").value);
+    const pkg = encodeURIComponent(document.getElementById("custPackage").value);
     const rawDate = document.getElementById("custDate").value;
     const formattedDate = encodeURIComponent(formatDateToDDMMYYYY(rawDate));
     const timeInput = document.getElementById("custTime").value;
@@ -584,6 +628,7 @@
     }, 3000);
   }
 
+  // --- Helper Functions ---
   function formatTimeTo12Hour(time24) {
     if (!time24) return "";
     let [hour, minute] = time24.split(":");
@@ -593,7 +638,6 @@
     if (hour === 0) hour = 12;
     return `${hour}:${minute} ${ampm}`;
   }
-
   function formatDateToDDMMYYYY(dateStr) {
     if (!dateStr) return "";
     const parts = dateStr.split("-");
@@ -619,7 +663,7 @@
     });
   });
 
-  // --- Popup Logic ---
+  // --- Overlay & Escape Key Logic ---
   document.querySelectorAll('.popup-overlay').forEach(overlay => {
     overlay.addEventListener('click', function(e) {
       if (e.target === this) this.classList.remove('active');
@@ -630,18 +674,6 @@
       document.querySelectorAll('.popup-overlay').forEach(overlay => overlay.classList.remove('active'));
     }
   });
-  function openPricePopup(id) {
-    document.getElementById(id).classList.add('active');
-  }
-  function closePricePopup(id) {
-    document.getElementById(id).classList.remove('active');
-  }
-  function openInclusionPopup(id) {
-    document.getElementById(id).classList.add('active');
-  }
-  function closeInclusionPopup(id) {
-    document.getElementById(id).classList.remove('active');
-  }
-  </script>
-  </body>
+</script>
+</body>
 </html>
