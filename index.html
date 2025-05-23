@@ -35,129 +35,120 @@
     .tagline { text-align: center; font-size: 0.85rem; color: #bbb; margin-bottom: 22px; }
     main { display: block; width: 100%; }
     h1 { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; margin-top: 0; }
-    .pricing-section { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 10px; max-width: 1200px; margin: 0 auto; }
-    .card { background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(20,20,20,0.85)); border-radius: 16px; padding: 18px; box-shadow: 0 10px 36px rgba(0,0,0,0.7); border: 1.5px solid rgba(0,230,118,0.13); }
-    .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
-    .price { color: var(--secondary-color); font-weight: 700; font-size: 1.08rem; margin-bottom: 8px; }
-    .card p { font-size: 0.93rem; color: #ddd; }
-    .price-btn, .info-btn, .quote-btn, #confirmCategoryBtn {
-      display: block;
-      width: 100%;
-      max-width: 220px;
-      margin: 10px auto 0 auto;
-      padding: 13px 0;
+
+    /* --- Service Cards Improved --- */
+    .pricing-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      padding: 24px 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(20,20,20,0.85));
+      border-radius: 22px;
+      padding: 28px 28px 22px 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+      border: 1.5px solid rgba(0,230,118,0.13);
+      min-height: 370px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card h2 {
       font-size: 1.08rem;
-      font-weight: 600;
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .price {
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 1.11rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.97rem;
+      color: #ddd;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .card .card-btn-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-start; /* Align all buttons to the left */
+      margin-top: auto;
+      padding-left: 0;
+    }
+    .card .quote-btn {
+      min-width: 0;
+      max-width: 120px;
+      padding: 11px 0;
+      font-size: 1rem;
       border-radius: 18px;
-      border: 1.5px solid var(--btn-border);
-      background: var(--btn-bg);
+      background: var(--primary-color);
       color: #fff;
-      box-shadow: var(--btn-shadow);
-      backdrop-filter: blur(8px);
-      transition: background 0.17s, color 0.17s, box-shadow 0.17s, transform 0.13s, border 0.17s;
-      outline: none;
-      cursor: pointer;
-      letter-spacing: 0.3px;
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-    .price-btn {
-      color: #25D366;
-      background: var(--btn-glass);
-      border: 1.5px solid #25D36677;
-    }
-    .price-btn:hover, .price-btn:focus {
-      background: var(--btn-hover);
-      color: #fff;
+      font-weight: 700;
       border: 1.5px solid #25D366;
-      transform: scale(1.03);
+      box-shadow: 0 2px 12px #25D36633, var(--btn-shadow);
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin: 0;
     }
-    .info-btn {
-      color: #fff;
+    .card .price-btn,
+    .card .info-btn {
+      min-width: 0;
+      max-width: 90px;
+      padding: 8px 0;
+      font-size: 0.95rem;
+      border-radius: 14px;
+      margin: 0;
       background: var(--btn-bg);
+      color: #25D366;
+      border: 1.5px solid #25D36677;
+      box-shadow: none;
+      font-weight: 600;
+    }
+    .card .info-btn {
+      color: #fff;
       border: 1.5px solid #444;
     }
-    .info-btn:hover, .info-btn:focus {
+    .card .price-btn:hover, .card .info-btn:hover, .card .price-btn:focus, .card .info-btn:focus {
       background: var(--btn-hover);
       color: #25D366;
       border: 1.5px solid #25D366;
       transform: scale(1.03);
     }
-    /* Green Book Now button */
-    .quote-btn, #confirmCategoryBtn {
-      color: #fff;
-      background: var(--primary-color);
-      border: 1.5px solid #25D366;
-      font-weight: 700;
-      box-shadow: 0 2px 12px #25D36633, var(--btn-shadow);
-      transition: background 0.17s, color 0.17s, box-shadow 0.17s, transform 0.13s, border 0.17s;
-    }
-    .quote-btn:hover, #confirmCategoryBtn:hover, .quote-btn:focus, #confirmCategoryBtn:focus {
+    .card .quote-btn:hover, .card .quote-btn:focus {
       background: #1ed760;
       color: #fff;
       border: 1.5px solid #25D366;
       transform: scale(1.03);
     }
-    .quote-btn:active, #confirmCategoryBtn:active {
+    .card .quote-btn:active {
       background: #13b954;
       color: #fff;
     }
-    .quote-btn[disabled], #confirmCategoryBtn[disabled] {
-      opacity: 0.6;
-      cursor: not-allowed;
-      background: var(--btn-bg);
-      color: #bbb;
-      border-color: #444;
-      box-shadow: none;
+    @media (max-width: 600px) {
+      .pricing-section {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 12px 2px;
+      }
+      .card {
+        padding: 18px 8px 14px 8px;
+        min-height: 0;
+      }
+      .card .card-btn-row {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+      }
     }
-    .car-category-card {
-      background: var(--btn-bg);
-      border: 2.5px solid transparent;
-      border-radius: 20px;
-      padding: 22px 10px 16px 10px;
-      font-size: 1.08rem;
-      color: #dcdcdc;
-      cursor: pointer;
-      transition: border-color 0.22s, box-shadow 0.22s, color 0.22s, background 0.22s;
-      text-align: center;
-      user-select: none;
-      font-weight: 600;
-      box-shadow: 0 2px 12px #0005;
-      margin-bottom: 0;
-      outline: none;
-      backdrop-filter: blur(8px);
-    }
-    .car-category-card strong {
-      font-size: 1.13em;
-      display: block;
-      margin-bottom: 4px;
-      color: #fff;
-      letter-spacing: 0.5px;
-    }
-    .car-category-card small {
-      color: #a0eec0;
-      font-size: 0.98em;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      margin-top: 8px;
-      display: block;
-    }
-    .car-category-card:hover, .car-category-card.selected, .car-category-card:focus {
-      border-color: #25D366;
-      box-shadow: 0 0 18px #25D36688;
-      color: #25D366;
-      background: var(--btn-hover);
-      outline: 2px solid #25D36644;
-      outline-offset: 2px;
-      z-index: 2;
-    }
-    .car-category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 18px;
-      margin: 20px 0 0 0;
-    }
+    /* --- End Service Cards Improved --- */
+
     .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
     .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-bg); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; border: 1.5px solid #25D366; }
@@ -341,7 +332,7 @@
     }
   </style>
 </head>
-<body>
+  <body>
 <header>
   <img src="logo.png" alt="A&H Auto Detailer Logo" loading="lazy" />
   <p class="tagline">Refined car care that comes to you!</p>
@@ -353,31 +344,39 @@
       <h2>A&H Total Revamp Package</h2>
       <div class="price">From ₹4,999*</div>
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
-      <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
-      <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
-      <button class="quote-btn" onclick="openBookingPopup('A&H Total Revamp Package')">Book Now</button>
+      <div class="card-btn-row">
+        <button class="quote-btn" onclick="openBookingPopup('A&H Total Revamp Package')">Book Now</button>
+        <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
+      </div>
     </div>
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
       <div class="price">From ₹1,199*</div>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
-      <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
-      <button class="quote-btn" onclick="openBookingPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
+      <div class="card-btn-row">
+        <button class="quote-btn" onclick="openBookingPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
+        <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
+      </div>
     </div>
     <div class="card">
       <h2>Paint Correction</h2>
       <div class="price">From ₹2,999*</div>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
-      <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
-      <button class="quote-btn" onclick="openBookingPopup('Paint Correction')">Book Now</button>
+      <div class="card-btn-row">
+        <button class="quote-btn" onclick="openBookingPopup('Paint Correction')">Book Now</button>
+        <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
+      </div>
     </div>
     <div class="card">
       <h2>Interior Detailing</h2>
       <div class="price">From ₹1,499*</div>
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
-      <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
-      <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
-      <button class="quote-btn" onclick="openBookingPopup('Interior Detailing')">Book Now</button>
+      <div class="card-btn-row">
+        <button class="quote-btn" onclick="openBookingPopup('Interior Detailing')">Book Now</button>
+        <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
+      </div>
     </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
@@ -482,6 +481,8 @@
     </div>
   </section>
 </main>
+
+<!-- All popups (category selection, inclusions, price, booking) and footer go here, unchanged from previous versions -->
 
 <!-- Car Category Selection Popup -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
@@ -672,7 +673,7 @@
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
   </footer>
-        <script>
+      <script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
@@ -865,6 +866,6 @@
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-        </script>
-        </body>
+      </script>
+      </body>
 </html>
