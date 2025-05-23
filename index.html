@@ -40,8 +40,6 @@
     .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.08rem; margin-bottom: 8px; }
     .card p { font-size: 0.93rem; color: #ddd; }
-
-    /* iPhone 16-Style Buttons */
     .price-btn, .info-btn, .quote-btn, #confirmCategoryBtn {
       display: block;
       width: 100%;
@@ -111,7 +109,6 @@
       border-color: #444;
       box-shadow: none;
     }
-    /* iPhone 16-style Car Category Cards */
     .car-category-card {
       background: var(--btn-bg);
       border: 2.5px solid transparent;
@@ -159,12 +156,10 @@
       gap: 18px;
       margin: 20px 0 0 0;
     }
-        .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
+    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
     .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-bg); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; border: 1.5px solid #25D366; }
     .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
-
-    /* Modern Footer */
     .site-footer {
       background: #15191e;
       color: #e0e0e0;
@@ -243,7 +238,6 @@
         height: 36px;
       }
     }
-    /* FAQ Tiles (iPhone style) */
     .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
     .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
     .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
@@ -282,7 +276,6 @@
       opacity: 1;
       pointer-events: auto;
     }
-    /* Popups and Overlays */
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
     .popup-overlay.active { display: flex; }
     .popup {
@@ -318,7 +311,6 @@
     .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
-    /* Price Table */
     .price-table {
       width: 100%;
       color: #fff;
@@ -332,7 +324,6 @@
     }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:last-child { text-align: right; font-weight: 600; }
-    /* Booking form: show chosen package and category in neutral style */
     #chosenPackage, #chosenCarCategory {
       font-weight: 700;
       color: #dcdcdc;
@@ -516,25 +507,25 @@
   </div>
 </div>
 
-<!-- Revamp Inclusions Popup -->
+<!-- Revamp Inclusions Popup (multi-stage paint correction, not highlighted) -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
     <div id="revampInclusionTitle" class="popup-title">A&H Total Revamp Package – Inclusions</div>
     <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
-      <li>Exterior foam wash & drying</li>
-      <li>Paint decontamination (claying)</li>
-      <li>One-step paint polish & swirl removal</li>
-      <li>Premium wax or sealant protection</li>
-      <li>Alloy wheel & tire cleaning + dressing</li>
-      <li>Engine bay cleaning</li>
-      <li>Glass & windshield cleaning</li>
-      <li>Deep interior vacuuming (seats, mats, boot)</li>
-      <li>Shampooing of carpets & upholstery</li>
-      <li>Leather seat cleaning & conditioning</li>
-      <li>Dashboard, console & trim cleaning</li>
-      <li>Door jambs & sill cleaning</li>
-      <li>Odor removal & air freshener</li>
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Wheel, tire, and fender cleaning & dressing</li>
+      <li>Door jamb and fuel cap cleaning</li>
+      <li>Full paint decontamination (clay bar + iron fallout removal)</li>
+      <li>Multi-stage paint correction (removes swirls, scratches, oxidation, restores gloss)</li>
+      <li>Premium wax or sealant for long-lasting protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Deep interior vacuum (seats, carpets, boot)</li>
+      <li>Shampooing of seats, carpets, and mats</li>
+      <li>Leather seat cleaning & conditioning (if applicable)</li>
+      <li>Dashboard, console, and trim cleaning</li>
+      <li>Interior glass and mirror cleaning</li>
+      <li>Odor neutralization and air freshener</li>
     </ul>
   </div>
 </div>
@@ -547,7 +538,7 @@
     <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
       <li>Complete vacuuming (seats, mats, boot)</li>
       <li>Shampooing of seats, carpets & mats</li>
-      <li>Leather seat cleaning & conditioning</li>
+      <li>Leather seat cleaning & conditioning (if applicable)</li>
       <li>Dashboard, console & trim cleaning</li>
       <li>Door panels & sill cleaning</li>
       <li>Glass & mirror cleaning (inside)</li>
@@ -616,8 +607,8 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-        </footer>
-    <script>
+  </footer>
+            <script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
@@ -810,6 +801,6 @@
   function closeInclusionPopup(id) {
     document.getElementById(id).classList.remove('active');
   }
-    </script>
-    </body>
+            </script>
+            </body>
 </html>
