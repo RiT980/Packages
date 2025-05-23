@@ -183,7 +183,7 @@
       max-width: 480px;
       width: 95vw;
       max-height: 80vh;
-      padding: 64px 32px 44px 36px; /* Extra left padding for all screens */
+      padding: 64px 32px 44px 36px;
       position: relative;
       animation: fadeIn 0.3s cubic-bezier(.22,.61,.36,1);
       overflow-y: auto;
@@ -621,7 +621,7 @@
     document.getElementById("bookingPopup").classList.add('active');
     document.getElementById("bookingForm").reset();
     document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
-    document.getElementById("bookingSuccess").style.display="none";
+    document.getElementById("bookingSuccess").style.display = "none";
     setTimeout(() => document.getElementById("custName").focus(), 100);
     trapFocus(document.getElementById("bookingPopup"));
   }
@@ -643,6 +643,28 @@
     showError("custDateError", document.getElementById("custDate").value ? "" : "Please select a date");
     showError("custTimeError", document.getElementById("custTime").value ? "" : "Please select a time");
     if (!valid) return;
+
+    // Collect form data
+    const name = encodeURIComponent(document.getElementById("custName").value.trim());
+    const address = encodeURIComponent(document.getElementById("custAddress").value.trim());
+    const car = encodeURIComponent(document.getElementById("custCar").value.trim());
+    const pkg = encodeURIComponent(document.getElementById("custPackage").value);
+    const date = encodeURIComponent(document.getElementById("custDate").value);
+    const time = encodeURIComponent(document.getElementById("custTime").value);
+
+    // Format WhatsApp message
+    const msg = `New Booking Request:%0A--------------------%0A` +
+      `Name: ${name}%0A` +
+      `Address: ${address}%0A` +
+      `Car Model: ${car}%0A` +
+      `Service Package: ${pkg}%0A` +
+      `Preferred Date: ${date}%0A` +
+      `Preferred Time: ${time}`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+
+    window.open(url, "_blank");
+
     document.getElementById("bookingSuccess").style.display = "block";
     document.getElementById("bookNowBtn").disabled = true;
     setTimeout(() => {
