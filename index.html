@@ -37,14 +37,10 @@
     .card { background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 0.85)); border-radius: 16px; padding: 18px; box-shadow: 0 10px 36px rgba(0,0,0,0.7); border: 1.5px solid rgba(0,230,118,0.13); }
     .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
     .card p { font-size: 0.93rem; color: #ddd; }
-    .quote-btn, .info-btn, .blue-btn {
+    .blue-btn, .info-btn, .book-charcoal-btn {
       margin-top: 12px; padding: 10px 20px; font-size: 0.95rem; border-radius: 25px; cursor: pointer; font-weight: bold; border: none;
       display: block; width: 100%; max-width: 220px; margin-left: auto; margin-right: auto; transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
     }
-    .quote-btn { background-color: var(--primary-color); color: white; margin-bottom: 8px; }
-    .quote-btn:hover { background-color: #1ebe5d; }
-    .info-btn { background-color: #333333; color: #fff; border-radius: 32px; font-size: 1.08rem; font-weight: 600; box-shadow: 0 2px 8px #00000033; }
-    .info-btn:hover { background: #1a1a1a; box-shadow: 0 4px 18px #00000044; transform: scale(1.04); }
     .blue-btn {
       background-color: var(--blue-btn);
       color: white;
@@ -66,9 +62,43 @@
       box-shadow: 0 4px 18px #00000044;
       transform: scale(1.04);
     }
+    .info-btn {
+      background-color: #333333;
+      color: #fff;
+      border-radius: 32px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #00000033;
+    }
+    .info-btn:hover {
+      background: #1a1a1a;
+      box-shadow: 0 4px 18px #00000044;
+      transform: scale(1.04);
+    }
+    .book-charcoal-btn {
+      background-color: #333333;
+      color: white;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      max-width: 220px;
+      margin: 12px auto 0 auto;
+      display: block;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+      box-shadow: 0 2px 8px #00000033;
+    }
+    .book-charcoal-btn:hover {
+      background-color: #1a1a1a;
+      box-shadow: 0 4px 18px #00000044;
+      transform: scale(1.04);
+    }
     .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
-    .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
+    .cta-section .book-charcoal-btn { max-width: 300px; margin-top: 20px; }
     /* Modern Footer */
     .site-footer {
       background: #15191e;
@@ -242,8 +272,8 @@
     .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus, .popup select:focus {
       box-shadow: 0 0 0 2px var(--primary-color);
     }
-    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--primary-color); color: #fff; font-weight: 700; border: none; box-shadow: 0 2px 8px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
-    .popup .quote-btn:hover { background: #1ebe5d; box-shadow: 0 4px 18px #25D36644; }
+    .popup .quote-btn, .popup .book-charcoal-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--primary-color); color: #fff; font-weight: 700; border: none; box-shadow: 0 2px 8px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
+    .popup .quote-btn:hover, .popup .book-charcoal-btn:hover { background: #1ebe5d; box-shadow: 0 4px 18px #25D36644; }
     .close-btn {
       position: absolute; top: 18px; right: 22px; background: var(--error-color); color: #fff; border: none; border-radius: 50px; padding: 0 18px;
       height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2;
@@ -262,32 +292,40 @@
   <p class="tagline">Refined car care that comes to you!</p>
 </header>
 <main id="main">
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" aria-label="Call to Action">
+    <h2>Ready for a Showroom Shine?</h2>
+    <p>Contact us now for premium doorstep detailing!</p>
+    <button class="book-charcoal-btn" onclick="openBookingPopup()">Book Now</button>
+  </section>
+
   <h1>Our Packages</h1>
   <section class="pricing-section" aria-label="Service Packages">
     <div class="card">
       <h2>A&H Total Revamp Package</h2>
       <button class="blue-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
-      <button class="quote-btn" onclick="openQuotePopup('A&H Total Revamp Package')">Get Quote</button>
+      <button class="book-charcoal-btn" onclick="openBookingPopup()">Book Now</button>
       <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
     </div>
     <div class="card">
       <h2>Detailed Wash + 1 Step Polish + Wax</h2>
       <button class="blue-btn" onclick="openPricePopup('washPricePopup')">Price</button>
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Detailed Wash + 1 Step Polish + Wax')">Get Quote</button>
+      <button class="book-charcoal-btn" onclick="openBookingPopup()">Book Now</button>
     </div>
     <div class="card">
       <h2>Paint Correction</h2>
       <button class="blue-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Paint Correction')">Get Quote</button>
+      <button class="book-charcoal-btn" onclick="openBookingPopup()">Book Now</button>
     </div>
     <div class="card">
       <h2>Interior Detailing</h2>
       <button class="blue-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
-      <button class="quote-btn" onclick="openQuotePopup('Interior Detailing')">Get Quote</button>
+      <button class="book-charcoal-btn" onclick="openBookingPopup()">Book Now</button>
       <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
     </div>
   </section>
@@ -405,24 +443,6 @@
     </div>
   </div>
 
-  <!-- QUOTE POPUP -->
-  <div class="popup-overlay" id="quotePopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-    <div class="popup">
-      <button class="close-btn" onclick="closePopup()" aria-label="Close popup">×</button>
-      <div id="popupTitle" class="popup-title">Enter your car model & location to proceed.</div>
-      <form id="quoteForm" onsubmit="return false;">
-        <label for="carModel" class="visually-hidden">Car Model</label>
-        <input type="text" id="carModel" placeholder="Car Model" autocomplete="off" required>
-        <div class="error-message" id="carModelError"></div>
-        <label for="location" class="visually-hidden">Location</label>
-        <input type="text" id="location" placeholder="Location" autocomplete="off" required>
-        <div class="error-message" id="locationError"></div>
-        <button class="quote-btn" id="sendBtn" type="button" onclick="sendWhatsApp()">Send on WhatsApp</button>
-        <div class="success-message" id="successMessage">Your request has been sent! We will contact you soon.</div>
-      </form>
-    </div>
-  </div>
-
   <!-- BOOKING POPUP -->
   <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
     <div class="popup">
@@ -465,7 +485,7 @@
         <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select time</label>
         <input type="time" id="custTime" required>
         <div class="error-message" id="custTimeError"></div>
-        <button class="quote-btn" id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
+        <button class="book-charcoal-btn" id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
         <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
           <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
         </p>
@@ -599,41 +619,18 @@
   const WHATSAPP_NUMBER = '919818198485';
   let currentService = "";
 
-  function openQuotePopup(service) {
-    currentService = service;
-    const overlay = document.getElementById("quotePopup");
+  // Popup open/close logic
+  function openBookingPopup() {
+    const overlay = document.getElementById("bookingPopup");
     overlay.classList.add('active');
     overlay.classList.remove('closing');
-    document.getElementById("carModel").value = "";
-    document.getElementById("location").value = "";
-    document.getElementById("carModelError").style.display = "none";
-    document.getElementById("locationError").style.display = "none";
-    document.getElementById("successMessage").style.display = "none";
-    document.getElementById("carModel").disabled = false;
-    document.getElementById("location").disabled = false;
-    document.getElementById("sendBtn").disabled = false;
-    setTimeout(() => {
-      document.getElementById("carModel").focus();
-    }, 100);
+    document.getElementById("bookingForm").reset();
+    document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
+    document.getElementById("bookingSuccess").style.display = "none";
+    setTimeout(() => document.getElementById("custName").focus(), 100);
     trapFocus(overlay);
   }
 
-  // Generic close function with animation
-  function closePopupAnimated(overlayId) {
-    const overlay = document.getElementById(overlayId);
-    if (!overlay) return;
-    overlay.classList.add('closing');
-    setTimeout(() => {
-      overlay.classList.remove('active', 'closing');
-    }, 350); // match CSS transition duration
-  }
-
-  function closePopup() {
-    closePopupAnimated('quotePopup');
-  }
-  function closeInclusionPopup(id) {
-    closePopupAnimated(id);
-  }
   function closeBookingPopup() {
     closePopupAnimated('bookingPopup');
   }
@@ -644,8 +641,10 @@
     overlay.classList.remove('closing');
     trapFocus(overlay);
   }
+  function closeInclusionPopup(id) {
+    closePopupAnimated(id);
+  }
 
-  // Price popups
   function openPricePopup(id) {
     const overlay = document.getElementById(id);
     overlay.classList.add('active');
@@ -656,39 +655,14 @@
     closePopupAnimated(id);
   }
 
-  function sendWhatsApp() {
-    const car = document.getElementById("carModel").value.trim();
-    const loc = document.getElementById("location").value.trim();
-    let valid = true;
-    if (!car) {
-      document.getElementById("carModelError").textContent = "Please enter your car model";
-      document.getElementById("carModelError").style.display = "block";
-      valid = false;
-    } else {
-      document.getElementById("carModelError").style.display = "none";
-    }
-    if (!loc) {
-      document.getElementById("locationError").textContent = "Please enter your location";
-      document.getElementById("locationError").style.display = "block";
-      valid = false;
-    } else {
-      document.getElementById("locationError").style.display = "none";
-    }
-    if (!valid) return;
-    const msg = `Hi, I'm interested in *${currentService}*.\nCar Model: ${car}\nLocation: ${loc}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-    document.getElementById("successMessage").style.display = "block";
-    document.getElementById("carModel").disabled = true;
-    document.getElementById("location").disabled = true;
-    document.getElementById("sendBtn").disabled = true;
+  // Generic close function with animation
+  function closePopupAnimated(overlayId) {
+    const overlay = document.getElementById(overlayId);
+    if (!overlay) return;
+    overlay.classList.add('closing');
     setTimeout(() => {
-      document.getElementById("successMessage").style.display = "none";
-      closePopup();
-      document.getElementById("carModel").disabled = false;
-      document.getElementById("location").disabled = false;
-      document.getElementById("sendBtn").disabled = false;
-    }, 3000);
+      overlay.classList.remove('active', 'closing');
+    }, 350); // match CSS transition duration
   }
 
   // FAQ Tiles iPhone-style
@@ -755,17 +729,7 @@
     setTimeout(() => first.focus(), 100);
   }
 
-  // Booking Popup
-  function openBookingPopup() {
-    const overlay = document.getElementById("bookingPopup");
-    overlay.classList.add('active');
-    overlay.classList.remove('closing');
-    document.getElementById("bookingForm").reset();
-    document.querySelectorAll("#bookingForm .error-message").forEach(e => e.style.display="none");
-    document.getElementById("bookingSuccess").style.display = "none";
-    setTimeout(() => document.getElementById("custName").focus(), 100);
-    trapFocus(overlay);
-  }
+  // Booking form validation and WhatsApp submission
   function submitBooking() {
     let valid = true;
     function showError(id, msg) {
