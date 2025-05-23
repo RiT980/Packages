@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,7 @@
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
-      -webkit-tap-highlight-color: transparent; /* Remove blue tap highlight on mobile */
+      -webkit-tap-highlight-color: transparent;
     }
     :focus {
       outline: none !important;
@@ -254,12 +256,11 @@
       box-sizing: border-box;
     }
     .popup-title { margin-bottom: 28px; color: #fff; font-size: 1.25rem; font-weight: 600; text-align: left; letter-spacing: 0.2px; }
-    .popup input[type="text"], .popup input[type="date"], .popup input[type="time"], .popup select {
+    .popup input[type="text"], .popup input[type="date"], .popup input[type="time"] {
       display: block; width: 100%; margin-bottom: 10px; padding: 17px 18px; border-radius: 12px; border: none; font-size: 1.13rem;
       background: #fff; color: #222; box-shadow: 0 2px 8px #0001; outline: none; transition: box-shadow 0.18s;
     }
-    .popup select { margin-bottom: 10px; }
-    .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus, .popup select:focus {
+    .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus {
       box-shadow: none;
     }
     .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--primary-color); color: #fff; font-weight: 700; border: none; box-shadow: 0 2px 8px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
@@ -287,6 +288,10 @@
     }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:last-child { text-align: right; font-weight: 600; }
+    /* Booking form: show chosen package */
+    #chosenPackage {
+      font-weight:600; color:#25D366; background:#181818; border-radius:8px; padding:12px 14px; margin-bottom:4px;
+    }
   </style>
 </head>
 <body>
@@ -558,7 +563,7 @@
     </ul>
   </div>
 </div>
-<!-- Booking Popup (no info icon or instructions) -->
+<!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
@@ -573,15 +578,10 @@
       <label for="custCar" class="visually-hidden">Car Model</label>
       <input type="text" id="custCar" placeholder="Car Model" required>
       <div class="error-message" id="custCarError"></div>
-      <label for="custPackage" class="visually-hidden">Service Package</label>
-      <select id="custPackage" required>
-        <option value="">Select Service Package</option>
-        <option>A&H Total Revamp Package</option>
-        <option>Detailed Wash + 1 Step Polish + Wax</option>
-        <option>Paint Correction</option>
-        <option>Interior Detailing</option>
-      </select>
-      <div class="error-message" id="custPackageError"></div>
+      <div style="margin-bottom:10px;">
+        <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Service Package</label>
+        <div id="chosenPackage"></div>
+      </div>
       <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Select date</label>
       <input type="date" id="custDate" required>
       <div class="error-message" id="custDateError"></div>
@@ -595,8 +595,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-          </div>
-          <script>
+</div>
+<script>
   // Price Popup Functions
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
@@ -676,16 +676,9 @@
     setTimeout(() => document.getElementById("custName").focus(), 100);
     trapFocus(document.getElementById("bookingPopup"));
 
-    // Auto-select the service package if provided
-    if (service) {
-      var select = document.getElementById("custPackage");
-      for (var i = 0; i < select.options.length; i++) {
-        if (select.options[i].value === service) {
-          select.selectedIndex = i;
-          break;
-        }
-      }
-    }
+    // Store and display selected package
+    window.selectedPackage = service || "A&H Total Revamp Package";
+    document.getElementById("chosenPackage").textContent = window.selectedPackage;
   }
   function closeBookingPopup() {
     document.getElementById("bookingPopup").classList.remove('active');
@@ -701,7 +694,6 @@
     showError("custNameError", document.getElementById("custName").value.trim() ? "" : "Please enter your name");
     showError("custAddressError", document.getElementById("custAddress").value.trim() ? "" : "Please enter your address");
     showError("custCarError", document.getElementById("custCar").value.trim() ? "" : "Please enter your car model");
-    showError("custPackageError", document.getElementById("custPackage").value ? "" : "Please select a package");
     showError("custDateError", document.getElementById("custDate").value ? "" : "Please select a date");
     showError("custTimeError", document.getElementById("custTime").value ? "" : "Please select a time");
     if (!valid) return;
@@ -710,7 +702,7 @@
     const name = encodeURIComponent(document.getElementById("custName").value.trim());
     const address = encodeURIComponent(document.getElementById("custAddress").value.trim());
     const car = encodeURIComponent(document.getElementById("custCar").value.trim());
-    const pkg = encodeURIComponent(document.getElementById("custPackage").value);
+    const pkg = encodeURIComponent(window.selectedPackage || "");
     const date = encodeURIComponent(document.getElementById("custDate").value);
     const time = encodeURIComponent(document.getElementById("custTime").value);
 
