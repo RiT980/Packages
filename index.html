@@ -1,5 +1,3 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -617,8 +615,8 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-        </div>
-        <script>
+      </div>
+      <script>
   // Price Popup Functions
   function openPricePopup(id) {
     document.getElementById(id).classList.add('active');
@@ -700,6 +698,14 @@
     return `${hour}:${minute} ${ampm}`;
   }
 
+  // Convert YYYY-MM-DD to DD MM YYYY
+  function formatDateToDDMMYYYY(dateStr) {
+    if (!dateStr) return "";
+    const parts = dateStr.split("-");
+    if (parts.length !== 3) return dateStr;
+    return `${parts[2]} ${parts[1]} ${parts[0]}`;
+  }
+
   // Booking Popup
   function openBookingPopup(service) {
     document.getElementById("bookingPopup").classList.add('active');
@@ -738,7 +744,8 @@
     const car = encodeURIComponent(document.getElementById("custCar").value.trim());
     const category = encodeURIComponent(document.getElementById("custCategory").value);
     const pkg = encodeURIComponent(window.selectedPackage || "");
-    const date = encodeURIComponent(document.getElementById("custDate").value);
+    const rawDate = document.getElementById("custDate").value;
+    const formattedDate = encodeURIComponent(formatDateToDDMMYYYY(rawDate));
     const timeInput = document.getElementById("custTime").value;
     const formattedTime = encodeURIComponent(formatTimeTo12Hour(timeInput));
 
@@ -749,7 +756,7 @@
       `Car Model: ${car}%0A` +
       `Car Category: ${category}%0A` +
       `Service Package: ${pkg}%0A` +
-      `Preferred Date: ${date}%0A` +
+      `Preferred Date: ${formattedDate}%0A` +
       `Preferred Time: ${formattedTime}`;
 
     const url = `https://wa.me/919818198485?text=${msg}`;
