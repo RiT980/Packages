@@ -171,69 +171,6 @@
       opacity: 1;
       pointer-events: auto;
     }
-    .booking-instructions {
-      color: #a0eec0;
-      font-size: 1rem;
-      margin-bottom: 14px;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .info-icon {
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
-      color: var(--primary-color);
-      font-weight: bold;
-      font-size: 1.2rem;
-      user-select: none;
-      margin-left: 4px;
-      outline: none;
-    }
-    .info-icon:focus {
-      outline: 2px solid var(--primary-color);
-    }
-    /* Guidance Popup */
-    .guidance-popup {
-      display: none;
-      position: fixed;
-      left: 50%;
-      bottom: 40px;
-      transform: translateX(-50%);
-      background: #e8f9f1;
-      color: #222;
-      padding: 18px 30px 18px 18px;
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 1px 4px #0001;
-      font-size: 1.08rem;
-      z-index: 2001;
-      min-width: 250px;
-      max-width: 90vw;
-      border-left: 6px solid #25D366;
-      align-items: center;
-      gap: 14px;
-      animation: fadeIn 0.2s;
-    }
-    .guidance-popup.show {
-      display: flex;
-    }
-    .guidance-icon {
-      font-size: 1.45rem;
-      margin-right: 12px;
-      color: #25D366;
-      flex-shrink: 0;
-    }
-    @media (max-width: 600px) {
-      .guidance-popup {
-        font-size: 0.98rem;
-        padding: 14px 16px 14px 12px;
-        left: 50%;
-        bottom: 18px;
-        min-width: 160px;
-      }
-      .guidance-icon { font-size: 1.2rem; margin-right: 8px; }
-    }
     /* Popups and Overlays */
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
     .popup-overlay.active { display: flex; }
@@ -316,21 +253,7 @@
     <a href="https://wa.me/919818198485" target="_blank" rel="noopener noreferrer">Book Now on WhatsApp</a>
     <button class="quote-btn" onclick="openBookingPopup()">Book Now</button>
   </section>
-  <section class="faq-section" aria-label="Frequently Asked Questions">
-    <!-- ...FAQ tiles as above... -->
-    <!-- (Paste the FAQ tiles from above here) -->
-  </section>
-</main>
-<footer class="site-footer">
-  <!-- ...footer as above... -->
-</footer>
-<!-- ...all popups as above... -->
-<!-- Guidance Popup -->
-<div id="guidancePopup" class="guidance-popup" role="status" aria-live="polite" aria-atomic="true">
-  <span class="guidance-icon" aria-hidden="true">ℹ️</span>
-  <span id="guidancePopupText">Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!</span>
-</div>
-  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <section class="faq-section" aria-label="Frequently Asked Questions">
     <h2>FAQs</h2>
     <div class="faq-tiles">
       <div class="faq-tile">
@@ -516,18 +439,11 @@
     </ul>
   </div>
 </div>
-<!-- Booking Popup with info icon -->
+<!-- Booking Popup (no info icon or instructions) -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
     <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
-    <p class="booking-instructions">
-      After you fill the form and click <b>Submit Booking</b>, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!
-      <span class="info-icon" tabindex="0" role="button" aria-label="Booking information" onclick="showGuidancePopup()"
-        onkeydown="if(event.key==='Enter'||event.key===' '){showGuidancePopup();}">
-        ℹ️
-      </span>
-    </p>
     <form id="bookingForm" onsubmit="return false;">
       <label for="custName" class="visually-hidden">Name</label>
       <input type="text" id="custName" placeholder="Your Name" required>
@@ -560,11 +476,6 @@
       <div class="success-message" id="bookingSuccess">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-</div>
-<!-- Guidance Popup -->
-<div id="guidancePopup" class="guidance-popup" role="status" aria-live="polite" aria-atomic="true">
-  <span class="guidance-icon" aria-hidden="true">ℹ️</span>
-  <span id="guidancePopupText">Booking, your WhatsApp will open with your booking details. Please review and tap <b>Send</b> to complete your booking!</span>
 </div>
 <script>
   const WHATSAPP_NUMBER = '919818198485';
@@ -740,25 +651,6 @@
       document.getElementById("bookNowBtn").disabled = false;
     }, 3000);
   }
-
-  // Guidance Popup logic
-  function showGuidancePopup() {
-    const popup = document.getElementById('guidancePopup');
-    popup.classList.add('show');
-    clearTimeout(window.guidancePopupTimeout);
-    window.guidancePopupTimeout = setTimeout(() => {
-      popup.classList.remove('show');
-    }, 4000);
-  }
-  document.addEventListener('click', function(e) {
-    const popup = document.getElementById('guidancePopup');
-    if (popup.classList.contains('show')) {
-      const infoIcon = document.querySelector('.info-icon');
-      if (!popup.contains(e.target) && !infoIcon.contains(e.target)) {
-        popup.classList.remove('show');
-      }
-    }
-  });
 </script>
 </body>
 </html>
