@@ -1,5 +1,4 @@
-</body>
-</html>
+       
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,7 @@
   <title>A&H Auto Detailer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    /* ...[your CSS remains unchanged]... */
     * {
       margin: 0;
       padding: 0;
@@ -488,11 +488,13 @@
       }
     }
 
-    // FAQ toggle (only one open at a time)
+    // Improved FAQ toggle (only one open at a time, clicking the same closes it)
     document.querySelectorAll('.faq-question').forEach(q => {
       q.addEventListener('click', () => {
+        const parent = q.parentElement;
+        const isActive = parent.classList.contains('active');
         document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-        q.parentElement.classList.toggle('active');
+        if (!isActive) parent.classList.add('active');
       });
     });
 
@@ -513,5 +515,4 @@
     });
   </script>
 </body>
-        </html>
-        
+</html>
