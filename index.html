@@ -1,5 +1,3 @@
-/div>
-</footer>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer - Premium Mobile Car Detailing Services</title>
   <meta name="description" content="Professional mobile car detailing services in Delhi/NCR. Get showroom-quality interior/exterior cleaning, paint correction, and ceramic coating at your doorstep.">
-  <meta property="og:title" content="A&H Auto Detailer - Premium Mobile Car Detailing">
-  <meta property="og:description" content="Professional mobile car detailing services in Delhi/NCR. Get showroom-quality cleaning at your doorstep.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0">
-  <meta property="og:url" content="https://aandhautodetailer.com">
   <link rel="icon" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -18,20 +12,19 @@
       --primary-color: #25D366;
       --secondary-color: #00e676;
       --error-color: #ff3b3b;
-      --btn-gradient: linear-gradient(90deg, #25D366 0%, #1ebe5d 100%);
-      --btn-shadow: 0 4px 20px #25d36644;
-      --btn-hover: linear-gradient(90deg, #1ebe5d 0%, #25D366 100%);
-      --btn-active: #1ebe5d;
+      --btn-bg: rgba(255,255,255,0.07);
+      --btn-glass: rgba(255,255,255,0.15);
+      --btn-border: rgba(255,255,255,0.24);
+      --btn-shadow: 0 2px 8px 0 rgba(0,0,0,0.13), 0 1.5px 3px 0 rgba(37,211,102,0.12);
+      --btn-hover: rgba(37,211,102,0.11);
+      --btn-active: rgba(37,211,102,0.17);
     }
-    * {
-      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter',sans-serif; -webkit-tap-highlight-color: transparent; }
     body {
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0,0,0,0.6);
       background-blend-mode: darken;
       color: white;
       padding-bottom: 100px;
@@ -43,79 +36,99 @@
     main { display: block; width: 100%; }
     h1 { text-align: center; font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; margin-top: 0; }
     .pricing-section { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 10px; max-width: 1200px; margin: 0 auto; }
-    .card { background: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(20, 20, 20, 0.85)); border-radius: 16px; padding: 18px; box-shadow: 0 10px 36px rgba(0,0,0,0.7); border: 1.5px solid rgba(0,230,118,0.13); }
+    .card { background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(20,20,20,0.85)); border-radius: 16px; padding: 18px; box-shadow: 0 10px 36px rgba(0,0,0,0.7); border: 1.5px solid rgba(0,230,118,0.13); }
     .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.08rem; margin-bottom: 8px; }
     .card p { font-size: 0.93rem; color: #ddd; }
-    .price-btn, .info-btn, .quote-btn {
+
+    /* iPhone 16-Style Buttons */
+    .price-btn, .info-btn, .quote-btn, #confirmCategoryBtn {
       display: block;
       width: 100%;
       max-width: 220px;
       margin: 10px auto 0 auto;
-      padding: 12px 0;
-      font-size: 1.05rem;
-      font-weight: 700;
-      border-radius: 32px;
-      border: none;
-      cursor: pointer;
-      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+      padding: 13px 0;
+      font-size: 1.08rem;
+      font-weight: 600;
+      border-radius: 18px;
+      border: 1.5px solid var(--btn-border);
+      background: var(--btn-bg);
+      color: #fff;
       box-shadow: var(--btn-shadow);
-      letter-spacing: 0.5px;
+      backdrop-filter: blur(8px);
+      transition: background 0.17s, color 0.17s, box-shadow 0.17s, transform 0.13s, border 0.17s;
       outline: none;
-      border: 2px solid transparent;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
     }
     .price-btn {
-      background: #fff;
       color: #25D366;
-      border: 2px solid #25D366;
+      background: var(--btn-glass);
+      border: 1.5px solid #25D36677;
     }
     .price-btn:hover, .price-btn:focus {
-      background: var(--btn-gradient);
-      color: #fff;
-      border-color: #25D366;
-      transform: scale(1.04);
-    }
-    .info-btn {
-      background: #232323;
-      color: #fff;
-      border: 2px solid #444;
-    }
-    .info-btn:hover, .info-btn:focus {
-      background: #2c2c2c;
-      color: #25D366;
-      border-color: #25D366;
-      transform: scale(1.04);
-    }
-    .quote-btn {
-      background: var(--btn-gradient);
-      color: #fff;
-      border: none;
-    }
-    .quote-btn:hover, .quote-btn:focus {
       background: var(--btn-hover);
       color: #fff;
-      transform: scale(1.04);
-      box-shadow: 0 0 20px #25D36655;
+      border: 1.5px solid #25D366;
+      transform: scale(1.03);
     }
-    .quote-btn:active {
+    .info-btn {
+      color: #fff;
+      background: var(--btn-bg);
+      border: 1.5px solid #444;
+    }
+    .info-btn:hover, .info-btn:focus {
+      background: var(--btn-hover);
+      color: #25D366;
+      border: 1.5px solid #25D366;
+      transform: scale(1.03);
+    }
+    .quote-btn, #confirmCategoryBtn {
+      color: #fff;
+      background: var(--btn-bg);
+      border: 1.5px solid #25D366;
+      font-weight: 700;
+      box-shadow: 0 2px 12px #25D36633, var(--btn-shadow);
+    }
+    .quote-btn:hover, #confirmCategoryBtn:hover, .quote-btn:focus, #confirmCategoryBtn:focus {
+      background: var(--btn-hover);
+      color: #25D366;
+      border: 1.5px solid #25D366;
+      transform: scale(1.03);
+    }
+    .quote-btn:active, #confirmCategoryBtn:active {
       background: var(--btn-active);
       color: #fff;
     }
-    /* Car Category Cards */
+    .quote-btn[disabled], #confirmCategoryBtn[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background: var(--btn-bg);
+      color: #bbb;
+      border-color: #444;
+      box-shadow: none;
+    }
+
+    /* iPhone 16-style Car Category Cards */
     .car-category-card {
-      background: #181818;
+      background: var(--btn-bg);
       border: 2.5px solid transparent;
       border-radius: 20px;
       padding: 22px 10px 16px 10px;
       font-size: 1.08rem;
       color: #dcdcdc;
       cursor: pointer;
-      transition: border-color 0.25s, box-shadow 0.25s, color 0.25s, background 0.25s;
+      transition: border-color 0.22s, box-shadow 0.22s, color 0.22s, background 0.22s;
       text-align: center;
       user-select: none;
       font-weight: 600;
       box-shadow: 0 2px 12px #0005;
       margin-bottom: 0;
+      outline: none;
+      backdrop-filter: blur(8px);
     }
     .car-category-card strong {
       font-size: 1.13em;
@@ -132,11 +145,14 @@
       margin-top: 8px;
       display: block;
     }
-    .car-category-card:hover, .car-category-card.selected {
+    .car-category-card:hover, .car-category-card.selected, .car-category-card:focus {
       border-color: #25D366;
       box-shadow: 0 0 18px #25D36688;
       color: #25D366;
-      background: #232323;
+      background: var(--btn-hover);
+      outline: 2px solid #25D36644;
+      outline-offset: 2px;
+      z-index: 2;
     }
     .car-category-grid {
       display: grid;
@@ -144,11 +160,12 @@
       gap: 18px;
       margin: 20px 0 0 0;
     }
-    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
+        .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
-    .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-gradient); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; }
+    .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-bg); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; border: 1.5px solid #25D366; }
     .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
-        /* Modern Footer */
+
+    /* Modern Footer */
     .site-footer {
       background: #15191e;
       color: #e0e0e0;
@@ -291,8 +308,8 @@
     .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus {
       box-shadow: 0 0 0 2px #25D36699;
     }
-    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--btn-gradient); color: #fff; font-weight: 700; border: none; box-shadow: var(--btn-shadow); transition: background 0.18s, box-shadow 0.18s; }
-    .popup .quote-btn:hover { background: var(--btn-hover); box-shadow: 0 4px 18px #25D36644; }
+    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--btn-bg); color: #fff; font-weight: 700; border: 1.5px solid #25D366; box-shadow: 0 2px 12px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
+    .popup .quote-btn:hover { background: var(--btn-hover); color: #25D366; box-shadow: 0 4px 18px #25D36644; }
     .close-btn {
       position: absolute; top: 18px; right: 22px; background: var(--error-color); color: #fff; border: none; border-radius: 50px; padding: 0 18px;
       height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2;
@@ -502,7 +519,7 @@
   </div>
 </div>
 
-<!-- Price Popups (unchanged, include as before) -->
+<!-- Price Popups (unchanged, add your price popups here) -->
 <!-- ...revampPricePopup, washPricePopup, paintPricePopup, interiorPricePopup... -->
 
 <!-- Revamp Inclusions Popup (unchanged) -->
@@ -574,8 +591,8 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-</footer>
-<script>
+        </footer>
+        <script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
