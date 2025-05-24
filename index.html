@@ -104,10 +104,6 @@
       box-shadow: 0 4px 18px #25D36644;
       transform: translateY(-2px) scale(1.03);
     }
-    .quote-btn[disabled] {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
     .price-btn {
       background: #fff;
       color: #25D366;
@@ -130,8 +126,7 @@
       border-color: #25D366;
       transform: scale(1.04);
     }
-    /* ... CSS continues in Part 2 ... */
-        /* Car Category Popup Styles */
+    /* Car Category Popup Styles */
     .car-category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -152,7 +147,6 @@
       font-weight: 600;
       box-shadow: 0 2px 12px #0005;
       margin-bottom: 0;
-      outline: none;
     }
     .car-category-card strong {
       font-size: 1.13em;
@@ -190,14 +184,40 @@
     .popup-title { margin-bottom: 28px; color: #fff; font-size: 1.25rem; font-weight: 600; text-align: left; letter-spacing: 0.2px; }
     .close-btn { position: absolute; top: 18px; right: 22px; background: #ff3b3b; color: #fff; border: none; border-radius: 50px; padding: 0 18px; height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2; }
     .close-btn:hover { background: #dd2222; transform: scale(1.06); }
-    .readonly-field {
-      font-weight:700; color:#a0eec0; background:#232323; border-radius:12px;
-      padding:12px 18px; margin-bottom:8px; border:1.5px solid #555;
-      font-size:1.05rem;
+    .price-table { width: 100%; color: #fff; border-collapse: collapse; margin-bottom: 0; }
+    .price-table td { padding: 8px 0; border-bottom: 1px solid #333; font-size: 1.08rem; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table td:last-child { text-align: right; font-weight: 600; }
+    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
+    .cta-section h2 { font-size: 2rem; }
+    .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
+    .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
+    .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
+    .faq-tile { background: #181818; border-radius: 18px; box-shadow: 0 2px 10px #0004; padding: 0; overflow: hidden; }
+    .faq-tile-question { width: 100%; background: none; border: none; color: #fff; font-size: 1.07rem; font-weight: 600; padding: 20px 20px 20px 26px; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
+    .faq-arrow { display: inline-block; margin-left: 12px; transition: transform 0.3s; border: solid #00e676; border-width: 0 3px 3px 0; padding: 4px; transform: rotate(45deg);}
+    .faq-tile.open .faq-arrow { transform: rotate(-135deg);}
+    .faq-tile-answer { background: #232323; color: #bbb; font-size: 0.97rem; padding: 0 24px 0 32px; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height 0.4s, padding 0.3s, opacity 0.2s;}
+    .faq-tile.open .faq-tile-answer { max-height: 400px; padding: 12px 24px 18px 32px; opacity: 1; pointer-events: auto;}
+    .site-footer { background: #15191e; color: #e0e0e0; padding: 36px 0 0 0; margin-top: 60px; font-size: 1rem; border-top: 1px solid #222; }
+    .footer-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo { width: 44px; height: 44px; border-radius: 12px; background: #fff; object-fit: contain; border: 1.5px solid #222; box-shadow: 0 2px 8px #0002; }
+    .footer-title { font-weight: 700; font-size: 1.18rem; color: #fff; letter-spacing: 1px; }
+    .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #a0eec0; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .footer-links a:hover { color: #25D366; }
+    .footer-bottom { text-align: center; color: #8aa; font-size: 0.97rem; padding: 18px 0 12px 0; margin-top: 18px; border-top: 1px solid #232323; background: #15191e; }
+    @media (max-width: 700px) {
+      .footer-container { flex-direction: column; gap: 18px; padding: 0 8px; }
+      .footer-links { gap: 18px; }
+      .footer-logo { width: 36px; height: 36px; }
     }
+    .popup input, .popup select { width: 100%; margin-bottom: 10px; padding: 14px 18px; border-radius: 12px; border: none; font-size: 1.13rem; background: #fff; color: #222; box-shadow: 0 2px 8px #0001; outline: none; transition: box-shadow 0.18s; }
+    .popup input:focus, .popup select:focus { box-shadow: 0 0 0 2px #25D36699; }
     .error-message { color: #ff3b3b; font-size: 0.93rem; margin-bottom: 8px; display: none; }
     .success-message { color: var(--secondary-color); font-weight: 600; text-align: center; margin-top: 20px; display: none; }
-    /* ...rest of your CSS (FAQ, footer, etc.) ... */
   </style>
 </head>
 <body>
@@ -208,8 +228,46 @@
 <main id="main">
   <h1>Our Packages</h1>
   <section class="pricing-section" aria-label="Service Packages">
-    <!-- ... your service cards ... -->
-    <!-- (Omitted for brevity, see Part 4 for full content) -->
+    <div class="card">
+      <h2>A&H Total Revamp Package</h2>
+      <div class="price">From ₹4,999*</div>
+      <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
+      <div class="card-btn-row">
+        <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
+        <button class="quote-btn" onclick="openCarCategoryPopup('A&H Total Revamp Package')">Book Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Detailed Wash + 1 Step Polish + Wax</h2>
+      <div class="price">From ₹1,199*</div>
+      <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
+      <div class="card-btn-row">
+        <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">See Inclusions</button>
+        <button class="quote-btn" onclick="openCarCategoryPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Paint Correction</h2>
+      <div class="price">From ₹2,999*</div>
+      <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
+      <div class="card-btn-row">
+        <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">See Inclusions</button>
+        <button class="quote-btn" onclick="openCarCategoryPopup('Paint Correction')">Book Now</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Interior Detailing</h2>
+      <div class="price">From ₹1,499*</div>
+      <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
+      <div class="card-btn-row">
+        <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
+        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
+        <button class="quote-btn" onclick="openCarCategoryPopup('Interior Detailing')">Book Now</button>
+      </div>
+    </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
   <section class="cta-section" aria-label="Call to Action">
@@ -217,7 +275,101 @@
     <p>Contact us now for premium doorstep detailing!</p>
     <button class="quote-btn" onclick="openCarCategoryPopup()">Book Now</button>
   </section>
-  <!-- ... FAQ section ... -->
+  <section class="faq-section" aria-label="Frequently Asked Questions">
+    <h2>FAQs</h2>
+    <div class="faq-tiles">
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Do you need water and electricity access?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Yes, we require access to water and electricity at your location for most detailing services.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Where do you serve?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          We currently operate in selected areas of Delhi, Noida, Ghaziabad, and Gurgaon.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Do you bring your own equipment?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Yes, we carry all necessary tools, products, and equipment to your doorstep.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          How long does a full detail take?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          A full detail can take 3 to 6 hours depending on the car size and condition.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          How do I book a service?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          You can book via WhatsApp through the provided buttons or by messaging us directly.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Do you use safe products?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Yes, we only use professional-grade, pH-balanced products safe for your car.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          What is paint correction?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Paint correction removes swirls, scratches, and oxidation to restore a glossy finish.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Can you clean leather interiors?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Yes, we deep clean and condition leather seats using specialized leather care products.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          Do you clean engine bays?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          Yes, upon request. We use low-pressure, water-safe techniques for engine bay cleaning.
+        </div>
+      </div>
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false">
+          What are your operating hours?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" aria-hidden="true">
+          We work from 8 AM to 7 PM every day, including weekends.
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Car Category Popup (with price) -->
@@ -246,53 +398,6 @@
     <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm</button>
   </div>
 </div>
-<!-- Booking Popup (improved) -->
-<div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
-  <div class="popup" style="max-width: 420px;">
-    <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
-    <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
-    <form id="bookingForm" autocomplete="off" onsubmit="return false;">
-      <label for="custName">Your Name</label>
-      <input type="text" id="custName" placeholder="Enter your name" required autocomplete="name">
-      <div class="error-message" id="custNameError"></div>
-
-      <label for="custAddress">Address</label>
-      <input type="text" id="custAddress" placeholder="Enter your address" required autocomplete="street-address">
-      <div class="error-message" id="custAddressError"></div>
-
-      <label for="custCar">Car Model</label>
-      <input type="text" id="custCar" placeholder="e.g. Honda City" required autocomplete="off">
-      <div class="error-message" id="custCarError"></div>
-
-      <div>
-        <label>Car Category</label>
-        <div id="chosenCarCategory" class="readonly-field"></div>
-      </div>
-      <div>
-        <label>Category Price</label>
-        <div id="chosenCarPrice" class="readonly-field"></div>
-      </div>
-
-      <label for="custPackage">Service Package</label>
-      <input type="text" id="custPackage" readonly class="readonly-field">
-      <div class="error-message" id="custPackageError"></div>
-
-      <label for="custDate">Preferred Date</label>
-      <input type="date" id="custDate" required>
-      <div class="error-message" id="custDateError"></div>
-
-      <label for="custTime">Preferred Time</label>
-      <input type="time" id="custTime" required>
-      <div class="error-message" id="custTimeError"></div>
-
-      <button class="quote-btn" id="bookNowBtn" type="button" style="margin-top:18px; width:100%;" onclick="submitBooking()">Submit Booking</button>
-      <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
-        <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
-      </p>
-      <div class="success-message" id="bookingSuccess" style="display:none;">Your booking request has been submitted! We will contact you soon.</div>
-    </form>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="footer-container">
@@ -310,8 +415,190 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-</footer>
-<script>
+  </footer>
+  <!-- Revamp Inclusions Popup -->
+<div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="revampInclusionTitle" class="popup-title">A&H Total Revamp Package – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Wheel, tire, and fender cleaning & dressing</li>
+      <li>Door jamb and fuel cap cleaning</li>
+      <li>Full paint decontamination (clay bar + iron fallout removal)</li>
+      <li>Multi-stage paint correction (removes swirls, scratches, oxidation, restores gloss)</li>
+      <li>Premium wax or sealant for long-lasting protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Deep interior vacuum (seats, carpets, boot)</li>
+      <li>Shampooing of seats, carpets, and mats</li>
+      <li>Leather seat cleaning & conditioning (if applicable)</li>
+      <li>Dashboard, console, and trim cleaning</li>
+      <li>Interior glass and mirror cleaning</li>
+      <li>Odor neutralization and air freshener</li>
+    </ul>
+  </div>
+</div>
+<!-- Wash+Polish+Wax Inclusions Popup -->
+<div class="popup-overlay" id="washInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="washInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('washInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="washInclusionTitle" class="popup-title">Detailed Wash + 1 Step Polish + Wax – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Wheel, tire, and fender cleaning & dressing</li>
+      <li>Door jamb and fuel cap cleaning</li>
+      <li>1-step machine polish (removes light swirls, enhances gloss)</li>
+      <li>Premium wax application for paint protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Final wipe down and inspection</li>
+    </ul>
+  </div>
+</div>
+<!-- Paint Correction Inclusions Popup -->
+<div class="popup-overlay" id="paintInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="paintInclusionTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('paintInclusionPopup')" aria-label="Close popup">×</button>
+    <div id="paintInclusionTitle" class="popup-title">Paint Correction – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Exterior foam pre-wash and hand wash</li>
+      <li>Full paint decontamination (clay bar + iron fallout removal)</li>
+      <li>Multi-stage machine polishing (removes swirls, scratches, oxidation, restores gloss)</li>
+      <li>Premium wax or sealant for paint protection</li>
+      <li>Exterior glass and mirror cleaning</li>
+      <li>Final inspection and touch-up</li>
+    </ul>
+  </div>
+</div>
+<!-- Interior Detailing Inclusions Popup -->
+<div class="popup-overlay" id="inclusionPopup" role="dialog" aria-modal="true" aria-labelledby="inclusionPopupTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closeInclusionPopup('inclusionPopup')" aria-label="Close popup">×</button>
+    <div id="inclusionPopupTitle" class="popup-title">Interior Detailing – Inclusions</div>
+    <ul style="color:#fff; font-size:1.08rem; line-height:1.7; margin:0 0 0 12px; padding:0;">
+      <li>Complete vacuuming of seats, carpets, mats, and boot</li>
+      <li>Shampooing of fabric seats, carpets, and mats for stain and odor removal</li>
+      <li>Leather seat cleaning & conditioning (if applicable)</li>
+      <li>Cleaning & sanitization of dashboard, console, and center panel</li>
+      <li>Door panel and trim cleaning</li>
+      <li>Cleaning of seat belts, cup holders, and storage compartments</li>
+      <li>Cleaning of air vents and hard-to-reach areas with brushes</li>
+      <li>Interior roof/headliner spot cleaning</li>
+      <li>Interior glass and mirror cleaning (streak-free)</li>
+      <li>Odor neutralization and air freshener treatment</li>
+      <li>Final inspection and touch-up for a spotless finish</li>
+    </ul>
+    <p style="color:#bbb; font-size:0.97rem; margin-top:14px;">
+      <b>Note:</b> Leather care and headliner cleaning are performed only if safe for your car’s materials.
+    </p>
+  </div>
+</div>
+
+<!-- Price Popups -->
+<div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('revampPricePopup')" aria-label="Close popup">×</button>
+    <div id="revampPriceTitle" class="popup-title">A&H Total Revamp Package – Price Table</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹4,999</td></tr>
+      <tr><td>Sedan</td><td>₹5,999</td></tr>
+      <tr><td>Compact SUV</td><td>₹6,999</td></tr>
+      <tr><td>Full Size SUV</td><td>₹8,499</td></tr>
+      <tr><td>Luxury Sedan</td><td>₹8,999</td></tr>
+    </table>
+    <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
+  </div>
+</div>
+<div class="popup-overlay" id="washPricePopup" role="dialog" aria-modal="true" aria-labelledby="washPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('washPricePopup')" aria-label="Close popup">×</button>
+    <div id="washPriceTitle" class="popup-title">Wash + 1 Step Polish + Wax – Price Table</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹1,199</td></tr>
+      <tr><td>Sedan</td><td>₹1,499</td></tr>
+      <tr><td>Compact SUV</td><td>₹1,799</td></tr>
+      <tr><td>Full Size SUV</td><td>₹2,199</td></tr>
+      <tr><td>Luxury Sedan</td><td>₹2,499</td></tr>
+    </table>
+    <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
+  </div>
+</div>
+<div class="popup-overlay" id="paintPricePopup" role="dialog" aria-modal="true" aria-labelledby="paintPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('paintPricePopup')" aria-label="Close popup">×</button>
+    <div id="paintPriceTitle" class="popup-title">Paint Correction – Price Table</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹2,999</td></tr>
+      <tr><td>Sedan</td><td>₹3,499</td></tr>
+      <tr><td>Compact SUV</td><td>₹3,999</td></tr>
+      <tr><td>Full Size SUV</td><td>₹4,999</td></tr>
+      <tr><td>Luxury Sedan</td><td>₹5,499</td></tr>
+    </table>
+    <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
+  </div>
+</div>
+<div class="popup-overlay" id="interiorPricePopup" role="dialog" aria-modal="true" aria-labelledby="interiorPriceTitle">
+  <div class="popup">
+    <button class="close-btn" onclick="closePricePopup('interiorPricePopup')" aria-label="Close popup">×</button>
+    <div id="interiorPriceTitle" class="popup-title">Interior Detailing – Price Table</div>
+    <table class="price-table">
+      <tr><td>Hatchback</td><td>₹1,499</td></tr>
+      <tr><td>Sedan</td><td>₹1,799</td></tr>
+      <tr><td>Compact SUV</td><td>₹1,999</td></tr>
+      <tr><td>Full Size SUV</td><td>₹2,499</td></tr>
+      <tr><td>Luxury Sedan</td><td>₹2,999</td></tr>
+    </table>
+    <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
+  </div>
+</div>
+
+<!-- Booking Popup -->
+<div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
+  <div class="popup" style="max-width: 420px;">
+    <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
+    <div id="bookingPopupTitle" class="popup-title">Book Your Detailing Service</div>
+    <form id="bookingForm" onsubmit="return false;">
+      <label for="custName" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Your Name</label>
+      <input type="text" id="custName" placeholder="Enter your name" required>
+      <div class="error-message" id="custNameError"></div>
+
+      <label for="custAddress" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Address</label>
+      <input type="text" id="custAddress" placeholder="Enter your address" required>
+      <div class="error-message" id="custAddressError"></div>
+
+      <label for="custCar" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Car Model</label>
+      <input type="text" id="custCar" placeholder="e.g. Honda City" required>
+      <div class="error-message" id="custCarError"></div>
+
+      <div style="margin-bottom:10px;">
+        <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Car Category</label>
+        <div id="chosenCarCategory" style="font-weight:700; color:#a0eec0; background:#232323; border-radius:12px; padding:12px 18px; margin-bottom:8px;"></div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Category Price</label>
+        <div id="chosenCarPrice" style="font-weight:700; color:#25D366; background:#232323; border-radius:12px; padding:12px 18px; margin-bottom:8px;"></div>
+      </div>
+
+      <label for="custPackage" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Service Package</label>
+      <input type="text" id="custPackage" readonly style="background:#eee; color:#222; font-weight:700; margin-bottom:12px; border-radius:12px; border:1.5px solid #555; padding:12px 18px;">
+      <div class="error-message" id="custPackageError"></div>
+
+      <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Date</label>
+      <input type="date" id="custDate" required>
+      <div class="error-message" id="custDateError"></div>
+
+      <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Time</label>
+      <input type="time" id="custTime" required>
+      <div class="error-message" id="custTimeError"></div>
+
+      <button class="quote-btn" id="bookNowBtn" type="button" style="margin-top:18px; width:100%;" onclick="submitBooking()">Submit Booking</button>
+      <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
+        <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
+      </p>
+      <div class="success-message" id="bookingSuccess" style="display:none;">Your booking request has been submitted! We will contact you soon.</div>
+    </form>
+  </div>
+    </div>
+    <script>
   // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
@@ -325,49 +612,23 @@
     selectedCarCategory = "";
     selectedCarPrice = "";
     document.querySelectorAll('.car-category-card').forEach(card => card.classList.remove('selected'));
-    setTimeout(() => {
-      const firstCard = document.querySelector('.car-category-card');
-      if (firstCard) firstCard.focus();
-    }, 100);
   }
 
   function closeCarCategoryPopup() {
     document.getElementById('carCategoryPopup').classList.remove('active');
   }
 
-  // Handle car category selection (with keyboard accessibility)
+  // Handle car category selection
   document.querySelectorAll('.car-category-card').forEach(card => {
     card.addEventListener('click', function() {
-      selectCarCategoryCard(this);
-    });
-    card.addEventListener('keydown', function(e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        selectCarCategoryCard(this);
-      }
-      // Arrow key navigation
-      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-        e.preventDefault();
-        let next = this.nextElementSibling || this.parentElement.firstElementChild;
-        next.focus();
-      }
-      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-        e.preventDefault();
-        let prev = this.previousElementSibling || this.parentElement.lastElementChild;
-        prev.focus();
-      }
+      document.querySelectorAll('.car-category-card').forEach(c => c.classList.remove('selected'));
+      this.classList.add('selected');
+      selectedCarCategory = this.getAttribute('data-category');
+      selectedCarPrice = this.getAttribute('data-price');
+      document.getElementById('selectedPrice').textContent = `Price: ${selectedCarPrice}`;
+      document.getElementById('confirmCategoryBtn').disabled = false;
     });
   });
-
-  function selectCarCategoryCard(card) {
-    document.querySelectorAll('.car-category-card').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    selectedCarCategory = card.getAttribute('data-category');
-    selectedCarPrice = card.getAttribute('data-price');
-    document.getElementById('selectedPrice').textContent = `Price: ${selectedCarPrice}`;
-    document.getElementById('confirmCategoryBtn').disabled = false;
-    document.getElementById('confirmCategoryBtn').focus();
-  }
 
   document.getElementById('confirmCategoryBtn').addEventListener('click', function() {
     if (selectedCarCategory && selectedCarPrice) {
@@ -376,6 +637,20 @@
     }
   });
 
+  // --- Price/Inclusion Popups ---
+  function openPricePopup(id) {
+    document.getElementById(id).classList.add('active');
+  }
+  function closePricePopup(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+  function openInclusionPopup(id) {
+    document.getElementById(id).classList.add('active');
+  }
+  function closeInclusionPopup(id) {
+    document.getElementById(id).classList.remove('active');
+  }
+
   // --- Booking Popup ---
   function openBookingPopup(service, carCategory, carPrice) {
     document.getElementById("bookingForm").reset();
@@ -383,6 +658,8 @@
     document.getElementById("bookingSuccess").style.display = "none";
     document.getElementById("bookingPopup").classList.add('active');
     setTimeout(() => document.getElementById("custName").focus(), 100);
+
+    // Set the package, car category, and price
     document.getElementById("custPackage").value = service || "";
     document.getElementById("chosenCarCategory").textContent = carCategory || "";
     document.getElementById("chosenCarPrice").textContent = carPrice || "";
@@ -391,6 +668,7 @@
     document.getElementById("bookingPopup").classList.remove('active');
   }
 
+  // --- Booking Form Submission ---
   function submitBooking() {
     let valid = true;
     function showError(id, msg) {
@@ -405,18 +683,10 @@
     showError("custPackageError", document.getElementById("custPackage").value ? "" : "Please select a service package");
     showError("custDateError", document.getElementById("custDate").value ? "" : "Please select a date");
     showError("custTimeError", document.getElementById("custTime").value ? "" : "Please select a time");
-
     if (!document.getElementById("chosenCarCategory").textContent) {
       valid = false;
       alert("Please select a car category.");
       return;
-    }
-    // Validate date is not in the past
-    const today = new Date();
-    const selectedDate = new Date(document.getElementById("custDate").value);
-    if (selectedDate.setHours(0,0,0,0) < today.setHours(0,0,0,0)) {
-      showError("custDateError", "Date cannot be in the past.");
-      valid = false;
     }
     if (!valid) return;
 
@@ -432,6 +702,7 @@
     const timeInput = document.getElementById("custTime").value;
     const formattedTime = encodeURIComponent(formatTimeTo12Hour(timeInput));
 
+    // Format WhatsApp message
     const msg = `New Booking Request:%0A--------------------%0A` +
       `Name: ${name}%0A` +
       `Address: ${address}%0A` +
@@ -454,6 +725,7 @@
     }, 3000);
   }
 
+  // --- Helper Functions ---
   function formatTimeTo12Hour(time24) {
     if (!time24) return "";
     let [hour, minute] = time24.split(":");
@@ -469,6 +741,24 @@
     if (parts.length !== 3) return dateStr;
     return `${parts[2]}/${parts[1]}/${parts[0]}`;
   }
+
+  // --- FAQ Logic ---
+  document.querySelectorAll('.faq-tile-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const tile = this.closest('.faq-tile');
+      const isOpen = tile.classList.contains('open');
+      document.querySelectorAll('.faq-tile').forEach(t => {
+        t.classList.remove('open');
+        t.querySelector('.faq-tile-question').setAttribute('aria-expanded', 'false');
+        t.querySelector('.faq-tile-answer').setAttribute('aria-hidden', 'true');
+      });
+      if (!isOpen) {
+        tile.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+        tile.querySelector('.faq-tile-answer').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
 
   // --- Overlay & Escape Key Logic ---
   document.querySelectorAll('.popup-overlay').forEach(overlay => {
