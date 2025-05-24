@@ -60,21 +60,6 @@
       margin-top: 12px;
       flex-wrap: nowrap;
     }
-    .card-btn-row button {
-      flex: 0 1 auto;
-      min-width: 0;
-      padding: 0 14px;
-      height: 32px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      border-radius: 999px;
-      box-shadow: 0 1px 4px #0001;
-      margin: 0;
-      white-space: nowrap;
-      line-height: 1;
-      border: none;
-      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
-    }
     @media (max-width: 400px) {
       .card-btn-row {
         flex-wrap: wrap;
@@ -85,6 +70,14 @@
       background: var(--btn-gradient);
       color: #fff;
       box-shadow: 0 2px 12px #25D36633;
+      font-weight: 600;
+      border-radius: 999px;
+      border: none;
+      padding: 0 14px;
+      height: 32px;
+      font-size: 0.92rem;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
+      cursor: pointer;
     }
     .quote-btn:hover, .quote-btn:focus {
       background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
@@ -96,6 +89,13 @@
       background: #fff;
       color: #25D366;
       border: 2px solid #25D366;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 0 14px;
+      height: 32px;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
     }
     .price-btn:hover, .price-btn:focus {
       background: var(--btn-gradient);
@@ -107,6 +107,13 @@
       background: #232323;
       color: #fff;
       border: 2px solid #444;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 0 14px;
+      height: 32px;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
     }
     .info-btn:hover, .info-btn:focus {
       background: #2c2c2c;
@@ -114,9 +121,65 @@
       border-color: #25D366;
       transform: scale(1.04);
     }
-    /* ... rest of your styles remain unchanged ... (see previous parts for more) */
-    /* Car Category Popup, Confirm/Submit Button, Popups, FAQ, Footer, etc. */
-    /* ... */
+    .note { text-align: center; margin-top: 30px; color: #ccc; }
+    /* ENQUIRY BUTTON (CTA) */
+    .enquiry-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #1ed760 0%, #25D366 100%);
+      color: #fff;
+      font-size: 1.18rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      box-shadow: 0 6px 20px #25D36666;
+      padding: 0 40px;
+      height: 54px;
+      line-height: 54px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+    .enquiry-btn:hover, .enquiry-btn:focus {
+      background: linear-gradient(90deg, #25D366 80%, #1ed760 100%);
+      box-shadow: 0 10px 28px #25D36688;
+      transform: translateY(-2px) scale(1.05);
+      outline: none;
+    }
+        .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
+    .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
+    .faq-tile { background: #181818; border-radius: 18px; box-shadow: 0 2px 10px #0004; padding: 0; overflow: hidden; }
+    .faq-tile-question { width: 100%; background: none; border: none; color: #fff; font-size: 1.07rem; font-weight: 600; padding: 20px 20px 20px 26px; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
+    .faq-arrow { display: inline-block; margin-left: 12px; transition: transform 0.3s; border: solid #00e676; border-width: 0 3px 3px 0; padding: 4px; transform: rotate(45deg);}
+    .faq-tile.open .faq-arrow { transform: rotate(-135deg);}
+    .faq-tile-answer { background: #232323; color: #bbb; font-size: 0.97rem; padding: 0 24px 0 32px; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height 0.4s, padding 0.3s, opacity 0.2s;}
+    .faq-tile.open .faq-tile-answer { max-height: 400px; padding: 12px 24px 18px 32px; opacity: 1; pointer-events: auto;}
+    .site-footer { background: #15191e; color: #e0e0e0; padding: 36px 0 0 0; margin-top: 60px; font-size: 1rem; border-top: 1px solid #222; }
+    .footer-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo { width: 44px; height: 44px; border-radius: 12px; background: #fff; object-fit: contain; border: 1.5px solid #222; box-shadow: 0 2px 8px #0002; }
+    .footer-title { font-weight: 700; font-size: 1.18rem; color: #fff; letter-spacing: 1px; }
+    .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { color: #a0eec0; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .footer-links a:hover { color: #25D366; }
+    .footer-bottom { text-align: center; color: #8aa; font-size: 0.97rem; padding: 18px 0 12px 0; margin-top: 18px; border-top: 1px solid #232323; background: #15191e; }
+    @media (max-width: 700px) {
+      .footer-container { flex-direction: column; gap: 18px; padding: 0 8px; }
+      .footer-links { gap: 18px; }
+      .footer-logo { width: 36px; height: 36px; }
+    }
+    .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
+    .popup-overlay.active { display: flex; }
+    .popup { background: var(--popup-bg); border-radius: 28px; box-shadow: 0 8px 40px #000a, 0 0 0 1px #222; color: #f4f4f4; max-width: 480px; width: 95vw; max-height: 80vh; padding: 64px 32px 44px 36px; position: relative; overflow-y: auto; box-sizing: border-box; }
+    .popup-title { margin-bottom: 28px; color: #fff; font-size: 1.25rem; font-weight: 600; text-align: left; letter-spacing: 0.2px; }
+    .close-btn { position: absolute; top: 18px; right: 22px; background: #ff3b3b; color: #fff; border: none; border-radius: 50px; padding: 0 18px; height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2; }
+    .close-btn:hover { background: #dd2222; transform: scale(1.06); }
+    .price-table { width: 100%; color: #fff; border-collapse: collapse; margin-bottom: 0; }
+    .price-table td { padding: 8px 0; border-bottom: 1px solid #333; font-size: 1.08rem; }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table td:last-child { text-align: right; font-weight: 600; }
     .car-category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -226,42 +289,6 @@
       cursor: not-allowed;
       transform: none;
     }
-    .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
-    .popup-overlay.active { display: flex; }
-    .popup { background: var(--popup-bg); border-radius: 28px; box-shadow: 0 8px 40px #000a, 0 0 0 1px #222; color: #f4f4f4; max-width: 480px; width: 95vw; max-height: 80vh; padding: 64px 32px 44px 36px; position: relative; overflow-y: auto; box-sizing: border-box; }
-    .popup-title { margin-bottom: 28px; color: #fff; font-size: 1.25rem; font-weight: 600; text-align: left; letter-spacing: 0.2px; }
-    .close-btn { position: absolute; top: 18px; right: 22px; background: #ff3b3b; color: #fff; border: none; border-radius: 50px; padding: 0 18px; height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2; }
-    .close-btn:hover { background: #dd2222; transform: scale(1.06); }
-    .price-table { width: 100%; color: #fff; border-collapse: collapse; margin-bottom: 0; }
-    .price-table td { padding: 8px 0; border-bottom: 1px solid #333; font-size: 1.08rem; }
-    .price-table tr:last-child td { border-bottom: none; }
-    .price-table td:last-child { text-align: right; font-weight: 600; }
-    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
-    .cta-section h2 { font-size: 2rem; }
-    .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
-    .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
-    .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
-    .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
-    .faq-tile { background: #181818; border-radius: 18px; box-shadow: 0 2px 10px #0004; padding: 0; overflow: hidden; }
-    .faq-tile-question { width: 100%; background: none; border: none; color: #fff; font-size: 1.07rem; font-weight: 600; padding: 20px 20px 20px 26px; text-align: left; cursor: pointer; display: flex; align-items: center; justify-content: space-between; }
-    .faq-arrow { display: inline-block; margin-left: 12px; transition: transform 0.3s; border: solid #00e676; border-width: 0 3px 3px 0; padding: 4px; transform: rotate(45deg);}
-    .faq-tile.open .faq-arrow { transform: rotate(-135deg);}
-    .faq-tile-answer { background: #232323; color: #bbb; font-size: 0.97rem; padding: 0 24px 0 32px; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height 0.4s, padding 0.3s, opacity 0.2s;}
-    .faq-tile.open .faq-tile-answer { max-height: 400px; padding: 12px 24px 18px 32px; opacity: 1; pointer-events: auto;}
-    .site-footer { background: #15191e; color: #e0e0e0; padding: 36px 0 0 0; margin-top: 60px; font-size: 1rem; border-top: 1px solid #222; }
-    .footer-container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .footer-brand { display: flex; align-items: center; gap: 12px; }
-    .footer-logo { width: 44px; height: 44px; border-radius: 12px; background: #fff; object-fit: contain; border: 1.5px solid #222; box-shadow: 0 2px 8px #0002; }
-    .footer-title { font-weight: 700; font-size: 1.18rem; color: #fff; letter-spacing: 1px; }
-    .footer-links { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { color: #a0eec0; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
-    .footer-links a:hover { color: #25D366; }
-    .footer-bottom { text-align: center; color: #8aa; font-size: 0.97rem; padding: 18px 0 12px 0; margin-top: 18px; border-top: 1px solid #232323; background: #15191e; }
-    @media (max-width: 700px) {
-      .footer-container { flex-direction: column; gap: 18px; padding: 0 8px; }
-      .footer-links { gap: 18px; }
-      .footer-logo { width: 36px; height: 36px; }
-    }
     .popup input, .popup select { width: 100%; margin-bottom: 10px; padding: 14px 18px; border-radius: 12px; border: none; font-size: 1.13rem; background: #fff; color: #222; box-shadow: 0 2px 8px #0001; outline: none; transition: box-shadow 0.18s; }
     .popup input:focus, .popup select:focus { box-shadow: 0 0 0 2px #25D36699; }
     .error-message { color: #ff3b3b; font-size: 0.93rem; margin-bottom: 8px; display: none; }
@@ -318,10 +345,17 @@
     </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
-  <section class="cta-section" aria-label="Call to Action">
+    <section class="cta-section" aria-label="Call to Action">
     <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
-    <button class="quote-btn" onclick="openCarCategoryPopup()">Book Now</button>
+    <a href="https://wa.me/919818198485?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20car%20detailing%20services." 
+       class="enquiry-btn" 
+       target="_blank" 
+       rel="noopener" 
+       aria-label="Enquiry on WhatsApp">
+      <svg style="vertical-align:middle; margin-right:8px;" width="22" height="22" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 19.5c-.3-.1-1.7-.8-2-1s-.5-.1-.7.1c-.2.2-.8 1-.9 1.1-.2.1-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.2-.8-.7-1.4-1.5-1.6-1.8-.2-.3 0-.4.1-.5.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.2-.2.3-.3.2-.2.2-.3.3-.4.1-.2.1-.3.1-.4 0-.1-.1-.2-.2-.3-.1-.1-.7-1.7-1-2.3-.3-.6-.6-.6-.8-.6-.2 0-.4 0-.6.1-.2.1-1.1.5-1.6 1.4-.5.9-.5 2.2.1 3.3.6 1.2 2.1 2.7 2.5 3.1.4.4 3.5 2.6 5.5 2.6.8 0 1.7-.2 2.2-.7.2-.2.3-.4.4-.6.1-.2.1-.4.1-.5 0-.2-.1-.3-.2-.4z" fill="#fff"/></svg>
+      Enquiry
+    </a>
   </section>
   <section class="faq-section" aria-label="Frequently Asked Questions">
     <h2>FAQs</h2>
@@ -418,9 +452,8 @@
       </div>
     </div>
   </section>
-</main>
-
-<!-- Car Category Popup (with improved Confirm button) -->
+  <!-- All popups for category, inclusions, prices, booking, etc. (see next part) -->
+  <!-- Car Category Popup -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
   <div class="popup" style="max-width: 520px; padding: 40px 32px;">
     <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -446,25 +479,7 @@
     <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm & Continue</button>
   </div>
 </div>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <img src="logo.png" alt="A&H Auto Detailer Logo" class="footer-logo" />
-      <span class="footer-title">A&H Auto Detailer</span>
-    </div>
-    <nav class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">Email</a>
-      <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">WhatsApp</a>
-      <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">Instagram</a>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
-  </div>
-</footer>
-<!-- Revamp Inclusions Popup -->
+<!-- Inclusions Popups -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
@@ -486,7 +501,6 @@
     </ul>
   </div>
 </div>
-<!-- Wash+Polish+Wax Inclusions Popup -->
 <div class="popup-overlay" id="washInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="washInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('washInclusionPopup')" aria-label="Close popup">×</button>
@@ -502,7 +516,6 @@
     </ul>
   </div>
 </div>
-<!-- Paint Correction Inclusions Popup -->
 <div class="popup-overlay" id="paintInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="paintInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('paintInclusionPopup')" aria-label="Close popup">×</button>
@@ -517,7 +530,6 @@
     </ul>
   </div>
 </div>
-<!-- Interior Detailing Inclusions Popup -->
 <div class="popup-overlay" id="inclusionPopup" role="dialog" aria-modal="true" aria-labelledby="inclusionPopupTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('inclusionPopup')" aria-label="Close popup">×</button>
@@ -540,7 +552,6 @@
     </p>
   </div>
 </div>
-
 <!-- Price Popups -->
 <div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
   <div class="popup">
@@ -598,7 +609,6 @@
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
 </div>
-
 <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
@@ -608,15 +618,12 @@
       <label for="custName" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Your Name</label>
       <input type="text" id="custName" placeholder="Enter your name" required>
       <div class="error-message" id="custNameError"></div>
-
       <label for="custAddress" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Address</label>
       <input type="text" id="custAddress" placeholder="Enter your address" required>
       <div class="error-message" id="custAddressError"></div>
-
       <label for="custCar" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Car Model</label>
       <input type="text" id="custCar" placeholder="e.g. Honda City" required>
       <div class="error-message" id="custCarError"></div>
-
       <div style="margin-bottom:10px;">
         <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Car Category</label>
         <div id="chosenCarCategory" style="font-weight:700; color:#a0eec0; background:#232323; border-radius:12px; padding:12px 18px; margin-bottom:8px;"></div>
@@ -625,19 +632,15 @@
         <label style="color:#bbb; font-size:1rem; margin-bottom:2px; display:block;">Category Price</label>
         <div id="chosenCarPrice" style="font-weight:700; color:#25D366; background:#232323; border-radius:12px; padding:12px 18px; margin-bottom:8px;"></div>
       </div>
-
       <label for="custPackage" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Service Package</label>
       <input type="text" id="custPackage" readonly style="background:#eee; color:#222; font-weight:700; margin-bottom:12px; border-radius:12px; border:1.5px solid #555; padding:12px 18px;">
       <div class="error-message" id="custPackageError"></div>
-
       <label for="custDate" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Date</label>
       <input type="date" id="custDate" required>
       <div class="error-message" id="custDateError"></div>
-
       <label for="custTime" style="color:#bbb; font-size:1rem; margin-bottom:3px; display:block;">Preferred Time</label>
       <input type="time" id="custTime" required>
       <div class="error-message" id="custTimeError"></div>
-
       <button id="bookNowBtn" type="button" onclick="submitBooking()">Submit Booking</button>
       <p style="color:#bbb; font-size:0.97rem; margin:12px 0 0 0;">
         <b>Note:</b> Your booking is only complete after you send the message on WhatsApp.
@@ -645,7 +648,24 @@
       <div class="success-message" id="bookingSuccess" style="display:none;">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-                              </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="logo.png" alt="A&H Auto Detailer Logo" class="footer-logo" />
+      <span class="footer-title">A&H Auto Detailer</span>
+    </div>
+    <nav class="footer-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">Email</a>
+      <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">WhatsApp</a>
+      <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">Instagram</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
+  </div>
+  </footer>
   <script>
   // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
@@ -831,4 +851,3 @@
 </script>
 </body>
 </html>
-
