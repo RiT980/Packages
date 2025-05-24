@@ -147,6 +147,37 @@
       margin-bottom: 32px;
     }
 
+    /* Modern Enquiry Button */
+    .enquiry-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #25D366 0%, #1ebe5d 100%);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 48px;
+      height: 56px;
+      letter-spacing: 0.6px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.13);
+      transition: background 0.3s, transform 0.15s;
+      margin: 32px auto 0 auto;
+      max-width: 320px;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    .enquiry-btn:hover,
+    .enquiry-btn:focus {
+      background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
+      transform: translateY(-3px) scale(1.05);
+      outline: none;
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    }
+
     .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
     .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
     .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
@@ -347,7 +378,7 @@
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
   <section class="cta-section" aria-label="Call to Action">
-    <h3>Ready for a Showroom Shine?</h3>
+    <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
     <a href="https://wa.me/919818198485?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20car%20detailing%20services." 
        class="enquiry-btn" 
@@ -731,7 +762,7 @@
       "Luxury Full Size SUV": "₹3,799"
     }
   };
-    // --- Car Category Popup Logic ---
+          // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
   let selectedPackageForBooking = "";
