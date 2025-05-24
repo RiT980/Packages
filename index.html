@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>A&H Auto Detailer - Premium Mobile Car Detailing Services</title>
   <meta name="description" content="Professional mobile car detailing services in Delhi/NCR. Get showroom-quality interior/exterior cleaning, paint correction, and ceramic coating at your doorstep.">
+  <!-- Open Graph Tags -->
   <meta property="og:title" content="A&H Auto Detailer - Premium Mobile Car Detailing">
   <meta property="og:description" content="Professional mobile car detailing services in Delhi/NCR. Get showroom-quality cleaning at your doorstep.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0">
@@ -16,15 +17,17 @@
       --primary-color: #25D366;
       --secondary-color: #00e676;
       --error-color: #ff3b3b;
-      --btn-gradient: linear-gradient(90deg, #25D366 0%, #1ebe5d 100%);
-      --btn-shadow: 0 4px 20px #25d36644;
-      --btn-hover: linear-gradient(90deg, #1ebe5d 0%, #25D366 100%);
-      --btn-active: #1ebe5d;
     }
     * {
       margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
+    :focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .skip-link { position: absolute; top: -40px; left: 0; background: #000; color: white; padding: 8px; z-index: 1001; text-decoration: none; transition: top 0.2s; }
+    .skip-link:focus { top: 0; }
     body {
       background: url('https://images.unsplash.com/photo-1608506375591-b90e1f955e4b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0') no-repeat center center;
       background-size: cover;
@@ -45,108 +48,29 @@
     .card h2 { font-size: 1.25rem; margin-bottom: 10px; color: #ffffff; }
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.08rem; margin-bottom: 8px; }
     .card p { font-size: 0.93rem; color: #ddd; }
-    .price-btn, .info-btn, .quote-btn {
-      display: block;
+    .price-btn {
+      background: #222;
+      color: #25D366;
+      font-weight: 700;
+      border: 2px solid #25D366;
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
       width: 100%;
       max-width: 220px;
-      margin: 10px auto 0 auto;
-      padding: 12px 0;
-      font-size: 1.05rem;
-      font-weight: 700;
-      border-radius: 32px;
-      border: none;
-      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
-      box-shadow: var(--btn-shadow);
-      letter-spacing: 0.5px;
-      outline: none;
-      border: 2px solid transparent;
     }
-    .price-btn {
-      background: #fff;
-      color: #25D366;
-      border: 2px solid #25D366;
-    }
-    .price-btn:hover, .price-btn:focus {
-      background: var(--btn-gradient);
-      color: #fff;
-      border-color: #25D366;
-      transform: scale(1.04);
-    }
-    .info-btn {
-      background: #232323;
-      color: #fff;
-      border: 2px solid #444;
-    }
-    .info-btn:hover, .info-btn:focus {
-      background: #2c2c2c;
-      color: #25D366;
-      border-color: #25D366;
-      transform: scale(1.04);
-    }
-    .quote-btn {
-      background: var(--btn-gradient);
-      color: #fff;
-      border: none;
-    }
-    .quote-btn:hover, .quote-btn:focus {
-      background: var(--btn-hover);
-      color: #fff;
-      transform: scale(1.04);
-      box-shadow: 0 0 20px #25D36655;
-    }
-    .quote-btn:active {
-      background: var(--btn-active);
-      color: #fff;
-    }
-    /* Car Category Cards */
-    .car-category-card {
-      background: #181818;
-      border: 2.5px solid transparent;
-      border-radius: 20px;
-      padding: 22px 10px 16px 10px;
-      font-size: 1.08rem;
-      color: #dcdcdc;
-      cursor: pointer;
-      transition: border-color 0.25s, box-shadow 0.25s, color 0.25s, background 0.25s;
-      text-align: center;
-      user-select: none;
-      font-weight: 600;
-      box-shadow: 0 2px 12px #0005;
-      margin-bottom: 0;
-    }
-    .car-category-card strong {
-      font-size: 1.13em;
-      display: block;
-      margin-bottom: 4px;
-      color: #fff;
-      letter-spacing: 0.5px;
-    }
-    .car-category-card small {
-      color: #a0eec0;
-      font-size: 0.98em;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      margin-top: 8px;
-      display: block;
-    }
-    .car-category-card:hover, .car-category-card.selected {
-      border-color: #25D366;
-      box-shadow: 0 0 18px #25D36688;
-      color: #25D366;
-      background: #232323;
-    }
-    .car-category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 18px;
-      margin: 20px 0 0 0;
-    }
-    .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
+        .note, .cta-section { text-align: center; margin-top: 30px; color: #ccc; }
     .cta-section h2 { font-size: 2rem; }
-    .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: var(--btn-gradient); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; }
+    .cta-section a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: linear-gradient(45deg, var(--primary-color), #1ebe5d); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; text-decoration: none; }
     .cta-section .quote-btn { max-width: 300px; margin-top: 20px; }
-        /* Modern Footer */
+    /* Modern Footer */
     .site-footer {
       background: #15191e;
       color: #e0e0e0;
@@ -287,10 +211,10 @@
       background: #fff; color: #222; box-shadow: 0 2px 8px #0001; outline: none; transition: box-shadow 0.18s;
     }
     .popup input[type="text"]:focus, .popup input[type="date"]:focus, .popup input[type="time"]:focus {
-      box-shadow: 0 0 0 2px #25D36699;
+      box-shadow: none;
     }
-    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--btn-gradient); color: #fff; font-weight: 700; border: none; box-shadow: var(--btn-shadow); transition: background 0.18s, box-shadow 0.18s; }
-    .popup .quote-btn:hover { background: var(--btn-hover); box-shadow: 0 4px 18px #25D36644; }
+    .popup .quote-btn { display: block; width: 100%; margin: 26px 0 0 0; padding: 17px 0; font-size: 1.13rem; border-radius: 32px; background: var(--primary-color); color: #fff; font-weight: 700; border: none; box-shadow: 0 2px 8px #25D36633; transition: background 0.18s, box-shadow 0.18s; }
+    .popup .quote-btn:hover { background: #1ebe5d; box-shadow: 0 4px 18px #25D36644; }
     .close-btn {
       position: absolute; top: 18px; right: 22px; background: var(--error-color); color: #fff; border: none; border-radius: 50px; padding: 0 18px;
       height: 44px; min-width: 44px; font-size: 1.45rem; font-weight: bold; cursor: pointer; box-shadow: 0 2px 8px #ff3b3b22; display: flex; align-items: center; justify-content: center; transition: background 0.18s, transform 0.18s; z-index: 2;
@@ -314,8 +238,8 @@
     }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:last-child { text-align: right; font-weight: 600; }
-    /* Booking form: show chosen package and category in neutral style */
-    #chosenPackage, #chosenCarCategory {
+    /* Booking form: show chosen package in neutral style */
+    #chosenPackage {
       font-weight: 700;
       color: #dcdcdc;
       background: #222;
@@ -327,6 +251,36 @@
       box-shadow: 0 0 8px #44444488;
       font-size: 1.1rem;
       user-select: none;
+    }
+    /* Car Category Cards */
+    .car-category-card {
+      background: #181818;
+      border: 2px solid transparent;
+      border-radius: 16px;
+      padding: 18px 14px;
+      font-size: 1rem;
+      color: #dcdcdc;
+      cursor: pointer;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      text-align: center;
+      user-select: none;
+    }
+    .car-category-card:hover, .car-category-card.selected {
+      border-color: #25D366;
+      box-shadow: 0 0 12px #25D366aa;
+      color: #25D366;
+    }
+    .car-category-card small {
+      color: #bbb;
+      font-size: 0.9em;
+      display: block;
+      margin-top: 6px;
+    }
+    .car-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 18px;
+      margin: 20px 0;
     }
   </style>
 </head>
@@ -472,7 +426,6 @@
     </div>
   </section>
 </main>
-
 <!-- Car Category Selection Popup -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
   <div class="popup" style="max-width: 520px; padding: 40px 32px;">
@@ -480,19 +433,19 @@
     <h2 id="carCategoryPopupTitle" class="popup-title">Select Your Car Category</h2>
     <div class="car-category-grid">
       <button class="car-category-card" data-category="Hatchback" data-price="₹4,999" onclick="selectCarCategory(this)">
-        <strong>Hatchback</strong><small>₹4,999</small>
+        <strong>Hatchback</strong><br><small>₹4,999</small>
       </button>
       <button class="car-category-card" data-category="Sedan" data-price="₹5,999" onclick="selectCarCategory(this)">
-        <strong>Sedan</strong><small>₹5,999</small>
+        <strong>Sedan</strong><br><small>₹5,999</small>
       </button>
       <button class="car-category-card" data-category="Compact SUV" data-price="₹6,999" onclick="selectCarCategory(this)">
-        <strong>Compact SUV</strong><small>₹6,999</small>
+        <strong>Compact SUV</strong><br><small>₹6,999</small>
       </button>
       <button class="car-category-card" data-category="Full Size SUV" data-price="₹8,499" onclick="selectCarCategory(this)">
-        <strong>Full Size SUV</strong><small>₹8,499</small>
+        <strong>Full Size SUV</strong><br><small>₹8,499</small>
       </button>
       <button class="car-category-card" data-category="Luxury Sedan" data-price="₹8,999" onclick="selectCarCategory(this)">
-        <strong>Luxury Sedan</strong><small>₹8,999</small>
+        <strong>Luxury Sedan</strong><br><small>₹8,999</small>
       </button>
       <!-- Add more categories as needed -->
     </div>
@@ -500,8 +453,8 @@
   </div>
 </div>
 
-<!-- Price Popups (unchanged, include as before) -->
-<!-- ...revampPricePopup, washPricePopup, paintPricePopup, interiorPricePopup... -->
+<!-- Price Popups (unchanged, include as in previous parts) -->
+<!-- ... (revampPricePopup, washPricePopup, paintPricePopup, interiorPricePopup) ... -->
 
 <!-- Revamp Inclusions Popup (unchanged) -->
 <!-- ... -->
@@ -546,34 +499,7 @@
     </form>
   </div>
 </div>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <img src="logo.png" alt="A&H Auto Detailer Logo" class="footer-logo" />
-      <span class="footer-title">A&H Auto Detailer</span>
-    </div>
-    <nav class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="mailto:info@aandhautodetailer.com" title="Email us" aria-label="Email">
-        <!-- Email SVG icon here -->
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L10 9l6-4.99V4H4zm0 2.236V16h12V6.236l-6 4.99-6-4.99z"></path></svg>
-      </a>
-      <a href="https://wa.me/919818198485" target="_blank" rel="noopener" title="WhatsApp us" aria-label="WhatsApp">
-        <!-- WhatsApp SVG icon here -->
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.029-.967-.272-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.075-.148-.669-1.612-.916-2.205-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.215 3.074.149.198 2.098 3.205 5.077 4.368.71.306 1.263.489 1.696.625.712.227 1.36.196 1.872.119.571-.085 1.758-.719 2.007-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zM10 2C5.589 2 2 5.589 2 10c0 1.768.576 3.41 1.573 4.768L2 18l3.314-1.547C6.59 17.424 8.232 18 10 18c4.411 0 8-3.589 8-8s-3.589-8-8-8z"></path></svg>
-      </a>
-      <a href="https://www.instagram.com/aandhautodetailer" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-        <!-- Instagram SVG icon here -->
-        <svg width="20" height="20" fill="currentColor" style="vertical-align:middle;"><path d="M10 2.2c2.7 0 3.018.01 4.073.06.979.047 1.507.206 1.86.344.45.174.772.383 1.11.721.338.338.547.66.721 1.11.138.353.297.881.344 1.86.05 1.055.06 1.373.06 4.073s-.01 3.018-.06 4.073c-.047.979-.206 1.507-.344 1.86-.174.45-.383.772-.721 1.11-.338.338-.66.547-1.11.721-.353.138-.881.297-1.86.344-1.055.05-1.373.06-4.073.06s-3.018-.01-4.073-.06c-.979-.047-1.507-.206-1.86-.344-.45-.174-.772-.383-1.11-.721-.338-.338-.547-.66-.721-1.11-.138-.353-.297-.881-.344-1.86C2.21 13.018 2.2 12.7 2.2 10s.01-3.018.06-4.073c.047-.979.206-1.507.344-1.86.174-.45.383-.772.721-1.11.338-.338.66-.547 1.11-.721.353-.138.881-.297 1.86-.344C6.982 2.21 7.3 2.2 10 2.2zm0-2.2C7.243 0 6.912.012 5.841.06 4.771.108 4.045.262 3.39.51c-.678.26-1.24.608-1.8 1.168-.56.56-.908 1.122-1.168 1.8C.262 4.045.108 4.771.06 5.841.012 6.912 0 7.243 0 10c0 2.757.012 3.088.06 4.159.048 1.07.202 1.796.45 2.451.26.678.608 1.24 1.168 1.8.56.56 1.122.908 1.8 1.168.655.248 1.381.402 2.451.45C6.912 19.988 7.243 20 10 20c2.757 0 3.088-.012 4.159-.06 1.07-.048 1.796-.202 2.451-.45.678-.26 1.24-.608 1.8-1.168.56-.56.908-1.122 1.168-1.8.248-.655.402-1.381.45-2.451.048-1.07.06-1.401.06-4.159 0-2.757-.012-3.088-.06-4.159-.048-1.07-.202-1.796-.45-2.451-.26-.678-.608-1.24-1.168-1.8-.56-.56-1.122-.908-1.8-1.168-.655-.248-1.381-.402-2.451-.45C13.088.012 12.757 0 10 0zm0 4.838A5.162 5.162 0 0 0 4.838 10 5.162 5.162 0 0 0 10 15.162 5.162 5.162 0 0 0 15.162 10 5.162 5.162 0 0 0 10 4.838zm0 8.524A3.362 3.362 0 0 1 6.638 10 3.362 3.362 0 0 1 10 6.638 3.362 3.362 0 0 1 13.362 10 3.362 3.362 0 0 1 10 13.362zm6.406-10.844a1.21 1.21 0 1 1-2.42 0 1.21 1.21 0 0 1 2.42 0z"></path></svg>
-      </a>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
-  </div>
-      </footer>
-      <script>
+<script>
   // --- Car Category Selection Popup Logic ---
   let selectedCarCategory = null;
   let selectedPackageForBooking = null;
