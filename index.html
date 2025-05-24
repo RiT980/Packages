@@ -361,10 +361,60 @@
   <section class="faq-section" aria-label="Frequently Asked Questions">
     <h2>FAQs</h2>
     <div class="faq-tiles">
-      <!-- (Your FAQ tiles as before) -->
+
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">
+          What areas do you serve for mobile detailing?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" id="faq1-answer" role="region" aria-labelledby="faq1-question" aria-hidden="true">
+          We provide mobile car detailing services across Delhi and NCR, including Gurgaon, Noida, Faridabad, and Ghaziabad.
+        </div>
+      </div>
+
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false" aria-controls="faq2-answer" id="faq2-question">
+          How long does a typical detailing service take?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" id="faq2-answer" role="region" aria-labelledby="faq2-question" aria-hidden="true">
+          Depending on the package and vehicle size, services typically take between 2 to 5 hours.
+        </div>
+      </div>
+
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false" aria-controls="faq3-answer" id="faq3-question">
+          Do you use eco-friendly products?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" id="faq3-answer" role="region" aria-labelledby="faq3-question" aria-hidden="true">
+          Yes, we prioritize environmentally friendly and safe products to protect your car and the environment.
+        </div>
+      </div>
+
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false" aria-controls="faq4-answer" id="faq4-question">
+          Can I reschedule or cancel my booking?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" id="faq4-answer" role="region" aria-labelledby="faq4-question" aria-hidden="true">
+          Yes, you can reschedule or cancel your booking by contacting us at least 24 hours before the scheduled service.
+        </div>
+      </div>
+
+      <div class="faq-tile">
+        <button class="faq-tile-question" aria-expanded="false" aria-controls="faq5-answer" id="faq5-question">
+          What payment methods do you accept?
+          <span class="faq-arrow"></span>
+        </button>
+        <div class="faq-tile-answer" id="faq5-answer" role="region" aria-labelledby="faq5-question" aria-hidden="true">
+          We accept cash, UPI payments, and major credit/debit cards at the time of service.
+        </div>
+      </div>
+
     </div>
   </section>
-    <!-- Car Category Popup with new categories -->
+            <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -534,8 +584,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-      </div>
-      <!-- Booking Popup -->
+</div>
+<!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
