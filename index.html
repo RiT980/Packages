@@ -51,10 +51,12 @@
     .card h2 { font-size: 1.08rem; margin-bottom: 8px; color: #fff; font-weight: 700; }
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.11rem; margin-bottom: 8px; }
     .card p { font-size: 0.97rem; color: #ddd; line-height: 1.6; margin-bottom: 8px; }
+
+    /* Pill-shaped button redesign for card action buttons */
     .card-btn-row {
       display: flex;
       flex-direction: row;
-      gap: 8px;
+      gap: 12px;
       align-items: center;
       justify-content: flex-start;
       margin-top: 12px;
@@ -66,62 +68,62 @@
         gap: 8px 0;
       }
     }
-    .quote-btn {
-      background: var(--btn-gradient);
-      color: #fff;
-      box-shadow: 0 2px 12px #25D36633;
-      font-weight: 600;
-      border-radius: 999px;
-      border: none;
-      padding: 0 14px;
-      height: 32px;
-      font-size: 0.92rem;
+    .card-btn-row button,
+    .card-btn-row .price-btn,
+    .card-btn-row .info-btn,
+    .card-btn-row .quote-btn {
+      border-radius: 999px !important; /* Pill shape */
+      padding: 0 26px !important;      /* More horizontal padding */
+      height: 40px !important;         /* Taller for touch and pill look */
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.2px;
       transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
       cursor: pointer;
-    }
-    .quote-btn:hover, .quote-btn:focus {
-      background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
-      color: #fff;
-      box-shadow: 0 4px 18px #25D36644;
-      transform: translateY(-2px) scale(1.03);
+      outline: none;
+      box-shadow: 0 2px 12px #25D36633;
+      margin-right: 0;
+      margin-bottom: 0;
+      border: none;
+      display: inline-block;
+      min-width: 120px;
     }
     .price-btn {
       background: #fff;
       color: #25D366;
       border: 2px solid #25D366;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: 0 14px;
-      height: 32px;
-      font-size: 0.92rem;
-      cursor: pointer;
-      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
     }
     .price-btn:hover, .price-btn:focus {
-      background: var(--btn-gradient);
+      background: linear-gradient(90deg, #25D366 80%, #1ed760 100%);
       color: #fff;
       border-color: #25D366;
-      transform: scale(1.04);
+      box-shadow: 0 4px 18px #25D36644;
+      transform: translateY(-2px) scale(1.04);
     }
     .info-btn {
       background: #232323;
       color: #fff;
       border: 2px solid #444;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: 0 14px;
-      height: 32px;
-      font-size: 0.92rem;
-      cursor: pointer;
-      transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s, transform 0.13s;
     }
     .info-btn:hover, .info-btn:focus {
       background: #2c2c2c;
       color: #25D366;
       border-color: #25D366;
-      transform: scale(1.04);
+      box-shadow: 0 4px 18px #25D36644;
+      transform: translateY(-2px) scale(1.04);
     }
-    .note { text-align: center; margin-top: 30px; color: #ccc; }
+    .quote-btn {
+      background: linear-gradient(90deg, #25D366 0%, #1ebe5d 100%);
+      color: #fff;
+      border: none;
+    }
+    .quote-btn:hover, .quote-btn:focus {
+      background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
+      color: #fff;
+      box-shadow: 0 4px 18px #25D36644;
+      transform: translateY(-2px) scale(1.04);
+    }
+        .note { text-align: center; margin-top: 30px; color: #ccc; }
     .enquiry-btn {
       display: inline-block;
       background: linear-gradient(90deg, #1ed760 0%, #25D366 100%);
@@ -146,7 +148,7 @@
       transform: translateY(-2px) scale(1.05);
       outline: none;
     }
-        .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+    .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
     .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
     .faq-tiles { display: flex; flex-direction: column; gap: 18px; }
     .faq-tile { background: #181818; border-radius: 18px; box-shadow: 0 2px 10px #0004; padding: 0; overflow: hidden; }
@@ -308,7 +310,7 @@
       <p>Complete transformation for your vehicle – perfect inside and out with premium care.</p>
       <div class="card-btn-row">
         <button class="price-btn" onclick="openPricePopup('revampPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('revampInclusionPopup')">Inclusions</button>
         <button class="quote-btn" onclick="openCarCategoryPopup('A&H Total Revamp Package')">Book Now</button>
       </div>
     </div>
@@ -318,7 +320,7 @@
       <p>Thorough wash with a polish and protective wax for a long-lasting shine.</p>
       <div class="card-btn-row">
         <button class="price-btn" onclick="openPricePopup('washPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('washInclusionPopup')">Inclusions</button>
         <button class="quote-btn" onclick="openCarCategoryPopup('Detailed Wash + 1 Step Polish + Wax')">Book Now</button>
       </div>
     </div>
@@ -328,7 +330,7 @@
       <p>Removes swirls, scratches, and dullness to restore factory-like gloss.</p>
       <div class="card-btn-row">
         <button class="price-btn" onclick="openPricePopup('paintPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('paintInclusionPopup')">Inclusions</button>
         <button class="quote-btn" onclick="openCarCategoryPopup('Paint Correction')">Book Now</button>
       </div>
     </div>
@@ -338,13 +340,13 @@
       <p>Deep cleaning of seats, mats, and panels for a fresh, hygienic cabin feel.</p>
       <div class="card-btn-row">
         <button class="price-btn" onclick="openPricePopup('interiorPricePopup')">Price</button>
-        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">See Inclusions</button>
+        <button class="info-btn" onclick="openInclusionPopup('inclusionPopup')">Inclusions</button>
         <button class="quote-btn" onclick="openCarCategoryPopup('Interior Detailing')">Book Now</button>
       </div>
     </div>
   </section>
   <p class="note">*Starting rates only; final quote depends on car model and condition.</p>
-    <section class="cta-section" aria-label="Call to Action">
+  <section class="cta-section" aria-label="Call to Action">
     <h2>Ready for a Showroom Shine?</h2>
     <p>Contact us now for premium doorstep detailing!</p>
     <a href="https://wa.me/919818198485?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20car%20detailing%20services." 
@@ -362,8 +364,7 @@
       <!-- (Your FAQ tiles as before) -->
     </div>
   </section>
-
-  <!-- Car Category Popup with new categories -->
+    <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -395,7 +396,7 @@
       <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm & Continue</button>
     </div>
   </div>
-  <!-- Inclusions Popups -->
+<!-- Inclusions Popups -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
@@ -533,9 +534,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-</div>
-
-<!-- Booking Popup -->
+      </div>
+      <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
@@ -592,8 +592,8 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-        </footer>
-        <script>
+</footer>
+<script>
   const packagePrices = {
     "A&H Total Revamp Package": {
       "Hatchback": "₹4,999",
@@ -632,8 +632,7 @@
       "Luxury Full Size SUV": "₹3,799"
     }
   };
-
-  // --- Car Category Popup Logic ---
+    // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
   let selectedPackageForBooking = "";
