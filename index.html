@@ -132,6 +132,7 @@
       text-align: center;
       margin: 0 auto 0 auto;
       padding-bottom: 32px;
+      margin-bottom: 56px; /* Ample space below CTA */
     }
     .enquiry-btn {
       display: inline-flex;
@@ -161,12 +162,6 @@
       transform: translateY(-3px) scale(1.05);
       outline: none;
       box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
-    }
-    .enquiry-btn svg {
-      margin-right: 12px;
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
     }
         .faq-section { max-width: 800px; margin: 50px auto; padding: 0 20px; }
     .faq-section h2 { text-align: center; font-size: 2rem; margin-bottom: 20px; color: var(--secondary-color); }
@@ -375,10 +370,6 @@
        target="_blank" 
        rel="noopener" 
        aria-label="Enquiry on WhatsApp">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 32 32" stroke="none" aria-hidden="true" focusable="false">
-        <circle cx="16" cy="16" r="16" fill="#25D366"/>
-        <path d="M23.5 19.5c-.3-.1-1.7-.8-2-1s-.5-.1-.7.1c-.2.2-.8 1-.9 1.1-.2.1-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.2-.8-.7-1.4-1.5-1.6-1.8-.2-.3 0-.4.1-.5.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.1-.2.2-.3.1-.1.2-.2.3-.3.2-.2.2-.3.3-.4.1-.2.1-.3.1-.4 0-.1-.1-.2-.2-.3-.1-.1-.7-1.7-1-2.3-.3-.6-.6-.6-.8-.6-.2 0-.4 0-.6.1-.2.1-1.1.5-1.6 1.4-.5.9-.5 2.2.1 3.3.6 1.2 2.1 2.7 2.5 3.1.4.4 3.5 2.6 5.5 2.6.8 0 1.7-.2 2.2-.7.2-.2.3-.4.4-.6.1-.2.1-.4.1-.5 0-.2-.1-.3-.2-.4z" fill="#fff"/>
-      </svg>
       Enquiry
     </a>
   </section>
@@ -388,11 +379,11 @@
 
       <div class="faq-tile">
         <button class="faq-tile-question" aria-expanded="false" aria-controls="faq1-answer" id="faq1-question">
-          What areas do you serve for doorstep detailing?
+          What areas do you serve for mobile detailing?
           <span class="faq-arrow"></span>
         </button>
         <div class="faq-tile-answer" id="faq1-answer" role="region" aria-labelledby="faq1-question" aria-hidden="true">
-          We provide doorstep detailing services in limited areas across Delhi and NCR, including Gurgaon, Noida and Ghaziabad.
+          We provide mobile car detailing services across Delhi and NCR, including Gurgaon, Noida, Faridabad, and Ghaziabad.
         </div>
       </div>
 
@@ -488,7 +479,7 @@
 
     </div>
   </section>
-    <!-- Car Category Popup with new categories -->
+          <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -654,12 +645,12 @@
       <tr><td>Full Size SUV</td><td>₹2,499</td></tr>
       <tr><td>Luxury Sedan</td><td>₹2,999</td></tr>
       <tr><td>Luxury Compact SUV</td><td>₹3,299</td></tr>
-      <tr><td>Luxury Full Size SUV</td><td>₹3,999</td></tr>
+      <tr><td>Luxury Full Size SUV</td><td>₹3,799</td></tr>
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-</div>
-<!-- Booking Popup -->
+                                         </div>
+                                         <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
@@ -753,7 +744,7 @@
       "Full Size SUV": "₹2,499",
       "Luxury Sedan": "₹2,999",
       "Luxury Compact SUV": "₹3,299",
-      "Luxury Full Size SUV": "₹3,999"
+      "Luxury Full Size SUV": "₹3,799"
     }
   };
     // --- Car Category Popup Logic ---
