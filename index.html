@@ -129,22 +129,22 @@
       transform: translateY(-2px) scale(1.04);
     }
 
-    /* 2x vertical space for note and CTA section */
+    /* 1x vertical space for note and CTA section */
     .note {
       text-align: center;
-      margin-top: 60px;
-      margin-bottom: 60px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       color: #ccc;
     }
     .cta-section {
       text-align: center;
       margin: 0 auto 0 auto;
-      padding-top: 64px;
-      padding-bottom: 64px;
-      margin-bottom: 112px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      margin-bottom: 20px; /* Reduced gap below Enquiry button */
     }
     .cta-section h2 {
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
 
     /* Modern Enquiry Button */
@@ -664,8 +664,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-</div>
-<!-- Booking Popup -->
+            </div>
+            <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
@@ -762,7 +762,7 @@
       "Luxury Full Size SUV": "₹3,799"
     }
   };
-          // --- Car Category Popup Logic ---
+    // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
   let selectedPackageForBooking = "";
