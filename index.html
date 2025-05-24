@@ -52,41 +52,39 @@
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.11rem; margin-bottom: 8px; }
     .card p { font-size: 0.97rem; color: #ddd; line-height: 1.6; margin-bottom: 8px; }
 
-    /* Pill-shaped button redesign for card action buttons */
+    /* Pill-shaped button redesign for card action buttons - horizontally aligned with ample space */
     .card-btn-row {
       display: flex;
       flex-direction: row;
-      gap: 12px;
+      gap: 24px;               /* Ample space between buttons */
       align-items: center;
       justify-content: flex-start;
-      margin-top: 12px;
-      flex-wrap: nowrap;
+      flex-wrap: nowrap;       /* Prevent wrapping unless on small screens */
+      margin-top: 16px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 480px) {
       .card-btn-row {
-        flex-wrap: wrap;
-        gap: 8px 0;
+        flex-wrap: wrap;       /* Allow wrapping on very small screens */
+        gap: 16px 12px;        /* Vertical and horizontal gaps */
       }
     }
     .card-btn-row button,
     .card-btn-row .price-btn,
     .card-btn-row .info-btn,
     .card-btn-row .quote-btn {
-      border-radius: 999px !important; /* Pill shape */
-      padding: 0 26px !important;      /* More horizontal padding */
-      height: 40px !important;         /* Taller for touch and pill look */
+      min-width: 140px;        /* Uniform minimum width for better alignment */
+      padding: 0 28px !important;
+      height: 44px !important;
       font-size: 1rem !important;
       font-weight: 600 !important;
-      letter-spacing: 0.2px;
-      transition: background 0.18s, color 0.18s, border 0.18s, transform 0.13s;
+      border-radius: 999px !important;
+      box-shadow: none !important;
       cursor: pointer;
+      transition: background 0.18s, color 0.18s, border 0.18s, transform 0.13s;
+      margin: 0;
       outline: none;
-      margin-right: 0;
-      margin-bottom: 0;
       border: none;
       display: inline-block;
-      min-width: 120px;
-      box-shadow: none !important; /* Remove all button shadows */
     }
     .price-btn {
       background: #232323;         /* Charcoal */
@@ -588,8 +586,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-      </div>
-    <!-- Booking Popup -->
+</div>
+<!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
@@ -683,7 +681,7 @@
       "Full Size SUV": "₹2,499",
       "Luxury Sedan": "₹2,999",
       "Luxury Compact SUV": "₹3,299",
-      "Luxury Full Size SUV": "₹3,999"
+      "Luxury Full Size SUV": "₹3,799"
     }
   };
     // --- Car Category Popup Logic ---
