@@ -1,3 +1,6 @@
+>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,7 +125,6 @@
       transform: scale(1.04);
     }
     .note { text-align: center; margin-top: 30px; color: #ccc; }
-    /* ENQUIRY BUTTON (CTA) */
     .enquiry-btn {
       display: inline-block;
       background: linear-gradient(90deg, #1ed760 0%, #25D366 100%);
@@ -452,7 +454,6 @@
       </div>
     </div>
   </section>
-  <!-- All popups for category, inclusions, prices, booking, etc. (see next part) -->
   <!-- Car Category Popup -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
   <div class="popup" style="max-width: 520px; padding: 40px 32px;">
@@ -479,6 +480,7 @@
     <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm & Continue</button>
   </div>
 </div>
+
 <!-- Inclusions Popups -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
@@ -552,6 +554,7 @@
     </p>
   </div>
 </div>
+
 <!-- Price Popups -->
 <div class="popup-overlay" id="revampPricePopup" role="dialog" aria-modal="true" aria-labelledby="revampPriceTitle">
   <div class="popup">
@@ -609,6 +612,7 @@
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
 </div>
+
 <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
@@ -649,6 +653,7 @@
     </form>
   </div>
 </div>
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
@@ -666,7 +671,39 @@
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
   </footer>
-  <script>
+        <script>
+  // --- Dynamic Pricing Data ---
+  const packagePrices = {
+    "A&H Total Revamp Package": {
+      "Hatchback": "₹4,999",
+      "Sedan": "₹5,999",
+      "Compact SUV": "₹6,999",
+      "Full Size SUV": "₹8,499",
+      "Luxury Sedan": "₹8,999"
+    },
+    "Detailed Wash + 1 Step Polish + Wax": {
+      "Hatchback": "₹1,199",
+      "Sedan": "₹1,499",
+      "Compact SUV": "₹1,799",
+      "Full Size SUV": "₹2,199",
+      "Luxury Sedan": "₹2,499"
+    },
+    "Paint Correction": {
+      "Hatchback": "₹2,999",
+      "Sedan": "₹3,499",
+      "Compact SUV": "₹3,999",
+      "Full Size SUV": "₹4,999",
+      "Luxury Sedan": "₹5,499"
+    },
+    "Interior Detailing": {
+      "Hatchback": "₹1,499",
+      "Sedan": "₹1,799",
+      "Compact SUV": "₹1,999",
+      "Full Size SUV": "₹2,499",
+      "Luxury Sedan": "₹2,999"
+    }
+  };
+
   // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
@@ -681,7 +718,16 @@
     document.getElementById('selectedPrice').textContent = "";
     selectedCarCategory = "";
     selectedCarPrice = "";
-    document.querySelectorAll('.car-category-card').forEach(card => card.classList.remove('selected'));
+
+    // Dynamically update prices in car category popup
+    const prices = packagePrices[service] || {};
+    document.querySelectorAll('.car-category-card').forEach(card => {
+      const category = card.getAttribute('data-category');
+      const price = prices[category] || "-";
+      card.setAttribute('data-price', price);
+      card.querySelector('small').textContent = price;
+      card.classList.remove('selected');
+    });
   }
 
   function closeCarCategoryPopup() {
