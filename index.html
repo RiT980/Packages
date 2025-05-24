@@ -1,3 +1,5 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,27 +54,33 @@
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.11rem; margin-bottom: 8px; }
     .card p { font-size: 0.97rem; color: #ddd; line-height: 1.6; margin-bottom: 8px; }
 
-    /* Pill-shaped button redesign for card action buttons - horizontally aligned with ample space */
+    /* Pill-shaped button redesign for card action buttons - always horizontal, scrollable on mobile */
     .card-btn-row {
       display: flex;
       flex-direction: row;
-      gap: 24px;               /* Ample space between buttons */
+      gap: 24px;
       align-items: center;
       justify-content: flex-start;
-      flex-wrap: nowrap;       /* Prevent wrapping unless on small screens */
+      flex-wrap: nowrap;          /* NO wrapping! */
+      overflow-x: auto;           /* Enable horizontal scrolling on small screens */
+      scrollbar-width: thin;
+      scrollbar-color: #25D366 #232323;
+      -webkit-overflow-scrolling: touch;
       margin-top: 16px;
     }
-    @media (max-width: 480px) {
-      .card-btn-row {
-        flex-wrap: wrap;       /* Allow wrapping on very small screens */
-        gap: 16px 12px;        /* Vertical and horizontal gaps */
-      }
+    .card-btn-row::-webkit-scrollbar {
+      height: 6px;
+      background: #232323;
+    }
+    .card-btn-row::-webkit-scrollbar-thumb {
+      background: #25D366;
+      border-radius: 4px;
     }
     .card-btn-row button,
     .card-btn-row .price-btn,
     .card-btn-row .info-btn,
     .card-btn-row .quote-btn {
-      min-width: 140px;        /* Uniform minimum width for better alignment */
+      min-width: 140px;
       padding: 0 28px !important;
       height: 44px !important;
       font-size: 1rem !important;
@@ -85,28 +93,29 @@
       outline: none;
       border: none;
       display: inline-block;
+      white-space: nowrap;
     }
     .price-btn {
-      background: #232323;         /* Charcoal */
-      color: #fff;                 /* White text */
-      border: 2px solid #181818;   /* Slightly darker charcoal */
+      background: #232323;
+      color: #fff;
+      border: 2px solid #181818;
       box-shadow: none !important;
     }
     .price-btn:hover, .price-btn:focus {
-      background: #181818;         /* Even darker on hover */
+      background: #181818;
       border-color: #232323;
       color: #fff;
       box-shadow: none !important;
       transform: translateY(-2px) scale(1.04);
     }
     .info-btn {
-      background: #1E3A8A;         /* Deep Royal Blue */
-      color: #fff;                 /* White text */
-      border: 2px solid #2563EB;   /* Slightly lighter blue */
+      background: #1E3A8A;
+      color: #fff;
+      border: 2px solid #2563EB;
       box-shadow: none !important;
     }
     .info-btn:hover, .info-btn:focus {
-      background: #2563EB;         /* Lighter blue on hover */
+      background: #2563EB;
       border-color: #1E3A8A;
       color: #fff;
       box-shadow: none !important;
@@ -132,7 +141,7 @@
       text-align: center;
       margin: 0 auto 0 auto;
       padding-bottom: 32px;
-      margin-bottom: 56px; /* Ample space below CTA */
+      margin-bottom: 56px;
     }
     .enquiry-btn {
       display: inline-flex;
@@ -479,7 +488,7 @@
 
     </div>
   </section>
-          <!-- Car Category Popup with new categories -->
+    <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -649,8 +658,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-                                         </div>
-                                         <!-- Booking Popup -->
+</div>
+<!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
