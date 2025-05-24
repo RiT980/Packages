@@ -89,27 +89,27 @@
       min-width: 120px;
     }
     .price-btn {
-      background: #fff;
-      color: #25D366;
-      border: 2px solid #25D366;
+      background: #232323;         /* Charcoal */
+      color: #fff;                 /* White text */
+      border: 2px solid #181818;   /* Slightly darker charcoal */
     }
     .price-btn:hover, .price-btn:focus {
-      background: linear-gradient(90deg, #25D366 80%, #1ed760 100%);
+      background: #181818;         /* Even darker on hover */
+      border-color: #232323;
       color: #fff;
-      border-color: #25D366;
-      box-shadow: 0 4px 18px #25D36644;
+      box-shadow: 0 4px 18px #23232344;
       transform: translateY(-2px) scale(1.04);
     }
     .info-btn {
-      background: #232323;
-      color: #fff;
-      border: 2px solid #444;
+      background: #1E3A8A;         /* Deep Royal Blue */
+      color: #fff;                 /* White text */
+      border: 2px solid #2563EB;   /* Slightly lighter blue */
     }
     .info-btn:hover, .info-btn:focus {
-      background: #2c2c2c;
-      color: #25D366;
-      border-color: #25D366;
-      box-shadow: 0 4px 18px #25D36644;
+      background: #2563EB;         /* Lighter blue on hover */
+      border-color: #1E3A8A;
+      color: #fff;
+      box-shadow: 0 4px 18px #2563EB55;
       transform: translateY(-2px) scale(1.04);
     }
     .quote-btn {
@@ -414,7 +414,7 @@
 
     </div>
   </section>
-            <!-- Car Category Popup with new categories -->
+    <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -584,8 +584,8 @@
     </table>
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
-</div>
-<!-- Booking Popup -->
+  </div>
+                                       <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
