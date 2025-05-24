@@ -52,11 +52,11 @@
     .price { color: var(--secondary-color); font-weight: 700; font-size: 1.11rem; margin-bottom: 8px; }
     .card p { font-size: 0.97rem; color: #ddd; line-height: 1.6; margin-bottom: 8px; }
 
-    /* Card Button Row: always horizontal, ample space, smaller buttons */
+    /* Card Button Row: always horizontal, ample space, ultra-small buttons */
     .card-btn-row {
       display: flex;
       flex-wrap: nowrap;
-      gap: 24px;
+      gap: 18px;
       align-items: center;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -75,10 +75,10 @@
     .card-btn-row .price-btn,
     .card-btn-row .info-btn,
     .card-btn-row .quote-btn {
-      min-width: 120px;
-      padding: 0 24px !important;
-      height: 40px !important;
-      font-size: 1rem !important;
+      min-width: 80px;
+      padding: 0 12px !important;
+      height: 32px !important;
+      font-size: 0.85rem !important;
       font-weight: 600 !important;
       border-radius: 999px !important;
       box-shadow: none !important;
@@ -483,7 +483,7 @@
 
     </div>
   </section>
-    <!-- Car Category Popup with new categories -->
+            <!-- Car Category Popup with new categories -->
   <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
     <div class="popup" style="max-width: 520px; padding: 40px 32px;">
       <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -654,7 +654,7 @@
     <div style="color:#bbb; font-size:0.97rem; margin-top:10px;">*Final quote may vary based on car condition.</div>
   </div>
   </div>
-  <!-- Booking Popup -->
+                                       <!-- Booking Popup -->
 <div class="popup-overlay" id="bookingPopup" role="dialog" aria-modal="true" aria-labelledby="bookingPopupTitle">
   <div class="popup" style="max-width: 420px;">
     <button class="close-btn" onclick="closeBookingPopup()" aria-label="Close popup">×</button>
