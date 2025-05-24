@@ -178,6 +178,33 @@
       font-weight: bold;
       min-height: 1.5em;
     }
+    /* Improved Confirm Button */
+    #confirmCategoryBtn {
+      background: linear-gradient(90deg, #25D366 0%, #1ebe5d 100%);
+      color: #fff;
+      font-size: 1.12rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      box-shadow: 0 4px 18px #25D36644;
+      padding: 0 32px;
+      height: 48px;
+      margin-top: 30px;
+      letter-spacing: 0.5px;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s, opacity 0.2s;
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    #confirmCategoryBtn.active, #confirmCategoryBtn:enabled {
+      opacity: 1;
+      cursor: pointer;
+      background: linear-gradient(90deg, #1ed760 80%, #25D366 100%);
+      box-shadow: 0 8px 24px #25D36655;
+      transform: scale(1.04);
+    }
+    #confirmCategoryBtn:active {
+      transform: scale(0.98);
+    }
     .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; }
     .popup-overlay.active { display: flex; }
     .popup { background: var(--popup-bg); border-radius: 28px; box-shadow: 0 8px 40px #000a, 0 0 0 1px #222; color: #f4f4f4; max-width: 480px; width: 95vw; max-height: 80vh; padding: 64px 32px 44px 36px; position: relative; overflow-y: auto; box-sizing: border-box; }
@@ -372,7 +399,7 @@
   </section>
 </main>
 
-<!-- Car Category Popup (with price) -->
+<!-- Car Category Popup (with improved Confirm button) -->
 <div class="popup-overlay" id="carCategoryPopup" role="dialog" aria-modal="true" aria-labelledby="carCategoryPopupTitle">
   <div class="popup" style="max-width: 520px; padding: 40px 32px;">
     <button class="close-btn" onclick="closeCarCategoryPopup()" aria-label="Close car category popup">×</button>
@@ -395,7 +422,7 @@
       </button>
     </div>
     <div class="selected-price" id="selectedPrice"></div>
-    <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm</button>
+    <button id="confirmCategoryBtn" class="quote-btn" disabled style="margin-top: 28px; width: 100%;">Confirm & Continue</button>
   </div>
 </div>
 
@@ -415,8 +442,8 @@
   <div class="footer-bottom">
     <span>&copy; 2025 A&H Auto Detailer. All rights reserved.</span>
   </div>
-  </footer>
-  <!-- Revamp Inclusions Popup -->
+</footer>
+<!-- Revamp Inclusions Popup -->
 <div class="popup-overlay" id="revampInclusionPopup" role="dialog" aria-modal="true" aria-labelledby="revampInclusionTitle">
   <div class="popup">
     <button class="close-btn" onclick="closeInclusionPopup('revampInclusionPopup')" aria-label="Close popup">×</button>
@@ -597,8 +624,8 @@
       <div class="success-message" id="bookingSuccess" style="display:none;">Your booking request has been submitted! We will contact you soon.</div>
     </form>
   </div>
-    </div>
-    <script>
+                                                         </div>
+                                                         <script>
   // --- Car Category Popup Logic ---
   let selectedCarCategory = "";
   let selectedCarPrice = "";
@@ -607,7 +634,9 @@
   function openCarCategoryPopup(service) {
     selectedPackageForBooking = service || "";
     document.getElementById('carCategoryPopup').classList.add('active');
-    document.getElementById('confirmCategoryBtn').disabled = true;
+    const confirmBtn = document.getElementById('confirmCategoryBtn');
+    confirmBtn.disabled = true;
+    confirmBtn.classList.remove('active');
     document.getElementById('selectedPrice').textContent = "";
     selectedCarCategory = "";
     selectedCarPrice = "";
@@ -618,7 +647,7 @@
     document.getElementById('carCategoryPopup').classList.remove('active');
   }
 
-  // Handle car category selection
+  // Improved car category selection logic
   document.querySelectorAll('.car-category-card').forEach(card => {
     card.addEventListener('click', function() {
       document.querySelectorAll('.car-category-card').forEach(c => c.classList.remove('selected'));
@@ -626,7 +655,11 @@
       selectedCarCategory = this.getAttribute('data-category');
       selectedCarPrice = this.getAttribute('data-price');
       document.getElementById('selectedPrice').textContent = `Price: ${selectedCarPrice}`;
-      document.getElementById('confirmCategoryBtn').disabled = false;
+      // Enable and highlight confirm button
+      const confirmBtn = document.getElementById('confirmCategoryBtn');
+      confirmBtn.disabled = false;
+      confirmBtn.classList.add('active');
+      setTimeout(() => confirmBtn.scrollIntoView({behavior: "smooth", block: "center"}), 150);
     });
   });
 
@@ -634,6 +667,9 @@
     if (selectedCarCategory && selectedCarPrice) {
       closeCarCategoryPopup();
       openBookingPopup(selectedPackageForBooking, selectedCarCategory, selectedCarPrice);
+      // Reset confirm button for next time
+      this.disabled = true;
+      this.classList.remove('active');
     }
   });
 
