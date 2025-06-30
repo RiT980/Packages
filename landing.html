@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A&H Auto Detailer - Custom Package</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #333333;
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #444444;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .base-package, .addons {
+      background-color: #555555;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #333333;
+      background-color: #f5f5f7;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e1e1e3;
+    }
+    .note {
+      font-size: 0.9rem;
+      margin-top: 20px;
+      font-style: italic;
+      color: #cccccc;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>A&H Auto Detailer</h1>
+    <p>Professional Interior Detailing at your doorstep, starting at <strong>₹1,199</strong>.</p>
+    
+    <div class="base-package">
+      <h2>Base Package Includes:</h2>
+      <ul>
+        <li>Deep cleaning of seats, mats & carpets</li>
+        <li>Dashboard, door panels & AC vents</li>
+        <li>Full vacuuming</li>
+      </ul>
+      <p>Duration: 2 to 2.5 hours</p>
+    </div>
+    
+    <div class="addons">
+      <h2>Add-ons (Optional):</h2>
+      <form id="packageForm">
+        <label><input type="checkbox" name="addon" value="199" data-name="Headliner Cleaning"> Headliner Cleaning – ₹199</label>
+        <label><input type="checkbox" name="addon" value="249" data-name="Stain & Odor Treatment"> Stain & Odor Treatment – ₹249</label>
+        <label><input type="checkbox" name="addon" value="499" data-name="Exterior Foam Wash"> Exterior Foam Wash – ₹499</label>
+        <label><input type="checkbox" name="addon" value="199" data-name="Water-Based Interior Dressing"> Water-Based Interior Dressing – ₹199</label>
+        <label><input type="checkbox" name="addon" value="99" data-name="Silicone-Based Interior Dressing"> Silicone-Based Interior Dressing – ₹99</label>
+        <label><input type="checkbox" name="addon" value="399" data-name="Leather Cleaning & Conditioning"> Leather Cleaning & Conditioning – ₹399</label>
+        <label><input type="checkbox" name="addon" value="299" data-name="Foaming Upholstery Cleaning"> Foaming Upholstery Cleaning – ₹299</label>
+        <label><input type="checkbox" name="addon" value="149" data-name="Foaming Interior Trims & Surface Cleaning"> Foaming Interior Trims & Surface Cleaning – ₹149</label>
+        <label><input type="checkbox" name="addon" value="149" data-name="Seatbelt Cleaning"> Seatbelt Cleaning – ₹149</label>
+        <label><input type="checkbox" name="addon" value="99" data-name="Pedal & Footwell Cleaning"> Pedal & Footwell Cleaning – ₹99</label>
+        <label><input type="checkbox" name="addon" value="149" data-name="Glass Polishing (Interior)"> Glass Polishing (Interior) – ₹149</label>
+        
+        <p class="note">For luxury cars with leather interiors, we recommend Leather Cleaning & Conditioning.</p>
+        <p class="price">Total Price: <span id="totalPrice">₹1199</span></p>
+        
+        <button type="button" onclick="submitForm()">Book Your Custom Package</button>
+      </form>
+    </div>
+          </div>
+          <script>
+  const basePrice = 1199;
+  const totalPriceEl = document.getElementById('totalPrice');
+  const form = document.getElementById('packageForm');
+
+  form.addEventListener('change', updateTotal);
+
+  function updateTotal() {
+    let total = basePrice;
+    const addons = form.querySelectorAll('input[name="addon"]:checked');
+    
+    addons.forEach(addon => {
+      total += parseInt(addon.value);
+    });
+    
+    totalPriceEl.textContent = `₹${total}`;
+  }
+
+  function submitForm() {
+    const selectedServices = [];
+    const addons = form.querySelectorAll('input[name="addon"]:checked');
+    
+    addons.forEach(addon => {
+      selectedServices.push(addon.dataset.name);
+    });
+    
+    alert(`Thank you for booking!\nSelected services: ${selectedServices.join(', ') || 'Base Package Only'}\nTotal: ${totalPriceEl.textContent}`);
+    form.reset();
+    totalPriceEl.textContent = `₹${basePrice}`;
+  }
+</script>
+</body>
+</html>
